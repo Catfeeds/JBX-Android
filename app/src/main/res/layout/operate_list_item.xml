@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/rv_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/header_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:overScrollMode="never">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/content_rel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/six_four_dp"
+        android:background="@drawable/ripple_bg">
+
+        <ImageView
+            android:id="@+id/check_yes_no_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/ten_dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/organ_no"/>
+
+        <com.example.zhengdong.base.Section.Mine.View.CircleImageView
+            android:id="@+id/header_pic"
+            android:layout_width="@dimen/four_four_dp"
+            android:layout_height="@dimen/four_four_dp"
+            android:layout_marginLeft="@dimen/thirty_dp"
+            app:border_color="@color/white"
+            app:border_width="@dimen/one_dp"
+            android:background="@null"
+            android:src="@color/gray_40"
+            android:scaleType="centerCrop"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/check_yes_no_pic"/>
+
+        <TextView
+            android:id="@+id/name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="张丹"
+            android:layout_toRightOf="@+id/header_pic"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/ten_dp"
+            android:textColor="#FF222222"
+            android:textSize="@dimen/fourteen_sp" />
+        <TextView
+            android:id="@+id/subname_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/name_txt"
+            android:layout_marginLeft="12dp"
+            android:layout_centerVertical="true"
+            android:text="主管"
+            android:padding="@dimen/two_dp"
+            android:textColor="#FFFFFFFF"
+            android:background="@color/skyblue"
+            android:textSize="@dimen/eleven_sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one_dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/ten_dp"
+            android:background="#d8d8d8"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

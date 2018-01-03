@@ -1,0 +1,125 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F3F3F3"
+    tools:context="com.example.zhengdong.base.Section.Mine.Controller.MineFC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/com_navi_title_bar_item"/>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:overScrollMode="never">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/ten_dp"
+                    app:cardBackgroundColor="@color/white">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/mine_name_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="YOUKE"
+                                android:layout_marginTop="@dimen/fifteen_dp"
+                                android:layout_marginLeft="@dimen/fifteen_dp"
+                                android:textColor="#FF222222"
+                                android:textSize="@dimen/eighteen_sp"/>
+                            <TextView
+                                android:id="@+id/mine_partment_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/fifteen_dp"
+                                android:layout_marginTop="@dimen/five_dpp"
+                                android:text="销售部"
+                                android:textColor="#FF222222"
+                                android:textSize="@dimen/fiften_sp"/>
+                        </LinearLayout>
+                        <com.example.zhengdong.base.Section.Mine.View.CircleImageView
+                            android:id="@+id/mine_header_pic"
+                            android:layout_width="@dimen/five_five_dp"
+                            android:layout_height="@dimen/five_five_dp"
+                            android:layout_alignParentRight="true"
+                            app:border_width="@dimen/one_dp"
+                            app:border_color="@color/gray_40"
+                            android:src="@drawable/banner"
+                            android:scaleType="centerCrop"
+                            android:layout_marginTop="@dimen/fifteen_dp"
+                            android:layout_marginRight="@dimen/fifteen_dp"/>
+
+                        <LinearLayout
+                            android:id="@+id/mine_shopname_lay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/one_hundred_twenty"
+                            android:layout_marginLeft="@dimen/fifteen_dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/mine_shopname_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="天津金利恒发"
+                                android:textColor="#FF222222"
+                                android:textSize="@dimen/fiften_sp" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/my_main_back"
+                                android:layout_marginLeft="@dimen/five_dpp"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:id="@+id/mine_ispass_pic"
+                            android:layout_below="@+id/mine_shopname_lay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/fifteen_dp"
+                            android:layout_marginTop="@dimen/five_dpp"
+                            android:layout_marginBottom="@dimen/fifteen_dp"
+                            android:src="@drawable/my_main_aut"/>
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/mine_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"
+                        android:overScrollMode="never">
+                    </android.support.v7.widget.RecyclerView>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

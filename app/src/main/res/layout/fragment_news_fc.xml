@@ -1,0 +1,83 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.zhengdong.base.Section.News.Controller.NewsFC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/four_eight"
+            android:background="@color/navi_back_blue_color">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/four_eight"
+                android:layout_marginLeft="@dimen/ten_dp"
+                android:layout_marginRight="@dimen/ten_dp">
+                <EditText
+                    android:id="@+id/news_search_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/thirty_dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:maxLines="1"
+                    android:hint="@string/news_search_txt"
+                    android:textSize="@dimen/fourteen_sp"
+                    android:inputType="text"
+                    android:imeOptions="actionSearch"
+                    android:textColorHint="#FF828282"
+                    android:paddingLeft="@dimen/thirty_dp"
+                    android:background="@drawable/table_shape_white_bg"
+                    android:cursorVisible="true"
+                    android:textCursorDrawable="@drawable/curse_bg" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/ten_dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/new_nav_search"/>
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:textSize="@dimen/fourteen_sp"-->
+                        <!--android:layout_marginLeft="@dimen/four_dp"-->
+                        <!--android:text="@string/news_search_txt"/>-->
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/tab_lay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/four_four_dp"
+            android:background="@color/white"
+            tl:tl_indicator_color="@color/navi_back_blue_color"
+            tl:tl_indicator_height="@dimen/two_dp"
+            tl:tl_indicator_width_equal_title="true"
+            tl:tl_tab_padding="@dimen/fifteen_dp"
+            tl:tl_tab_space_equal="true"
+            tl:tl_textSelectColor="#222222"
+            tl:tl_textUnselectColor="#656565"
+            tl:tl_textsize="@dimen/fiften_sp"
+            tl:tl_underline_color="@color/white"
+            tl:tl_underline_height="@dimen/one_dp"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"/>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/six_four_dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/bg_lay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ripple_bg">
+
+        <ImageView
+            android:id="@+id/check_yes_no_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/ten_dp"
+            android:background="@drawable/organ_no"/>
+        <TextView
+            android:id="@+id/organ_name_txt"
+            android:layout_toRightOf="@+id/check_yes_no_pic"
+            android:layout_marginLeft="@dimen/thirty_dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fiften_sp"
+            android:text="测试组织机构"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one_dp"
+            android:layout_alignParentBottom="true"
+            android:background="#f3f3f3"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

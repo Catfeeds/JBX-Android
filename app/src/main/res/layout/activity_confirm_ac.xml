@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zhengdong.base.Section.Login.Controller.ConfirmAC">
+    
+    <LinearLayout
+        android:id="@+id/confirm_back_lay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/twenty_dp"
+        android:layout_marginTop="@dimen/twenty_dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:scaleType="centerInside"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/six_nine_dp"
+        android:paddingTop="@dimen/ten_dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:src="@drawable/login_ic"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/four_eight"
+            android:layout_marginLeft="@dimen/twenty_dp"
+            android:layout_marginRight="@dimen/twenty_dp"
+            android:layout_marginTop="@dimen/four_eight"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/confirm_new_paw_edt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/four_four_dp"
+                android:background="@null"
+                android:cursorVisible="true"
+                android:textCursorDrawable="@drawable/curse_bg"
+                android:inputType="textPassword"
+                android:hint="@string/new_paw"
+                android:textColorHint="#FF989898"
+                android:textSize="@dimen/fiften_sp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/one_dp"
+                android:background="#D8D8D8"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/four_eight"
+            android:layout_marginLeft="@dimen/twenty_dp"
+            android:layout_marginRight="@dimen/twenty_dp"
+            android:layout_marginTop="@dimen/thirty_dp"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/confirm_conform_paw_edt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/four_four_dp"
+                android:background="@null"
+                android:cursorVisible="true"
+                android:textCursorDrawable="@drawable/curse_bg"
+                android:inputType="textPassword"
+                android:hint="@string/confirm_new_paw"
+                android:textColorHint="#FF989898"
+                android:textSize="@dimen/fiften_sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/one_dp"
+                android:background="#D8D8D8"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+        <Button
+            android:id="@+id/confirm_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/four_four_dp"
+            android:background="@drawable/table_shape_button_radio"
+            android:layout_marginRight="@dimen/twenty_dp"
+            android:layout_marginTop="@dimen/thirty_five"
+            android:layout_marginLeft="@dimen/twenty_dp"
+            android:text="@string/next"
+            android:textSize="@dimen/twenty_spp"
+            android:textColor="@color/white"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/thirty_five">
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

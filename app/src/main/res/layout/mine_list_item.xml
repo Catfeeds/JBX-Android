@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/mine_setting_rela"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/four_two_dp"
+        android:background="@drawable/ripple_bg">
+        <ImageView
+            android:id="@+id/first_pic"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/ten_dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/first_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/twenty_dp"
+            android:layout_toRightOf="@+id/first_pic"
+            android:text=""
+            android:textColor="#FF222222"
+            android:textSize="@dimen/fiften_sp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/my_list_back"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/ten_dp"
+            android:layout_centerVertical="true"/>
+        <View
+            android:id="@+id/mine_line_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one_dp"
+            android:background="#D8D8D8"
+            android:layout_marginLeft="@dimen/four_two_dp"
+            android:layout_alignParentBottom="true"/>
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/mine_bottom_lay"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ten_dp"
+        android:background="#FFF3F3F3"
+        android:orientation="vertical">
+    </LinearLayout>
+
+
+</LinearLayout>

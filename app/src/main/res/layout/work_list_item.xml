@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+       <com.example.zhengdong.base.Section.Work.View.RecyclerBanner
+           android:id="@+id/banner_rv"
+           android:layout_width="match_parent"
+           android:layout_height="@dimen/one_hundred_five_dp"
+           android:scrollbars="none"
+           android:overScrollMode="never">
+       </com.example.zhengdong.base.Section.Work.View.RecyclerBanner>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/five_four_dp">
+        <TextView
+            android:id="@+id/first_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/twenty_four_dp"
+            android:layout_marginTop="@dimen/twenty_dp"
+            android:layout_marginLeft="@dimen/twenty_dp"
+            android:text=""
+            android:textColor="@color/work_color"
+            android:textSize="@dimen/seventeen_sp" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/one_dp"
+        android:background="@color/bg_line_gray"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/work_item_rv"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_height="@dimen/six_nine_dp"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+    </android.support.v7.widget.RecyclerView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ten_dp"
+        android:background="@color/bg_line_gray" />
+
+
+</LinearLayout>

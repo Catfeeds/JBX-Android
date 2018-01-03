@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.zhengdong.jbx">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name="com.example.zhengdong.base.APIManager.JBXApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        <activity android:name="com.example.zhengdong.base.WelcomeAC">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.zhengdong.base.MainAC"
+            android:theme="@style/AppTheme" />
+        <activity android:name="com.example.zhengdong.base.Section.Login.Controller.LoginAC" />
+        <activity android:name="com.example.zhengdong.base.Section.Login.Controller.RegisterAC" />
+        <activity android:name="com.example.zhengdong.base.Section.Login.Controller.ForgetAC" />
+        <activity android:name="com.example.zhengdong.base.Section.Login.Controller.ConfirmAC" />
+        <activity
+            android:name="com.example.zhengdong.base.Section.Work.Controller.CommonAC"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.example.zhengdong.base.Section.Work.Controller.OperationAC"
+            android:theme="@style/AppThemeWithWhite" />
+        <activity
+            android:name="com.example.zhengdong.base.Section.Work.Controller.AddtionalAC"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.example.zhengdong.base.Section.Work.Controller.MovePartmentAC"
+            android:theme="@style/AppThemeWithWhite" />
+        <activity
+            android:name="com.example.zhengdong.base.Section.Work.Controller.PeopleDetailAC"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.example.zhengdong.base.Section.Login.Controller.SelectOrgAC"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.example.zhengdong.base.Section.Work.Controller.OrganListAC"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.example.zhengdong.base.Section.Work.Controller.IronMasterWC"
+            android:theme="@style/AppTheme" />
+    </application>
+
+</manifest>

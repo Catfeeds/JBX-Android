@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/shop_header_lay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/eight_eight_dp"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:weightSum="3">
+        <LinearLayout
+            android:id="@+id/shop_find_goods_lay"
+            android:layout_width="@dimen/zero_dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shop_tab_spot"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/seven_dp"
+                android:text="@string/find_good"
+                android:textColor="#FF222222"
+                android:textSize="@dimen/fiften_sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/shop_find_supply_lay"
+            android:layout_width="@dimen/zero_dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shop_tab_sup"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/seven_dp"
+                android:text="@string/find_sup"
+                android:textColor="#FF222222"
+                android:textSize="@dimen/fiften_sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/shop_find_make_lay"
+            android:layout_width="@dimen/zero_dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shop_tab_conx"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/seven_dp"
+                android:text="@string/find_conx"
+                android:textColor="#FF222222"
+                android:textSize="@dimen/fiften_sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ten_dp"
+        android:background="#FFF3F3F3" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/four_six_dp"
+        android:background="@color/white">
+        <ImageView
+            android:id="@+id/title_first_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:layout_marginTop="@dimen/seventeen_dp"
+            android:layout_marginLeft="@dimen/ten_dp"/>
+        <TextView
+            android:id="@+id/first_title_txt"
+            android:layout_toRightOf="@+id/title_first_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/seventeen_dp"
+            android:layout_marginLeft="@dimen/eight_dp"
+            android:text=""
+            android:textColor="#FF222222"
+            android:textSize="@dimen/fiften_sp" />
+        <LinearLayout
+            android:id="@+id/first_go_lay"
+            android:layout_width="@dimen/four_four_dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical|center_horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/shop_tit_more" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one_dp"
+            android:layout_alignParentBottom="true"
+            android:background="#D8D8D8"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/shop_class_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:overScrollMode="never">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+
+</LinearLayout>

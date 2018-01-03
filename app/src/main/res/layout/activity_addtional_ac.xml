@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF3F3F3"
+    tools:context="com.example.zhengdong.base.Section.Work.Controller.CommonAC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF3F3F3"
+        android:orientation="vertical">
+
+        <include layout="@layout/com_navi_title_bar_item" />
+
+        <!--添加部门-->
+        <LinearLayout
+            android:id="@+id/partment_lay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/five_five_dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginTop="@dimen/ten_dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/ten_dp"
+                android:text="@string/partment_name"
+                android:textColor="#FF000000"
+                android:textSize="@dimen/fiften_sp" />
+
+            <EditText
+                android:id="@+id/partment_name_edt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/five_dpp"
+                android:layout_marginRight="@dimen/ten_dp"
+                android:background="@null"
+                android:cursorVisible="true"
+                android:hint="@string/marst_input_str"
+                android:inputType="textMultiLine"
+                android:paddingLeft="@dimen/fifteen_dp"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@drawable/curse_bg"
+                android:textSize="@dimen/fiften_sp" />
+
+        </LinearLayout>
+
+
+        <!--添加员工-->
+        <LinearLayout
+            android:id="@+id/people_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ten_dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/five_five_dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/five_five_dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/sixty_dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:text="@string/name"
+                        android:textColor="#FF000000"
+                        android:textSize="@dimen/fiften_sp" />
+
+                    <EditText
+                        android:id="@+id/people_name_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/five_dpp"
+                        android:layout_marginRight="@dimen/ten_dp"
+                        android:background="@null"
+                        android:cursorVisible="true"
+                        android:hint="@string/marst_input_str"
+                        android:inputType="textMultiLine"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@drawable/curse_bg"
+                        android:textSize="@dimen/fiften_sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/ten_dp"
+                    android:background="#D8D8D8" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/five_five_dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/five_five_dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/sixty_dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:text="@string/phonestr"
+                        android:textColor="#FF000000"
+                        android:textSize="@dimen/fiften_sp" />
+
+                    <EditText
+                        android:id="@+id/people_phone_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/five_dpp"
+                        android:layout_marginRight="@dimen/ten_dp"
+                        android:background="@null"
+                        android:cursorVisible="true"
+                        android:hint="必填(国际号码输入)"
+                        android:inputType="textMultiLine"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@drawable/curse_bg"
+                        android:textSize="@dimen/fiften_sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/ten_dp"
+                    android:background="#D8D8D8" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/five_five_dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/five_five_dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/sixty_dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:text="@string/jobname"
+                        android:textColor="#FF000000"
+                        android:textSize="@dimen/fiften_sp" />
+
+                    <EditText
+                        android:id="@+id/people_jobname_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/five_dpp"
+                        android:layout_marginRight="@dimen/ten_dp"
+                        android:background="@null"
+                        android:cursorVisible="true"
+                        android:hint="@string/select_input"
+                        android:inputType="textMultiLine"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@drawable/curse_bg"
+                        android:textSize="@dimen/fiften_sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/ten_dp"
+                    android:background="#D8D8D8" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/five_five_dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/five_five_dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="@dimen/sixty_dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:text="@string/orangeemail"
+                        android:textColor="#FF000000"
+                        android:textSize="@dimen/fiften_sp" />
+
+                    <EditText
+                        android:id="@+id/people_email_edt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/five_dpp"
+                        android:layout_marginRight="@dimen/ten_dp"
+                        android:background="@null"
+                        android:cursorVisible="true"
+                        android:hint="@string/select_input"
+                        android:inputType="textMultiLine"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@drawable/curse_bg"
+                        android:textSize="@dimen/fiften_sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/ten_dp"
+                    android:background="#D8D8D8" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/enter_partment_rel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/five_five_dp"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="@dimen/sixty_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/ten_dp"
+                    android:text="@string/part"
+                    android:textColor="#FF000000"
+                    android:textSize="@dimen/fiften_sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/ten_dp"
+                    android:background="@drawable/my_list_back" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/ten_dp"
+                android:text="@string/des"
+                android:textColor="#FF989898"
+                android:textSize="@dimen/fourteen_sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/five_five_dp"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="@dimen/sixty_dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/ten_dp"
+                    android:text="@string/height_manager"
+                    android:textColor="#FF000000"
+                    android:textSize="@dimen/fiften_sp" />
+
+                <com.example.zhengdong.base.Section.Work.View.CustomSwitchView
+                    android:id="@+id/switch_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/ten_dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/ten_dp"
+                android:text="@string/desc"
+                android:textColor="#FF989898"
+                android:textSize="@dimen/fourteen_sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF3F3F3"
+    tools:context="com.example.zhengdong.base.Section.Work.Controller.OperationAC">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/com_navi_title_bar_item"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ten_dp"
+            android:layout_marginBottom="@dimen/four_eight">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/operate_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:overScrollMode="never">
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/four_eight"
+        android:layout_alignParentBottom="true">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one_dp"
+            android:layout_alignParentTop="true"
+            android:background="#D8D8D8"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/fifteen_dp"
+            android:text="@string/please_select_partment"
+            android:textColor="#FF989898"
+            android:textSize="@dimen/fiften_sp" />
+        <Button
+            android:id="@+id/confirm_operate_btn"
+            android:layout_width="@dimen/six_four_dp"
+            android:layout_height="@dimen/twenty_four_dp"
+            android:text="@string/cponfirm"
+            android:textColor="@color/white"
+            android:textSize="@dimen/threeteen_sp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/ten_dp"
+            android:background="@drawable/table_shape_button_radio_bg"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

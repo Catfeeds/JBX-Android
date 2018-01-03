@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/rv_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/header_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:overScrollMode="never">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/content_rel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/six_four_dp"
+        android:background="@drawable/ripple_bg">
+
+        <com.example.zhengdong.base.Macro.FlashTextView
+            android:id="@+id/name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小卖部"
+            android:layout_toRightOf="@+id/header_pic"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/ten_dp"
+            android:textColor="#FF222222"
+            android:textSize="@dimen/fourteen_sp" />
+
+        <ImageView
+            android:id="@+id/go_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/organ_more"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/ten_dp"/>
+        <TextView
+            android:id="@+id/number_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/five_dpp"
+            android:text="3人"
+            android:textColor="#FF989898"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/go_pic"
+            android:textSize="@dimen/fourteen_sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one_dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/ten_dp"
+            android:background="#d8d8d8"/>
+    </RelativeLayout>
+
+
+</LinearLayout>
