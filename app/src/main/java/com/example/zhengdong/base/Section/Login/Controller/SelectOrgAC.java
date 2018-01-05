@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.zhengdong.base.APIManager.HttpInterFace;
 import com.example.zhengdong.base.APIManager.HttpRequest;
 import com.example.zhengdong.base.APIManager.UrlUtils;
+import com.example.zhengdong.base.General.BaseAC;
 import com.example.zhengdong.base.Macro.SharedPreferencesUtils;
 import com.example.zhengdong.base.Macro.XToast;
 import com.example.zhengdong.base.Section.Login.Adapter.OrganListAdapter;
@@ -28,7 +29,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SelectOrgAC extends AppCompatActivity {
+public class SelectOrgAC extends BaseAC {
 
     @BindView(R.id.navi_back_lay)
     LinearLayout naviBackLay;

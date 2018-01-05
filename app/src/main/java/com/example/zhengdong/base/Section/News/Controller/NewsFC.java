@@ -84,6 +84,8 @@ public class NewsFC extends Fragment implements OnTabSelectListener {
                         mNewsIDs.add(String.valueOf(newsTitleModel.getData().get(i).getId()));
                     }
                     initTabLayView();
+                }else {
+                    XToast.show(getActivity().getBaseContext(),""+newsTitleModel.getMsg());
                 }
             }
 

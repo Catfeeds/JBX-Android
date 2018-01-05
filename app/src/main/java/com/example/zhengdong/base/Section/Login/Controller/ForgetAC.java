@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.zhengdong.base.APIManager.HttpInterFace;
 import com.example.zhengdong.base.APIManager.HttpRequest;
 import com.example.zhengdong.base.APIManager.UrlUtils;
+import com.example.zhengdong.base.General.BaseAC;
 import com.example.zhengdong.base.Macro.XToast;
 import com.example.zhengdong.base.Section.Login.Model.GetVerifyCodeModel;
 import com.example.zhengdong.jbx.R;
@@ -26,7 +27,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ForgetAC extends AppCompatActivity {
+public class ForgetAC extends BaseAC {
 
     @BindView(R.id.forget_phone_edt)
     EditText forgetPhoneEdt;

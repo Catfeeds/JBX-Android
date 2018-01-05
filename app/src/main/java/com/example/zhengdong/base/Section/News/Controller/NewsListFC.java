@@ -1,10 +1,15 @@
 package com.example.zhengdong.base.Section.News.Controller;
 
 import android.annotation.SuppressLint;
+import android.app.Service;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.zhengdong.base.APIManager.CheckNetService;
 import com.example.zhengdong.base.APIManager.HttpInterFace;
 import com.example.zhengdong.base.APIManager.HttpRequest;
 import com.example.zhengdong.base.APIManager.UrlUtils;
@@ -77,7 +83,6 @@ public class NewsListFC extends Fragment {
             LogUtil.e("当前的页面四" + newsID);
             currentID = newsID;
             initNewsListData(currentID, 1, 10, "");
-
         }
         return view;
     }

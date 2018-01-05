@@ -52,6 +52,18 @@
         <activity
             android:name="com.example.zhengdong.base.Section.Work.Controller.IronMasterWC"
             android:theme="@style/AppTheme" />
+
+        <service
+            android:name="com.example.zhengdong.base.APIManager.CheckNetService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.WAKE_LOCK"
+            android:process=":remote" />
+        <!-- android:isolatedProcess="true" -->
+        <receiver android:name="com.example.zhengdong.base.Macro.NetReceiver" />
+
+        <activity android:name="com.example.zhengdong.base.General.BaseAC"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

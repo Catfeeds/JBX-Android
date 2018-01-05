@@ -1,6 +1,13 @@
 package com.example.zhengdong.base;
 
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.ServiceConnection;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
@@ -10,6 +17,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.zhengdong.base.APIManager.CheckNetService;
+import com.example.zhengdong.base.General.BaseAC;
+import com.example.zhengdong.base.Macro.LogUtil;
+import com.example.zhengdong.base.Macro.NetReceiver;
+import com.example.zhengdong.base.Section.News.Controller.NewsListFC;
 import com.example.zhengdong.jbx.R;
 
 import java.util.HashMap;
@@ -22,9 +34,7 @@ import com.example.zhengdong.base.Section.Work.Controller.WorkFC;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainAC extends AppCompatActivity implements View.OnClickListener {
-
-
+public class MainAC extends BaseAC implements View.OnClickListener {
     public static final int PAGE_ONE = 0;
     public static final int PAGE_TWO = 1;
     public static final int PAGE_THREE = 2;
@@ -71,6 +81,33 @@ public class MainAC extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_main_ac);
         ButterKnife.bind(this);
         initTabView();
+        // 启动服务
+        // 启动网络服务
+        Intent intent = new Intent(MainAC.this,CheckNetService.class);
+        MyConnection myConnection = new MyConnection();
+//            CheckNetService checkNetService = new CheckNetService();
+        bindService(intent,myConnection, BIND_AUTO_CREATE);
+
+    }
+
+
+    // 服务监听方法
+    public class MyConnection implements ServiceConnection {
+
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+            LogUtil.e("服务已连接");
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            LogUtil.e("服务已断开");
+        }
+
+        @Override
+        public void onBindingDied(ComponentName name) {
+
+        }
     }
 
     private void initTabView() {
@@ -162,6 +199,11 @@ public class MainAC extends AppCompatActivity implements View.OnClickListener {
                 firstPic.setBackgroundResource(R.drawable.icon_job);
                 firstTxt.setTextColor(ContextCompat.getColor(this, R.color.skyblue));
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     @Override

@@ -14,6 +14,7 @@ import com.example.zhengdong.base.APIManager.HttpInterFace;
 import com.example.zhengdong.base.APIManager.HttpRequest;
 import com.example.zhengdong.base.APIManager.RxBus;
 import com.example.zhengdong.base.APIManager.UrlUtils;
+import com.example.zhengdong.base.General.BaseAC;
 import com.example.zhengdong.base.Macro.PreferencesUtils;
 import com.example.zhengdong.base.Macro.SharedPreferencesUtils;
 import com.example.zhengdong.base.Macro.XToast;
@@ -27,7 +28,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class LoginAC extends AppCompatActivity {
+public class LoginAC extends BaseAC {
 
     @BindView(R.id.login_username_edt)
     EditText loginUsernameEdt;
