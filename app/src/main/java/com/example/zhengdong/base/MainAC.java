@@ -81,12 +81,12 @@ public class MainAC extends BaseAC implements View.OnClickListener {
         setContentView(R.layout.activity_main_ac);
         ButterKnife.bind(this);
         initTabView();
-        // 启动服务
-        // 启动网络服务
-        Intent intent = new Intent(MainAC.this,CheckNetService.class);
-        MyConnection myConnection = new MyConnection();
-//            CheckNetService checkNetService = new CheckNetService();
-        bindService(intent,myConnection, BIND_AUTO_CREATE);
+//         启动服务
+//        // 启动网络服务
+//        Intent intent = new Intent(MainAC.this,CheckNetService.class);
+//        MyConnection myConnection = new MyConnection();
+////            CheckNetService checkNetService = new CheckNetService();
+//        bindService(intent,myConnection, BIND_AUTO_CREATE);
 
     }
 
