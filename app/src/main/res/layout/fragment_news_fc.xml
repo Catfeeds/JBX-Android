@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/four_eight"
             android:background="@color/navi_back_blue_color">
@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/four_eight"
                 android:layout_marginLeft="@dimen/ten_dp"
-                android:layout_marginRight="@dimen/ten_dp">
+                android:layout_marginRight="@dimen/four_eight">
                 <EditText
                     android:id="@+id/news_search_edt"
                     android:layout_width="match_parent"
@@ -54,10 +54,18 @@
                         <!--android:layout_marginLeft="@dimen/four_dp"-->
                         <!--android:text="@string/news_search_txt"/>-->
                 </LinearLayout>
-
-
             </RelativeLayout>
-        </LinearLayout>
+            <TextView
+                android:id="@+id/find_add_lay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="添加"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/ten_dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fourteen_sp"/>
+        </RelativeLayout>
         <com.flyco.tablayout.SlidingTabLayout
             android:id="@+id/tab_lay"
             android:layout_width="match_parent"

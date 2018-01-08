@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +14,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.zhengdong.base.APIManager.HttpInterFace;
@@ -22,6 +22,7 @@ import com.example.zhengdong.base.APIManager.HttpRequest;
 import com.example.zhengdong.base.APIManager.UrlUtils;
 import com.example.zhengdong.base.Macro.LogUtil;
 import com.example.zhengdong.base.Macro.XToast;
+import com.example.zhengdong.base.Macro.comView.CommonPopupWindow;
 import com.example.zhengdong.base.Section.News.Evevts.NewsEvent;
 import com.example.zhengdong.base.Section.News.Model.NewsTitleModel;
 import com.example.zhengdong.jbx.R;
@@ -32,16 +33,16 @@ import com.google.gson.Gson;
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NewsFC extends Fragment implements OnTabSelectListener {
+public class NewsFC extends Fragment implements OnTabSelectListener, CommonPopupWindow.ViewInterface {
 
 
     @BindView(R.id.news_search_edt)
@@ -51,6 +52,8 @@ public class NewsFC extends Fragment implements OnTabSelectListener {
     @BindView(R.id.vp)
     ViewPager vp;
     Unbinder unbinder;
+    @BindView(R.id.find_add_lay)
+    TextView findAddLay;
     private View view;
     private Context mContext = getActivity();
     private ArrayList<Fragment> mFragments = new ArrayList<>();
@@ -58,6 +61,7 @@ public class NewsFC extends Fragment implements OnTabSelectListener {
     ArrayList<String> mNewsIDs = new ArrayList<>();
     private MyPagerAdapter mAdapter;
     private String currentNewsID = "";
+    private CommonPopupWindow popupWindow;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -84,8 +88,8 @@ public class NewsFC extends Fragment implements OnTabSelectListener {
                         mNewsIDs.add(String.valueOf(newsTitleModel.getData().get(i).getId()));
                     }
                     initTabLayView();
-                }else {
-                    XToast.show(getActivity().getBaseContext(),""+newsTitleModel.getMsg());
+                } else {
+                    XToast.show(getActivity().getBaseContext(), "" + newsTitleModel.getMsg());
                 }
             }
 
@@ -181,6 +185,68 @@ public class NewsFC extends Fragment implements OnTabSelectListener {
         super.onDestroyView();
         unbinder.unbind();
     }
+
+    @OnClick(R.id.find_add_lay)
+    public void onViewClicked() {
+        // 点击添加相关的模块内容
+        initCommomPopupWindowView(findAddLay,R.layout.pop_release_find);
+    }
+
+    // 通用pop下拉框
+    private void initCommomPopupWindowView(View view,int draweable){
+        if (popupWindow != null && popupWindow.isShowing()) return;
+        popupWindow = new CommonPopupWindow.Builder(getActivity())
+                .setView(draweable)
+                .setWidthAndHeight(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+                .setAnimationStyle(R.style.AnimDown)
+                .setViewOnclickListener(this)
+                .setOutsideTouchable(true)
+                .create();
+        popupWindow.showAsDropDown(view);
+    }
+
+    @Override
+    public void getChildView(View view, int layoutResId) {
+        switch (layoutResId){
+            case R.layout.pop_release_find:
+                LinearLayout first = (LinearLayout)view.findViewById(R.id.pop_release_lay);
+                first.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (popupWindow != null){
+                            popupWindow.dismiss();
+                            LogUtil.e("点击了第一个按妞!");
+                        }
+                    }
+                });
+                LinearLayout second = (LinearLayout)view.findViewById(R.id.pop_upload_lay);
+                second.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (popupWindow != null){
+                            popupWindow.dismiss();
+                            LogUtil.e("点击了第二个按妞!");
+                        }
+                    }
+                });
+                LinearLayout three = (LinearLayout)view.findViewById(R.id.pop_download_lay);
+                three.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (popupWindow != null){
+                            popupWindow.dismiss();
+                            LogUtil.e("点击了第三个按妞!");
+                        }
+                    }
+                });
+
+                break;
+            default:
+                break;
+        }
+
+    }
+
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
         public MyPagerAdapter(FragmentManager fm) {

@@ -112,9 +112,9 @@ public class MainAC extends BaseAC implements View.OnClickListener {
 
     private void initTabView() {
         fragments.put(PAGE_ONE, new WorkFC());
-        fragments.put(PAGE_TWO, new NewsFC());
+        fragments.put(PAGE_TWO, new MessageFC());
         fragments.put(PAGE_THREE, new ShopFC());
-        fragments.put(PAGE_FOUR, new MessageFC());
+        fragments.put(PAGE_FOUR, new NewsFC());
         fragments.put(PAGE_FIVE, new MineFC());
         firstLay.setOnClickListener(this);
         secondLay.setOnClickListener(this);
@@ -125,7 +125,7 @@ public class MainAC extends BaseAC implements View.OnClickListener {
         ft.add(fragmentContentId, fragments.get(PAGE_ONE));
         currentTab = PAGE_ONE;
         firstTxt.setTextColor(ContextCompat.getColor(this, R.color.skyblue));
-        firstPic.setBackgroundResource(R.drawable.icon_job);
+        firstPic.setBackgroundResource(R.drawable.shop_sel_icon);
         ft.commit();
     }
 
@@ -152,51 +152,51 @@ public class MainAC extends BaseAC implements View.OnClickListener {
         switch (index) {
             case PAGE_ONE:
                 if (check) {
-                    firstPic.setBackgroundResource(R.drawable.icon_job);
+                    firstPic.setBackgroundResource(R.drawable.shop_sel_icon);
                     firstTxt.setTextColor(ContextCompat.getColor(this, R.color.skyblue));
                 } else {
-                    firstPic.setBackgroundResource(R.drawable.icon_jobt);
+                    firstPic.setBackgroundResource(R.drawable.shop_icon);
                     firstTxt.setTextColor(ContextCompat.getColor(this, R.color.gray_40));
                 }
                 break;
             case PAGE_TWO:
                 if (check) {
-                    secondPic.setBackgroundResource(R.drawable.icon_new);
+                    secondPic.setBackgroundResource(R.drawable.star_sel_icon);
                     secondTxt.setTextColor(ContextCompat.getColor(this, R.color.skyblue));
                 } else {
-                    secondPic.setBackgroundResource(R.drawable.icon_newt);
+                    secondPic.setBackgroundResource(R.drawable.star_icon);
                     secondTxt.setTextColor(ContextCompat.getColor(this, R.color.gray_40));
                 }
                 break;
             case PAGE_THREE:
-                if (check) {
-                    threePic.setBackgroundResource(R.drawable.icon_shop);
+//                if (check) {
+                    threePic.setBackgroundResource(R.drawable.job_icon);
                     threeTxt.setTextColor(ContextCompat.getColor(this, R.color.skyblue));
-                } else {
-                    threePic.setBackgroundResource(R.drawable.icon_shopt);
-                    threeTxt.setTextColor(ContextCompat.getColor(this, R.color.gray_40));
-                }
+//                } else {
+//                    threePic.setBackgroundResource(R.drawable.job_icon);
+//                    threeTxt.setTextColor(ContextCompat.getColor(this, R.color.gray_40));
+//                }
                 break;
             case PAGE_FOUR:
                 if (check) {
-                    fourPic.setBackgroundResource(R.drawable.icon_infor);
+                    fourPic.setBackgroundResource(R.drawable.find_sel_icon);
                     fourTxt.setTextColor(ContextCompat.getColor(this, R.color.skyblue));
                 } else {
-                    fourPic.setBackgroundResource(R.drawable.icon_infort);
+                    fourPic.setBackgroundResource(R.drawable.find_icon);
                     fourTxt.setTextColor(ContextCompat.getColor(this, R.color.gray_40));
                 }
                 break;
             case PAGE_FIVE:
                 if (check) {
-                    fivePic.setBackgroundResource(R.drawable.icon_my);
+                    fivePic.setBackgroundResource(R.drawable.my_sel_icon);
                     fiveTxt.setTextColor(ContextCompat.getColor(this, R.color.skyblue));
                 } else {
-                    fivePic.setBackgroundResource(R.drawable.icon_myt);
+                    fivePic.setBackgroundResource(R.drawable.my_icon);
                     fiveTxt.setTextColor(ContextCompat.getColor(this, R.color.gray_40));
                 }
                 break;
             default:
-                firstPic.setBackgroundResource(R.drawable.icon_job);
+                firstPic.setBackgroundResource(R.drawable.shop_sel_icon);
                 firstTxt.setTextColor(ContextCompat.getColor(this, R.color.skyblue));
         }
     }

@@ -78,15 +78,16 @@
                 android:orientation="vertical">
                 <ImageView
                     android:id="@+id/three_pic"
-                    android:layout_width="@dimen/four_four"
-                    android:layout_height="@dimen/four_four"
-                    android:background="@drawable/three"/>
+                    android:layout_width="@dimen/four_six_dp"
+                    android:layout_height="@dimen/four_six_dp"
+                    android:layout_marginTop="@dimen/four_dp"
+                    android:background="@drawable/job_icon"/>
                 <TextView
                     android:id="@+id/three_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/five_dp"
-                    android:text="@string/shop"
+                    android:text=""
                     android:textSize="@dimen/twenty_sp"
                     android:textColor="@color/gray_40"/>
             </LinearLayout>

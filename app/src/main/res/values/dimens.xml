@@ -39,7 +39,6 @@
     <dimen name="forty_two_dp">52dp</dimen>
     <dimen name="eight_eight_dp">88dp</dimen>
     <dimen name="seven_dp">7dp</dimen>
-    <dimen name="four_six_dp">46dp</dimen>
     <dimen name="five_dpp">5dp</dimen>
     <dimen name="fourteen_sp">14sp</dimen>
     <dimen name="five_five_dp">55dp</dimen>
@@ -49,5 +48,6 @@
     <dimen name="eleven_sp">11sp</dimen>
     <dimen name="five_two_dp">52dp</dimen>
     <dimen name="sixty_dp">60dp</dimen>
+    <dimen name="four_six_dp">46dp</dimen>
 
 </resources>
