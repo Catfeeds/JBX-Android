@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.ViewFlipper;
 
+import com.example.zhengdong.base.Main.MainAC;
 import com.example.zhengdong.jbx.R;
 
 

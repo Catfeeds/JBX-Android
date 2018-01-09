@@ -10,13 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="visible">
-       <com.example.zhengdong.base.Section.Work.View.RecyclerBanner
+       <com.example.zhengdong.base.Section.First.View.RecyclerBanner
            android:id="@+id/banner_rv"
            android:layout_width="match_parent"
            android:layout_height="@dimen/one_hundred_five_dp"
            android:scrollbars="none"
            android:overScrollMode="never">
-       </com.example.zhengdong.base.Section.Work.View.RecyclerBanner>
+       </com.example.zhengdong.base.Section.First.View.RecyclerBanner>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

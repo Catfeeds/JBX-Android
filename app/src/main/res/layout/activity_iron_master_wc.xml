@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.zhengdong.base.Section.Work.Controller.IronMasterWC">
+    tools:context="com.example.zhengdong.base.Section.First.Controller.IronMasterWC">
 
     <include layout="@layout/com_navi_title_bar_item"/>
     <WebView

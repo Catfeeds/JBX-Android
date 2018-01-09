@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zhengdong.base.Section.Work.Controller.CommonAC">
+    tools:context="com.example.zhengdong.base.Section.First.Controller.CommonAC">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
                 android:layout_height="@dimen/four_eight"
                 android:layout_marginLeft="@dimen/ten_dp"
                 android:layout_marginRight="@dimen/ten_dp">
-                <com.example.zhengdong.base.Section.Work.View.SearchEditText
+                <com.example.zhengdong.base.Section.First.View.SearchEditText
                     android:id="@+id/search_view"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/thirty_dp"

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/header_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_marginTop="@dimen/fifteen_dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/seventen_zero_dp">
+            <GridView
+                android:layout_centerInParent="true"
+                android:id="@+id/gridview"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:numColumns="4"
+                android:verticalSpacing="@dimen/zero_dp"
+                android:horizontalSpacing="@dimen/zero_dp"
+                android:columnWidth="@dimen/eight_ten_dp"
+                android:stretchMode="columnWidth"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:gravity="center">
+            </GridView>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ten_dp"
+            android:background="#F0F0F0"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fourty_dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fifteen_dp"
+                android:background="@drawable/icon_recom"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/five_dpp"
+                android:text="为你推荐"
+                android:textColor="#FF0373E4"
+                android:textSize="@dimen/fiften_sp" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one_dp"
+            android:background="#FFE9E9E9"/>
+
+    </LinearLayout>
+    <include layout="@layout/news_list_item"/>
+
+</LinearLayout>

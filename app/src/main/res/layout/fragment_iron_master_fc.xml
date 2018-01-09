@@ -1,0 +1,23 @@
+<!--
+  ~ Copyright (c) create by ki1lt0 .
+  -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zhengdong.base.Section.Three.Controller.IronMasterFC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/com_navi_title_bar_item"/>
+        <WebView
+            android:id="@+id/master_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </WebView>
+    </LinearLayout>
+
+</FrameLayout>

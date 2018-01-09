@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF3F3F3"
-    tools:context="com.example.zhengdong.base.Section.Work.Controller.OrganListFC">
+    tools:context="com.example.zhengdong.base.Section.First.Controller.OrganListFC">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout

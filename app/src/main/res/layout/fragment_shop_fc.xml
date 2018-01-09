@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zhengdong.base.Section.Shop.Controller.ShopFC">
+    tools:context="com.example.zhengdong.base.Section.Three.Controller.ShopFC">
 
     <LinearLayout
         android:layout_width="match_parent"

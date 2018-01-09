@@ -8,7 +8,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zhengdong.base.Section.Work.Controller.TestAC">
+    tools:context="com.example.zhengdong.base.Section.First.Controller.TestAC">
     <Button
         android:id="@+id/next"
         android:layout_width="wrap_content"

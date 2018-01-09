@@ -176,6 +176,7 @@
     <!--<color name="bluesky">#128CEE</color>-->
     <color name="bluesky">#4e8cee</color>
     <color name="line">#bad4ff</color>
+    <color name="navigation_title">#1F7EFF</color>
     // 一键换肤
     <color name="tab_color">#ffffff</color>
     <color name="textColor">#FF000000</color>

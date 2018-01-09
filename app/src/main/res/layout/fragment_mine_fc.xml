@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F3F3F3"
-    tools:context="com.example.zhengdong.base.Section.Mine.Controller.MineFC">
+    tools:context="com.example.zhengdong.base.Section.Five.Controller.MineFC">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,7 +56,7 @@
                                 android:textColor="#FF222222"
                                 android:textSize="@dimen/fiften_sp"/>
                         </LinearLayout>
-                        <com.example.zhengdong.base.Section.Mine.View.CircleImageView
+                        <com.example.zhengdong.base.Section.Five.View.CircleImageView
                             android:id="@+id/mine_header_pic"
                             android:layout_width="@dimen/five_five_dp"
                             android:layout_height="@dimen/five_five_dp"

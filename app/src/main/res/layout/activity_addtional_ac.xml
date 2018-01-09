@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF3F3F3"
-    tools:context="com.example.zhengdong.base.Section.Work.Controller.CommonAC">
+    tools:context="com.example.zhengdong.base.Section.First.Controller.CommonAC">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -283,7 +283,7 @@
                     android:textColor="#FF000000"
                     android:textSize="@dimen/fiften_sp" />
 
-                <com.example.zhengdong.base.Section.Work.View.CustomSwitchView
+                <com.example.zhengdong.base.Section.First.View.CustomSwitchView
                     android:id="@+id/switch_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

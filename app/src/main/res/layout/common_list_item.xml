@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/six_four_dp"
         android:background="@drawable/ripple_bg">
-        <com.example.zhengdong.base.Section.Mine.View.CircleImageView
+        <com.example.zhengdong.base.Section.Five.View.CircleImageView
             android:id="@+id/header_pic"
             android:layout_width="@dimen/four_four_dp"
             android:layout_height="@dimen/four_four_dp"

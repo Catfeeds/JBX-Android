@@ -22,35 +22,35 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.zhengdong.base.MainAC"
+            android:name="com.example.zhengdong.base.Main.MainAC"
             android:theme="@style/AppTheme" />
         <activity android:name="com.example.zhengdong.base.Section.Login.Controller.LoginAC" />
         <activity android:name="com.example.zhengdong.base.Section.Login.Controller.RegisterAC" />
         <activity android:name="com.example.zhengdong.base.Section.Login.Controller.ForgetAC" />
         <activity android:name="com.example.zhengdong.base.Section.Login.Controller.ConfirmAC" />
         <activity
-            android:name="com.example.zhengdong.base.Section.Work.Controller.CommonAC"
+            android:name="com.example.zhengdong.base.Section.First.Controller.CommonAC"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.example.zhengdong.base.Section.Work.Controller.OperationAC"
+            android:name="com.example.zhengdong.base.Section.First.Controller.OperationAC"
             android:theme="@style/AppThemeWithWhite" />
         <activity
-            android:name="com.example.zhengdong.base.Section.Work.Controller.AddtionalAC"
+            android:name="com.example.zhengdong.base.Section.First.Controller.AddtionalAC"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.example.zhengdong.base.Section.Work.Controller.MovePartmentAC"
+            android:name="com.example.zhengdong.base.Section.First.Controller.MovePartmentAC"
             android:theme="@style/AppThemeWithWhite" />
         <activity
-            android:name="com.example.zhengdong.base.Section.Work.Controller.PeopleDetailAC"
+            android:name="com.example.zhengdong.base.Section.First.Controller.PeopleDetailAC"
             android:theme="@style/AppTheme" />
         <activity
             android:name="com.example.zhengdong.base.Section.Login.Controller.SelectOrgAC"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.example.zhengdong.base.Section.Work.Controller.OrganListAC"
+            android:name="com.example.zhengdong.base.Section.First.Controller.OrganListAC"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.example.zhengdong.base.Section.Work.Controller.IronMasterWC"
+            android:name="com.example.zhengdong.base.Section.First.Controller.IronMasterWC"
             android:theme="@style/AppTheme" />
 
         <service
@@ -62,8 +62,9 @@
         <!-- android:isolatedProcess="true" -->
         <receiver android:name="com.example.zhengdong.base.Macro.NetReceiver" />
 
-        <activity android:name="com.example.zhengdong.base.General.BaseAC"
-            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name="com.example.zhengdong.base.General.BaseAC"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

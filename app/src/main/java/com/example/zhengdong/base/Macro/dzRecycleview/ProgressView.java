@@ -147,7 +147,7 @@ public class ProgressView extends View {
     private void init(AttributeSet attrs, int defStyle) {
         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.AVLoadingIndicatorView);
         mIndicatorId=a.getInt(R.styleable.AVLoadingIndicatorView_indicator, BallPulse);
-        mIndicatorColor=a.getColor(R.styleable.AVLoadingIndicatorView_indicator_color, Color.WHITE);
+        mIndicatorColor=a.getColor(R.styleable.AVLoadingIndicatorView_indicator_color, getResources().getColor(R.color.skyblue));
         a.recycle();
         mPaint=new Paint();
         mPaint.setColor(mIndicatorColor);

@@ -23,6 +23,6 @@
         android:angle="90"/>
 
     //控制圆角大小
-    <corners android:radius="@dimen/threeteen_dp" />
+    <corners android:radius="@dimen/eight_dp" />
 
 </shape>
