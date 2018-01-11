@@ -55,5 +55,9 @@
         <item name="android:windowEnterAnimation">@anim/pop_enter_anim</item>
         <item name="android:windowExitAnimation">@anim/pop_exit_anim</item>
     </style>
+    <style name="pop_top_in" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_top_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/pop_top_exit_anim</item>
+    </style>
 
 </resources>

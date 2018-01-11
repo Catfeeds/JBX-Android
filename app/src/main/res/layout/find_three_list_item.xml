@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <!--根据不同的id来显示不同的cell-->
+    <!--我的简历-->
+    <LinearLayout
+        android:id="@+id/mine_word_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_bg"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fifteen_dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="激光切割师傅"
+                android:textColor="#FF222222"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="浏览：330"
+                    android:textColor="#FF878787"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="浏览：330"
+                    android:textColor="#FF878787"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="浏览：330"
+                    android:textColor="#FF878787"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="求职岗位："
+                    android:textColor="#FF878787"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="切割师傅"
+                    android:textColor="#FF0373E4"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!--我的求职-->
+    <LinearLayout
+        android:id="@+id/min_work_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_bg"
+        android:paddingBottom="@dimen/ten_dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fifteen_dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="激光切割师傅"
+                    android:textColor="#FF222222"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="5分钟前"
+                    android:textColor="#FF878787"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="面议"
+                    android:textColor="#FFFA7502"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="三年以上经验"
+                    android:textColor="#FF878787"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="@dimen/five_four_dp"
+                android:layout_height="@dimen/twenty_dp"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:background="@drawable/table_shape_blue_line_bg"
+                android:text="加班补助"
+                android:textColor="@color/skyblue"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/two_dp"
+            android:background="#FFF2F2F2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fifteen_dp"
+            android:layout_marginTop="@dimen/ten_dp"
+            android:text="天津金利恒发有限公司"
+            android:textColor="#FF878787"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <!--我要招人-->
+    <LinearLayout
+        android:id="@+id/min_hr_lay"
+        android:background="@drawable/ripple_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/ten_dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fifteen_dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="激光切割师傅"
+                    android:textColor="#FF222222"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="5分钟前"
+                    android:textColor="#FF878787"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:weightSum="4">
+
+                <TextView
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="面议"
+                    android:textColor="#FFFA7502"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="三年以上经验"
+                    android:textColor="#FF878787"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="@dimen/five_four_dp"
+                android:layout_height="@dimen/twenty_dp"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:background="@drawable/table_shape_blue_line_bg"
+                android:text="加班补助"
+                android:textColor="@color/skyblue"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ten_dp"
+        android:background="#FFF0F0F0" />
+</LinearLayout>

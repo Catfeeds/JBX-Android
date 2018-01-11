@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF0F0F0"
+    tools:context="com.example.zhengdong.base.Section.Four.Controller.FindAddAC">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/com_navi_title_bar_item"/>
+    </LinearLayout>
+    <!--添加简历-->
+    <ScrollView
+        android:id="@+id/add_word_view"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/add_word_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/twenty_dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/four_six_dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/fifteen_dp"
+                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="标题"
+                            android:textColor="#FF666666"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="@dimen/thirty_five"
+                            android:layout_weight="3"
+                            android:background="@null"
+                            android:gravity="right|center"
+                            android:hint="请填写标题"
+                            android:inputType="textMultiLine"
+                            android:textColorHint="#FF666666"
+                            android:textSize="@dimen/fiften_sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/one_dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#D8D8D8" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/four_six_dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/fifteen_dp"
+                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="姓名"
+                            android:textColor="#FF666666"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="@dimen/thirty_five"
+                            android:layout_weight="3"
+                            android:background="@null"
+                            android:gravity="right|center"
+                            android:hint="请填写真实姓名"
+                            android:inputType="textMultiLine"
+                            android:textColorHint="#FF666666"
+                            android:textSize="@dimen/fiften_sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/one_dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#D8D8D8" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/four_six_dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/fifteen_dp"
+                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="性别"
+                            android:textColor="#FF666666"
+                            android:textSize="15sp" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="@dimen/ten_dp"
+                                android:gravity="right"
+                                android:text="请选择"
+                                android:textColor="#FF666666"
+                                android:textSize="15sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/icon_more" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/one_dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#D8D8D8" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/four_six_dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/fifteen_dp"
+                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="出生年月"
+                            android:textColor="#FF666666"
+                            android:textSize="15sp" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="@dimen/ten_dp"
+                                android:gravity="right"
+                                android:text="请选择日期"
+                                android:textColor="#FF666666"
+                                android:textSize="15sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/icon_more" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/one_dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#D8D8D8" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/four_six_dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/fifteen_dp"
+                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="薪资待遇"
+                            android:textColor="#FF666666"
+                            android:textSize="15sp" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="@dimen/ten_dp"
+                                android:gravity="right"
+                                android:text="请选择薪资范围"
+                                android:textColor="#FF666666"
+                                android:textSize="15sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/icon_more" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/one_dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#D8D8D8" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/four_six_dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/fifteen_dp"
+                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="工作年限"
+                            android:textColor="#FF666666"
+                            android:textSize="15sp" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:gravity="right"
+                                android:text="请选择年限"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="@dimen/ten_dp"
+                                android:textColor="#FF666666"
+                                android:textSize="15sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/icon_more" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/one_dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#D8D8D8" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/four_six_dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/fifteen_dp"
+                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="联系电话"
+                            android:textColor="#FF666666"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="@dimen/thirty_five"
+                            android:layout_weight="3"
+                            android:background="@null"
+                            android:gravity="right|center"
+                            android:hint="请填写有效的手机号码"
+                            android:inputType="textMultiLine"
+                            android:textColorHint="#FF666666"
+                            android:textSize="@dimen/fiften_sp" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/ten_dp"
+                    android:background="#F0F0F0" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/four_six_dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/fifteen_dp"
+                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="求职岗位"
+                            android:textColor="#FF666666"
+                            android:textSize="15sp" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:gravity="right"
+                                android:text="请选择职位"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="@dimen/ten_dp"
+                                android:textColor="#FF666666"
+                                android:textSize="15sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/icon_more" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/one_dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#D8D8D8" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:text="一句话介绍一下自己吧"
+                        android:textColor="#FF666666"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/fifteen_dp"
+                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:background="@null"
+                        android:hint="【示例】本人已从事不锈钢行业10年，熟练掌握各
+种专业技能，性格热情开朗，待人友好，为人诚实
+谦虚。"
+                        android:inputType="textMultiLine"
+                        android:textColorHint="#FFD5D5D5"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/twenty_four_dp"
+                android:layout_marginTop="@dimen/thirty_five">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/four_four_dp"
+                    android:layout_marginLeft="@dimen/fifteen_dp"
+                    android:layout_marginRight="@dimen/fifteen_dp"
+                    android:background="@drawable/table_shape_button_radio_eight"
+                    android:text="保存"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <!--发布招聘信息-->
+    <ScrollView
+        android:id="@+id/add_hr_view"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/twenty_dp">
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/four_six_dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/fifteen_dp"
+                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="我要招聘"
+                            android:textColor="#FF666666"
+                            android:textSize="15sp" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="@dimen/ten_dp"
+                                android:gravity="right"
+                                android:text="请选择职位"
+                                android:textColor="#FF666666"
+                                android:textSize="15sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/icon_more" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/one_dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#D8D8D8" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/four_six_dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/fifteen_dp"
+                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="薪资待遇"
+                            android:textColor="#FF666666"
+                            android:textSize="15sp" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="@dimen/ten_dp"
+                                android:gravity="right"
+                                android:text="请选择薪资范围"
+                                android:textColor="#FF666666"
+                                android:textSize="15sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/icon_more" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/one_dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#D8D8D8" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/four_six_dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/fifteen_dp"
+                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="福利待遇"
+                            android:textColor="#FF666666"
+                            android:textSize="15sp" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="@dimen/ten_dp"
+                                android:gravity="right"
+                                android:text="请选择福利待遇"
+                                android:textColor="#FF666666"
+                                android:textSize="15sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/icon_more" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/one_dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#D8D8D8" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/four_six_dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/fifteen_dp"
+                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="工作年限"
+                            android:textColor="#FF666666"
+                            android:textSize="15sp" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:gravity="right"
+                                android:text="请选择年限"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="@dimen/ten_dp"
+                                android:textColor="#FF666666"
+                                android:textSize="15sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/icon_more" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/one_dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#D8D8D8" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/four_six_dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/fifteen_dp"
+                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="招聘人数"
+                            android:textColor="#FF666666"
+                            android:textSize="15sp" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:gravity="right"
+                                android:text="请选择人数"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="@dimen/ten_dp"
+                                android:textColor="#FF666666"
+                                android:textSize="15sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/icon_more" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/ten_dp"
+                    android:background="#F0F0F0" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:text="职位描述"
+                        android:textColor="#FF666666"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/fifteen_dp"
+                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:background="@null"
+                        android:hint="【示例】本人已从事不锈钢行业10年，熟练掌握各
+种专业技能，性格热情开朗，待人友好，为人诚实
+谦虚。"
+                        android:inputType="textMultiLine"
+                        android:textColorHint="#FFD5D5D5"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/twenty_four_dp"
+                android:layout_marginTop="@dimen/thirty_five">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/four_four_dp"
+                    android:layout_marginLeft="@dimen/fifteen_dp"
+                    android:layout_marginRight="@dimen/fifteen_dp"
+                    android:background="@drawable/table_shape_button_radio_eight"
+                    android:text="发布"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

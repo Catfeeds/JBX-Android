@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F0F0F0"
+    tools:context="com.example.zhengdong.base.Section.Four.Controller.FindThreeAC">
+    <include layout="@layout/com_navi_title_bar_item"/>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/ten_dp">
+        <com.example.zhengdong.base.Macro.dzRecycleview.DzRecyclerView
+            android:id="@+id/common_rv"
+            android:scrollbars="none"
+            android:overScrollMode="never"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.example.zhengdong.base.Macro.dzRecycleview.DzRecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

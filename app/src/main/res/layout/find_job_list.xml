@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/cell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginTop="@dimen/sixteen_dp"
+                android:layout_marginLeft="@dimen/sixteen_dp"
+                android:layout_marginRight="@dimen/sixteen_dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="wrap_content"
+                    android:text="激光切割师傅"
+                    android:textStyle="bold"
+                    android:textColor="#FF222222"
+                    android:textSize="@dimen/fiften_sp"/>
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="wrap_content"
+                    android:text="5分钟前"
+                    android:gravity="end"
+                    android:textColor="#FF878787"
+                    android:textSize="@dimen/twenty_sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:layout_marginRight="@dimen/sixteen_dp"
+                android:layout_marginLeft="@dimen/sixteen_dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="面议"
+                    android:textColor="#FFFA7502"
+                    android:textSize="@dimen/threeteen_sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="三年以上经验"
+                    android:layout_marginLeft="@dimen/fifteen_dp"
+                    android:textColor="#FF878787"
+                    android:textSize="@dimen/threeteen_sp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/sixteen_dp"
+                android:layout_marginRight="@dimen/sixteen_dp"
+                android:layout_marginTop="@dimen/ten_dp">
+                <TextView
+                    android:id="@+id/comment_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/two_dp"
+                android:background="#FFF2F2F2" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:layout_marginRight="@dimen/sixteen_dp"
+                android:layout_marginLeft="@dimen/sixteen_dp"
+                android:text="天津金利恒发有限公司"
+                android:textColor="#FF878787"
+                android:textSize="@dimen/twenty_sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:layout_height="@dimen/ten_dp"
+                android:background="#FFF0F0F0" />
+        </LinearLayout>
+        <Button
+            android:layout_width="@dimen/sixty_dp"
+            android:layout_height="@dimen/thirty_dp"
+            android:text="@string/apply_btn"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/four_six_dp"
+            android:layout_marginRight="@dimen/sixteen_dp"
+            android:textColor="@color/white"
+            android:background="@drawable/table_shape_button_radio_eight"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -53,4 +53,9 @@
     <string name="desc">开启后，该成员可指派订单到该部门某个成员</string>
     <string name="please_select_partment">请选择部门</string>
     <string name="partment_setting">部门设置</string>
+    <string name="mine_word">我的简历</string>
+    <string name="mine_job">我的求职</string>
+    <string name="mine_hr">我要招人</string>
+    <string name="hot_rec_str">热门推荐</string>
+    <string name="apply_btn">申请</string>
 </resources>

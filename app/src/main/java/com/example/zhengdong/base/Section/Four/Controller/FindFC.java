@@ -6,6 +6,7 @@ package com.example.zhengdong.base.Section.Four.Controller;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -24,8 +25,6 @@ import com.example.zhengdong.base.Macro.comView.SoftKeyBoardListener;
 import com.example.zhengdong.base.Section.Four.Adapter.FindListAdapter;
 import com.example.zhengdong.base.Section.Four.View.FindSearchEdtView;
 import com.example.zhengdong.jbx.R;
-
-import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,7 +47,7 @@ public class FindFC extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        if (views == null){
+        if (views == null) {
             views = inflater.inflate(R.layout.fragment_find_fc, container, false);
             unbinder = ButterKnife.bind(this, views);
             initRecycleView();
@@ -64,12 +63,12 @@ public class FindFC extends Fragment {
             @Override
             public void keyBoardShow(int height) {
                 // 设置灰色区域
-                AlphaViewUtils.setBackGroundLevel(getActivity(),0.6f);
+                AlphaViewUtils.setBackGroundLevel(getActivity(), 0.6f);
             }
 
             @Override
             public void keyBoardHide(int height) {
-                AlphaViewUtils.setBackGroundLevel(getActivity(),1.0f);
+                AlphaViewUtils.setBackGroundLevel(getActivity(), 1.0f);
             }
         });
         getActivity().getWindow().getDecorView().setOnClickListener(new View.OnClickListener() {
@@ -98,18 +97,22 @@ public class FindFC extends Fragment {
 
     /**
      * 初始化RV
+     *
      * @param
      */
     private void initRecycleView() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         findRv.setLayoutManager(linearLayoutManager);
-        FindListAdapter findListAdapter = new FindListAdapter(getActivity(),null);
+        FindListAdapter findListAdapter = new FindListAdapter(getActivity(), null);
         findRv.setAdapter(findListAdapter);
         findListAdapter.setOnItemClickListener(new FindListAdapter.OnItemClickListener() {
             @Override
-            public void OnItemClick(View view, String name) {
-
+            public void OnItemClick(View view, String name, int gridviewPosition) {
+                Intent intent = new Intent(getActivity(), FindSecondAC.class);
+                intent.putExtra("gridType", gridviewPosition);
+                intent.putExtra("gridName",name);
+                startActivity(intent);
             }
         });
     }

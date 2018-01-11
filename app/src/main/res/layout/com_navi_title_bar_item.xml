@@ -74,10 +74,10 @@
             android:gravity="center_horizontal|center_vertical"
             android:layout_alignParentRight="true">
             <ImageView
+                android:id="@+id/right_pic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                android:src="@drawable/my_nav_invitation"/>
+                android:scaleType="centerCrop" />
         </LinearLayout>
 
 

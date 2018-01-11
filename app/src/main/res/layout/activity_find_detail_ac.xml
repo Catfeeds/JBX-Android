@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zhengdong.base.Section.Four.Controller.FindDetailAC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/four_four_dp"
+        android:orientation="vertical">
+        <include layout="@layout/com_navi_title_bar_item" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/fifteen_dp"
+                    android:layout_marginRight="@dimen/fifteen_dp"
+                    android:layout_marginTop="@dimen/fifteen_dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="激光切割师傅"
+                        android:textColor="#FF222222"
+                        android:textSize="@dimen/seventeen_sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:text="面议"
+                        android:textColor="#FFFA7502"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="更新于：2018-01-02"
+                            android:textColor="#FF878787"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="浏览：330人"
+                            android:textColor="#FF878787"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="@dimen/zero_dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:text="申请：20"
+                            android:textColor="#FF878787"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/two_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:background="#FFF2F2F2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/fifteen_dp"
+                    android:layout_marginRight="@dimen/fifteen_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="职位："
+                            android:textColor="#FF878787"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="切割师傅"
+                            android:textColor="#FF222222"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="要求："
+                            android:textColor="#FF878787"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="切割师傅"
+                            android:textColor="#FF222222"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="福利："
+                            android:textColor="#FF878787"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="切割师傅"
+                            android:textColor="#FF222222"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/ten_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:background="#FFF0F0F0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/fifteen_dp"
+                    android:layout_marginRight="@dimen/fifteen_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:text="工作地址"
+                    android:textColor="#FF222222"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/two_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:background="#FFF2F2F2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/fifteen_dp"
+                    android:layout_marginRight="@dimen/fifteen_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_map" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/five_dpp"
+                        android:text="厦门市思明区软件园二期望海路23号之一"
+                        android:textColor="#FF666666"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/ten_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:background="#FFF0F0F0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/fifteen_dp"
+                    android:layout_marginRight="@dimen/fifteen_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:text="职位描述"
+                    android:textColor="#FF222222"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/two_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:background="#FFF2F2F2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/fifteen_dp"
+                    android:layout_marginRight="@dimen/fifteen_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:text="1.熟悉激光数控设备机器及其运作；2.具有较高的工
+作责任心与学习能力；3.具有较高的组织、协调、
+沟通能力；4.有机器平常运作的检修能力。"
+                    android:textColor="#FF666666"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/ten_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:background="#FFF0F0F0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/fifteen_dp"
+                    android:layout_marginRight="@dimen/fifteen_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:text="公司信息"
+                    android:textColor="#FF222222"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/two_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:background="#FFF2F2F2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/fifteen_dp"
+                    android:layout_marginRight="@dimen/fifteen_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="天津金利恒发有限公司"
+                        android:textColor="#FF222222"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="规模："
+                            android:textColor="#FF878787"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="50-100人"
+                            android:textColor="#FF222222"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="性质："
+                            android:textColor="#FF878787"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="贸易商\开发商"
+                            android:textColor="#FF222222"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="地址："
+                            android:textColor="#FF878787"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="天晶石南开区长江道94号"
+                            android:textColor="#FF222222"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/ten_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:background="#FFF2F2F2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/fifteen_dp"
+                    android:layout_marginRight="@dimen/fifteen_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:text="公司简介"
+                    android:textColor="#FF222222"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/two_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:background="#FFF2F2F2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/fifteen_dp"
+                    android:layout_marginRight="@dimen/fifteen_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:text="专注装饰不锈钢的研发、生产、加工、销售，形成以装饰不锈钢产、销为主体，配套加工为支持，承接不锈钢制品及工程的经营模式。并在全国设立多家分公司，重视人才梯队建设，合理绩效机制，员工可持续发展晋升通道。"
+                    android:textColor="#FF666666"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/ten_dp"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:background="#FFF2F2F2" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/four_four_dp"
+        android:background="#FF0373E4"
+        android:text="申请职位"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:textSize="@dimen/fiften_sp"
+        />
+
+</RelativeLayout>

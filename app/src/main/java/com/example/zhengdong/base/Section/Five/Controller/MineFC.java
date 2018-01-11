@@ -58,6 +58,8 @@ public class MineFC extends Fragment {
     @BindView(R.id.mine_rv)
     RecyclerView mineRv;
     Unbinder unbinder1;
+    @BindView(R.id.right_pic)
+    ImageView rightPic;
     private View view;
     private MineListAdapter mineListAdapter;
 
@@ -78,7 +80,7 @@ public class MineFC extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mineRv.setLayoutManager(linearLayoutManager);
-        mineListAdapter = new MineListAdapter(getActivity(),null);
+        mineListAdapter = new MineListAdapter(getActivity(), null);
         mineRv.setAdapter(mineListAdapter);
         mineListAdapter.setOnItemClickListener(new MineListAdapter.OnItemClickListener() {
             @Override
@@ -91,6 +93,7 @@ public class MineFC extends Fragment {
     private void initScanView() {
         naviRightPicLay.setVisibility(View.VISIBLE);
         naviTitleTxt.setText("我的");
+        rightPic.setBackgroundResource(R.drawable.my_nav_invitation);
     }
 
     @Override
@@ -100,7 +103,7 @@ public class MineFC extends Fragment {
     }
 
 
-    @OnClick({R.id.mine_header_pic, R.id.mine_shopname_lay,R.id.navi_right_pic_lay})
+    @OnClick({R.id.mine_header_pic, R.id.mine_shopname_lay, R.id.navi_right_pic_lay})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.mine_header_pic:

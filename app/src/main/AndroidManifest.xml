@@ -65,6 +65,17 @@
         <activity
             android:name="com.example.zhengdong.base.General.BaseAC"
             android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.example.zhengdong.base.Section.Four.Controller.FindSecondAC"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.example.zhengdong.base.Section.Four.Controller.FindDetailAC"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.example.zhengdong.base.Section.Four.Controller.FindThreeAC"
+            android:theme="@style/AppTheme" />
+        <activity android:name="com.example.zhengdong.base.Section.Four.Controller.FindAddAC"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

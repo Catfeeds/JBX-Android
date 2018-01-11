@@ -48,8 +48,10 @@
     <dimen name="eleven_sp">11sp</dimen>
     <dimen name="five_two_dp">52dp</dimen>
     <dimen name="sixty_dp">60dp</dimen>
-    <dimen name="four_six_dp">46dp</dimen>
     <dimen name="seventen_zero_dp">170dp</dimen>
     <dimen name="eight_ten_dp">80dp</dimen>
-
+    <dimen name="four_six_dp">46dp</dimen>
+    <dimen name="sixteen_dp">16dp</dimen>
+    <dimen name="one_hundred_one_dp">101dp</dimen>
+    <dimen name="fifty_dp">50dp</dimen>
 </resources>

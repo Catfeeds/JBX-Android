@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -49,7 +50,7 @@ public class FindListAdapter extends RecyclerView.Adapter<FindListAdapter.ViewHo
     private List<Map<String, Object>> data_list = new ArrayList<Map<String, Object>>();
 
     public interface OnItemClickListener {
-        void OnItemClick(View view, String name);
+        void OnItemClick(View view, String name, int i);
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
@@ -78,6 +79,13 @@ public class FindListAdapter extends RecyclerView.Adapter<FindListAdapter.ViewHo
             int[] to = {R.id.image, R.id.txt};
             SimpleAdapter simpleAdapter = new SimpleAdapter(mContext, data_list, R.layout.item, from, to);
             viewHolder.gridview.setAdapter(simpleAdapter);
+            viewHolder.gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                    LogUtil.e("当前点击的是"+i);
+                    mOnItemClickListener.OnItemClick(view,data_list.get(i).get("text").toString(),i);
+                }
+            });
         }else {
             viewHolder.headerLay.setVisibility(View.GONE);
         }

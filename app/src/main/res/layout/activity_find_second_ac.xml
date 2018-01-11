@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/find_second_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.example.zhengdong.base.Section.Four.Controller.FindSecondAC">
+
+    <LinearLayout
+        android:id="@+id/title_view_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include layout="@layout/com_navi_title_bar_item" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/find_job_sc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_view_lay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/four_six_dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/sixteen_dp"
+                    android:text="@string/hot_rec_str"
+                    android:textColor="#FF0373E4"
+                    android:textSize="@dimen/fiften_sp" />
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/one_dp"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:background="#FFF2F2F2"/>-->
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/find_second_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFF0F0F0"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"></android.support.v7.widget.RecyclerView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/ten_dp"
+                    android:background="#FFF0F0F0" />
+            </LinearLayout>
+
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/tab_lay"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/four_four_dp"
+                android:background="@color/white"
+                tl:tl_indicator_color="@color/navi_back_blue_color"
+                tl:tl_indicator_height="@dimen/two_dp"
+                tl:tl_indicator_width_equal_title="true"
+                tl:tl_tab_padding="@dimen/fifteen_dp"
+                tl:tl_tab_space_equal="true"
+                tl:tl_textSelectColor="#222222"
+                tl:tl_textUnselectColor="#656565"
+                tl:tl_textsize="@dimen/fiften_sp"
+                tl:tl_underline_color="@color/white"
+                tl:tl_underline_height="@dimen/one_dp" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
