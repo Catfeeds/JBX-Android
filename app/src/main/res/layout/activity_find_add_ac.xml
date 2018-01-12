@@ -16,6 +16,7 @@
     <ScrollView
         android:id="@+id/add_word_view"
         android:visibility="gone"
+        android:layout_marginTop="@dimen/ten_dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:overScrollMode="never"
@@ -36,15 +37,17 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/four_six_dp"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/fifteen_dp"
-                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:paddingRight="@dimen/fifteen_dp"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:paddingTop="@dimen/ten_dp"
+                        android:paddingBottom="@dimen/ten_dp"
                         android:orientation="horizontal"
                         android:weightSum="4">
 
@@ -58,8 +61,9 @@
 
                         <EditText
                             android:layout_width="@dimen/zero_dp"
-                            android:layout_height="@dimen/thirty_five"
+                            android:layout_height="wrap_content"
                             android:layout_weight="3"
+                            android:padding="@dimen/five_dpp"
                             android:background="@null"
                             android:gravity="right|center"
                             android:hint="请填写标题"
@@ -77,15 +81,17 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/four_six_dp"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/fifteen_dp"
-                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:paddingRight="@dimen/fifteen_dp"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:paddingTop="@dimen/ten_dp"
+                        android:paddingBottom="@dimen/ten_dp"
                         android:orientation="horizontal"
                         android:weightSum="4">
 
@@ -99,7 +105,8 @@
 
                         <EditText
                             android:layout_width="@dimen/zero_dp"
-                            android:layout_height="@dimen/thirty_five"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/five_dpp"
                             android:layout_weight="3"
                             android:background="@null"
                             android:gravity="right|center"
@@ -118,14 +125,17 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/four_six_dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/fifteen_dp"
-                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:paddingRight="@dimen/fifteen_dp"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:paddingTop="@dimen/ten_dp"
+                        android:paddingBottom="@dimen/ten_dp"
+                        android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:weightSum="4">
 
@@ -141,6 +151,7 @@
                             android:layout_width="@dimen/zero_dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
+                            android:padding="@dimen/five_dpp"
                             android:gravity="center_vertical">
 
                             <TextView
@@ -173,15 +184,18 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/four_six_dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/fifteen_dp"
-                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:paddingRight="@dimen/fifteen_dp"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:paddingTop="@dimen/ten_dp"
+                        android:paddingBottom="@dimen/ten_dp"
                         android:orientation="horizontal"
+                        android:gravity="center_vertical"
                         android:weightSum="4">
 
                         <TextView
@@ -196,6 +210,7 @@
                             android:layout_width="@dimen/zero_dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
+                            android:padding="@dimen/five_dpp"
                             android:gravity="center_vertical">
 
                             <TextView
@@ -228,15 +243,18 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/four_six_dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/fifteen_dp"
-                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:paddingRight="@dimen/fifteen_dp"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:paddingTop="@dimen/ten_dp"
+                        android:paddingBottom="@dimen/ten_dp"
                         android:orientation="horizontal"
+                        android:gravity="center_vertical"
                         android:weightSum="4">
 
                         <TextView
@@ -251,6 +269,7 @@
                             android:layout_width="@dimen/zero_dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
+                            android:padding="@dimen/five_dpp"
                             android:gravity="center_vertical">
 
                             <TextView
@@ -283,14 +302,17 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/four_six_dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/fifteen_dp"
-                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:paddingRight="@dimen/fifteen_dp"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:paddingTop="@dimen/ten_dp"
+                        android:paddingBottom="@dimen/ten_dp"
+                        android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:weightSum="4">
 
@@ -305,6 +327,7 @@
                         <RelativeLayout
                             android:layout_width="@dimen/zero_dp"
                             android:layout_height="wrap_content"
+                            android:padding="@dimen/five_dpp"
                             android:layout_weight="3"
                             android:gravity="center_vertical">
 
@@ -338,15 +361,18 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/four_six_dp"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/fifteen_dp"
-                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:paddingRight="@dimen/fifteen_dp"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:paddingTop="@dimen/ten_dp"
+                        android:paddingBottom="@dimen/ten_dp"
+                        android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:weightSum="4">
 
@@ -360,7 +386,8 @@
 
                         <EditText
                             android:layout_width="@dimen/zero_dp"
-                            android:layout_height="@dimen/thirty_five"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/five_dpp"
                             android:layout_weight="3"
                             android:background="@null"
                             android:gravity="right|center"
@@ -379,14 +406,17 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/four_six_dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/fifteen_dp"
-                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:paddingRight="@dimen/fifteen_dp"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:paddingTop="@dimen/ten_dp"
+                        android:paddingBottom="@dimen/ten_dp"
+                        android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:weightSum="4">
 
@@ -402,6 +432,7 @@
                             android:layout_width="@dimen/zero_dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
+                            android:padding="@dimen/five_dpp"
                             android:gravity="center_vertical">
 
                             <TextView
@@ -440,6 +471,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="@dimen/five_dpp"
                         android:layout_marginLeft="@dimen/ten_dp"
                         android:layout_marginTop="@dimen/ten_dp"
                         android:text="一句话介绍一下自己吧"
@@ -449,6 +481,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:padding="@dimen/five_dpp"
                         android:layout_marginLeft="@dimen/fifteen_dp"
                         android:layout_marginRight="@dimen/fifteen_dp"
                         android:layout_marginTop="@dimen/ten_dp"
@@ -488,6 +521,7 @@
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ten_dp"
         android:overScrollMode="never"
         android:scrollbars="none">
 
@@ -507,15 +541,18 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/four_six_dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/fifteen_dp"
-                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:paddingRight="@dimen/fifteen_dp"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:paddingTop="@dimen/ten_dp"
+                        android:paddingBottom="@dimen/ten_dp"
                         android:orientation="horizontal"
+                        android:gravity="center_vertical"
                         android:weightSum="4">
 
                         <TextView
@@ -530,6 +567,7 @@
                             android:layout_width="@dimen/zero_dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
+                            android:padding="@dimen/five_dpp"
                             android:gravity="center_vertical">
 
                             <TextView
@@ -562,15 +600,18 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/four_six_dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/fifteen_dp"
-                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:paddingRight="@dimen/fifteen_dp"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:paddingTop="@dimen/ten_dp"
+                        android:paddingBottom="@dimen/ten_dp"
                         android:orientation="horizontal"
+                        android:gravity="center_vertical"
                         android:weightSum="4">
 
                         <TextView
@@ -585,6 +626,7 @@
                             android:layout_width="@dimen/zero_dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
+                            android:padding="@dimen/five_dpp"
                             android:gravity="center_vertical">
 
                             <TextView
@@ -617,15 +659,18 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/four_six_dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/fifteen_dp"
-                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:paddingRight="@dimen/fifteen_dp"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:paddingTop="@dimen/ten_dp"
+                        android:paddingBottom="@dimen/ten_dp"
                         android:orientation="horizontal"
+                        android:gravity="center_vertical"
                         android:weightSum="4">
 
                         <TextView
@@ -640,6 +685,7 @@
                             android:layout_width="@dimen/zero_dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
+                            android:padding="@dimen/five_dpp"
                             android:gravity="center_vertical">
 
                             <TextView
@@ -672,14 +718,17 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/four_six_dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/fifteen_dp"
-                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:paddingRight="@dimen/fifteen_dp"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:paddingTop="@dimen/ten_dp"
+                        android:paddingBottom="@dimen/ten_dp"
+                        android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:weightSum="4">
 
@@ -695,6 +744,7 @@
                             android:layout_width="@dimen/zero_dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
+                            android:padding="@dimen/five_dpp"
                             android:gravity="center_vertical">
 
                             <TextView
@@ -726,14 +776,17 @@
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/four_six_dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="@dimen/fifteen_dp"
-                        android:layout_marginRight="@dimen/fifteen_dp"
+                        android:paddingRight="@dimen/fifteen_dp"
+                        android:paddingLeft="@dimen/fifteen_dp"
+                        android:paddingTop="@dimen/ten_dp"
+                        android:paddingBottom="@dimen/ten_dp"
+                        android:gravity="center_vertical"
                         android:orientation="horizontal"
                         android:weightSum="4">
 
@@ -749,6 +802,7 @@
                             android:layout_width="@dimen/zero_dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
+                            android:padding="@dimen/five_dpp"
                             android:gravity="center_vertical">
 
                             <TextView
@@ -793,6 +847,7 @@
                         android:layout_marginLeft="@dimen/ten_dp"
                         android:layout_marginTop="@dimen/ten_dp"
                         android:text="职位描述"
+                        android:padding="@dimen/five_dpp"
                         android:textColor="#FF666666"
                         android:textSize="15sp" />
 

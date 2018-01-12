@@ -109,7 +109,7 @@ public class FindThreeListAdapter extends RecyclerView.Adapter<FindThreeListAdap
         LinearLayout minWorkLay;
         @BindView(R.id.min_hr_lay)
         LinearLayout minHrLay;
-        
+
 
         public ViewHolder(View view) {
             super(view);
