@@ -5,22 +5,21 @@
 package com.example.zhengdong.base.Section.Four.Adapter;
 
 import android.content.Context;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-import com.example.zhengdong.base.Section.Four.Model.NewsListModel;
+import com.example.zhengdong.base.Section.Four.Model.NewsTitleModel;
+import com.example.zhengdong.base.Section.Four.View.HorizontalRecycleView.PagingScrollHelper;
 import com.example.zhengdong.jbx.R;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,15 +27,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class FindListAdapter extends RecyclerView.Adapter<FindListAdapter.ViewHolder> {
-    public List<NewsListModel.DataBean.EcInformationBean> datas = null;
-    // 初始化数据源
-    public String[] txt = {
-            "报价中心", "求职招聘", "技术论坛", "商家动态", "平台资讯", "行业资讯", "商业资讯", "下游动态"
-    };
-    public int[] image = {
-            R.drawable.offer_header_icon, R.drawable.job_header_icon, R.drawable.tech_header_icon, R.drawable.shop_header_icon,
-            R.drawable.plat_header_icon, R.drawable.ind_header_icon, R.drawable.business_header_icon, R.drawable.downstream_header_icon
-    };
+    public List<NewsTitleModel.DataBean.EcInformationCatBean> datas = null;
 
     /**
      * 修改 增加context
@@ -58,7 +49,7 @@ public class FindListAdapter extends RecyclerView.Adapter<FindListAdapter.ViewHo
     }
 
 
-    public FindListAdapter(Context context, List<NewsListModel.DataBean.EcInformationBean> datas) {
+    public FindListAdapter(Context context, List<NewsTitleModel.DataBean.EcInformationCatBean> datas) {
         mContext = context;
         this.datas = datas;
     }
@@ -72,21 +63,38 @@ public class FindListAdapter extends RecyclerView.Adapter<FindListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
-        if (position == 0){
+        if (position == 0) {
             viewHolder.headerLay.setVisibility(View.VISIBLE);
-            getData();
-            String[] from = {"image", "text"};
-            int[] to = {R.id.image, R.id.txt};
-            SimpleAdapter simpleAdapter = new SimpleAdapter(mContext, data_list, R.layout.item, from, to);
-            viewHolder.gridview.setAdapter(simpleAdapter);
-            viewHolder.gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
+//            HorizontalPageLayoutManager linearLayoutManager = new HorizontalPageLayoutManager(1,2);
+            linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+            viewHolder.horizontalRv.setLayoutManager(linearLayoutManager);
+            PagingScrollHelper pagingScrollHelper = new PagingScrollHelper();
+            pagingScrollHelper.setUpRecycleView(viewHolder.horizontalRv);
+            pagingScrollHelper.setOnPageChangeListener(new PagingScrollHelper.onPageChangeListener() {
                 @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                    LogUtil.e("当前点击的是"+i);
-                    mOnItemClickListener.OnItemClick(view,data_list.get(i).get("text").toString(),i);
+                public void onPageChange(int index) {
+                    if (index == 0){
+                        viewHolder.firstPoint.setBackgroundResource(R.drawable.point_deep);
+                        viewHolder.secondPoint.setBackgroundResource(R.drawable.point_light);
+                    }else if (index == 1){
+                        viewHolder.firstPoint.setBackgroundResource(R.drawable.point_light);
+                        viewHolder.secondPoint.setBackgroundResource(R.drawable.point_deep);
+                    }
                 }
             });
-        }else {
+            FindHorizontalListAdapter findHorizontalListAdapter = new FindHorizontalListAdapter(mContext, datas);
+            viewHolder.horizontalRv.setAdapter(findHorizontalListAdapter);
+            findHorizontalListAdapter.setOnItemClickListener(new FindHorizontalListAdapter.OnItemClickListener() {
+                @Override
+                public void OnItemClick(View view, String name, int newId) {
+                    mOnItemClickListener.OnItemClick(view, name, newId);
+                }
+            });
+
+
+
+        } else {
             viewHolder.headerLay.setVisibility(View.GONE);
         }
         viewHolder.titleTxt.setText("测试标题");
@@ -94,17 +102,6 @@ public class FindListAdapter extends RecyclerView.Adapter<FindListAdapter.ViewHo
 
     }
 
-    public List<Map<String, Object>> getData() {
-        //cion和iconName的长度是相同的，这里任选其一都可以
-        for (int i = 0; i < image.length; i++) {
-            Map<String, Object> map = new HashMap<String, Object>();
-            map.put("image", image[i]);
-            map.put("text", txt[i]);
-            data_list.add(map);
-        }
-
-        return data_list;
-    }
 
     @Override
     public int getItemCount() {
@@ -125,6 +122,13 @@ public class FindListAdapter extends RecyclerView.Adapter<FindListAdapter.ViewHo
         ImageView rightPic;
         @BindView(R.id.cell)
         LinearLayout cell;
+        @BindView(R.id.horizontal_rv)
+        RecyclerView horizontalRv;
+        @BindView(R.id.first_point)
+        ImageView firstPoint;
+        @BindView(R.id.second_point)
+        ImageView secondPoint;
+
         public ViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);

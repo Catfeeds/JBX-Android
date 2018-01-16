@@ -38,7 +38,7 @@ public class MineListAdapter extends RecyclerView.Adapter<MineListAdapter.ViewHo
     private int[] commonPic;
 
     String[] mineListTitle = {
-            "我的订单", "我的关注", "发票设置", "收货地址", "邀请", "我的客服", "帮助与反馈", "设置"
+            "我的订单", "我的关注", "我的报价", "我的询价", "邀请", "我的客服", "帮助与反馈", "设置"
     };
 
     int[] mineListPic = {
@@ -87,7 +87,7 @@ public class MineListAdapter extends RecyclerView.Adapter<MineListAdapter.ViewHo
         viewHolder.mineSettingRela.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mOnItemClickListener.OnItemClick(view, position, "");
+                mOnItemClickListener.OnItemClick(view, position, mineListTitle[position]);
             }
         });
     }

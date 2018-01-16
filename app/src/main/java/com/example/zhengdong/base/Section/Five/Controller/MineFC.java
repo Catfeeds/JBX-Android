@@ -1,6 +1,7 @@
 package com.example.zhengdong.base.Section.Five.Controller;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.zhengdong.base.Section.Five.Adapter.MineListAdapter;
 import com.example.zhengdong.base.Section.Five.View.CircleImageView;
+import com.example.zhengdong.base.Section.Four.View.XScrollView;
 import com.example.zhengdong.jbx.R;
 
 import butterknife.BindView;
@@ -60,6 +62,8 @@ public class MineFC extends Fragment {
     Unbinder unbinder1;
     @BindView(R.id.right_pic)
     ImageView rightPic;
+    @BindView(R.id.scrollView)
+    XScrollView scrollView;
     private View view;
     private MineListAdapter mineListAdapter;
 
@@ -72,6 +76,7 @@ public class MineFC extends Fragment {
             unbinder = ButterKnife.bind(this, view);
             initScanView();
             initMineListView();
+
         }
         return view;
     }
@@ -85,9 +90,20 @@ public class MineFC extends Fragment {
         mineListAdapter.setOnItemClickListener(new MineListAdapter.OnItemClickListener() {
             @Override
             public void OnItemClick(View view, int position, String name) {
-
+                if (position == 2||position == 3){
+                    // mine offer
+                    initMineOfferView(name);
+                }
             }
         });
+
+    }
+
+    // 我的报价
+    private void initMineOfferView(String name) {
+        Intent intent = new Intent(getActivity(),MineOfferAC.class);
+        intent.putExtra("offerName",name);
+        startActivity(intent);
     }
 
     private void initScanView() {

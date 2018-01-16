@@ -16,11 +16,12 @@
         <include layout="@layout/com_navi_title_bar_item" />
     </LinearLayout>
 
-
+    <!--求职招聘模块-->
     <LinearLayout
         android:id="@+id/find_job_sc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         android:layout_below="@+id/title_view_lay">
 
         <LinearLayout
@@ -93,6 +94,33 @@
 
         </LinearLayout>
 
+    </LinearLayout>
+    <!--新闻模块的界面-->
+    <LinearLayout
+        android:id="@+id/new_list_view"
+        android:layout_below="@+id/title_view_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:gravity="center_horizontal|center_vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ten_dp"
+            android:background="#FFF3F3F3" />
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <com.example.zhengdong.base.Macro.dzRecycleview.DzRecyclerView
+                android:id="@+id/common_rv"
+                android:scrollbars="none"
+                android:overScrollMode="never"
+                android:background="#FFF3F3F3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </com.example.zhengdong.base.Macro.dzRecycleview.DzRecyclerView>
+        </android.support.v4.widget.SwipeRefreshLayout>
     </LinearLayout>
 
 

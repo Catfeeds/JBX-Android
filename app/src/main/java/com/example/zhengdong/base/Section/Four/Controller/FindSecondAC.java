@@ -5,29 +5,42 @@
 package com.example.zhengdong.base.Section.Four.Controller;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.zhengdong.base.APIManager.HttpInterFace;
+import com.example.zhengdong.base.APIManager.HttpRequest;
+import com.example.zhengdong.base.APIManager.UrlUtils;
 import com.example.zhengdong.base.General.BaseAC;
+import com.example.zhengdong.base.Macro.XToast;
+import com.example.zhengdong.base.Macro.dzRecycleview.DzRecyclerView;
+import com.example.zhengdong.base.Macro.dzRecycleview.LoadMoreListener;
+import com.example.zhengdong.base.Macro.dzRecycleview.ProgressView;
+import com.example.zhengdong.base.Section.First.Controller.IronMasterWC;
 import com.example.zhengdong.base.Section.Four.Adapter.FindGridListAdapter;
+import com.example.zhengdong.base.Section.Four.Adapter.NewsListAdapter;
 import com.example.zhengdong.base.Section.Four.Adapter.SpaceDecoration;
+import com.example.zhengdong.base.Section.Four.Model.NewsListModel;
 import com.example.zhengdong.base.Section.Four.View.FindJobPupWindow;
 import com.example.zhengdong.jbx.R;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -68,6 +81,14 @@ public class FindSecondAC extends BaseAC {
     SlidingTabLayout tabLay;
     @BindView(R.id.vp)
     ViewPager vp;
+    @BindView(R.id.common_rv)
+    DzRecyclerView common_rv;
+    @BindView(R.id.swipe_layout)
+    SwipeRefreshLayout swipeLayout;
+    @BindView(R.id.new_list_view)
+    LinearLayout newListView;
+    @BindView(R.id.find_second_activity)
+    RelativeLayout findSecondActivity;
     private int gridType = -1;
     private String gridName = "";
     private FindJobPupWindow findJobPupWindow;
@@ -85,6 +106,10 @@ public class FindSecondAC extends BaseAC {
     };
     private ArrayList<FindJobFC> mFragments = new ArrayList<FindJobFC>();
     private MyPagerAdapter mAdapter;
+    private List<NewsListModel.DataBean.EcInformationBean> dataSource;
+    private NewsListModel newsListModel;
+    private int page = 1;
+    private NewsListAdapter newsListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,9 +119,150 @@ public class FindSecondAC extends BaseAC {
         gridType = getIntent().getIntExtra("gridType", -1);
         gridName = getIntent().getStringExtra("gridName");
         initNavigationView();
-        initGridView();
-        initTabLayView();
+
+        // 前四个的界面
+        if (gridType < 10) {
+            findJobSc.setVisibility(View.VISIBLE);
+            initGridView();
+            initTabLayView();
+        } else {
+            // 新闻模块的界面
+            newListView.setVisibility(View.VISIBLE);
+            initNewsListData(String.valueOf(gridType),1,10,"");
+        }
+
+
     }
+
+    /**
+     * 初始化新闻模块的界面
+     */
+    // 刷新数据
+    private void initNewsListData(String newsID, final int pages, int pageNum, String searchTxt) {
+        if (pages == 1) {
+            dataSource = null;
+        }
+        HashMap<String, String> map = new HashMap<>();
+        map.put("Information_id", newsID);
+        map.put("page", String.valueOf(pages));
+        map.put("pageNum", String.valueOf(10));
+        map.put("titleName", searchTxt);
+        HttpRequest.URL_JSONGET_REQUEST(this, UrlUtils.NEWS_LIST_URL, map, "", false, new HttpInterFace() {
+            @Override
+            public void URL_REQUEST(String response) {
+                newsListModel = new Gson().fromJson(response, NewsListModel.class);
+                if (newsListModel.getCode() == 200) {
+                    if (pages == 1) {
+                        dataSource = newsListModel.getData().getEcInformation();
+                        initRefreshView();
+                    } else {
+                        dataSource.addAll(newsListModel.getData().getEcInformation());
+                        newsListAdapter.notifyDataSetChanged();
+                    }
+
+                } else {
+                    XToast.show(getBaseContext(), "" + newsListModel.getMsg());
+                }
+            }
+
+            @Override
+            public void BEFORE() {
+
+            }
+
+            @Override
+            public void AFTER() {
+
+            }
+
+            @Override
+            public void NOCONNECTION() {
+
+            }
+        });
+    }
+
+
+    // 初始化刷新界面
+    private void initRefreshView() {
+        swipeLayout.setColorSchemeResources(R.color.navi_back_blue_color, R.color.navi_back_blue_color, R.color.navi_back_blue_color,
+                R.color.navi_back_blue_color);
+
+        swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        //注意此处
+                        dataSource.clear();
+                        page = 1;
+                        initNewsListData(String.valueOf(gridType), 1, 10, "");
+                        common_rv.refreshComplete();
+                        swipeLayout.setRefreshing(false);
+                        newsListAdapter.notifyDataSetChanged();
+                    }
+                }, 1000);
+
+            }
+        });
+//        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 3) {
+//            //            @Override
+////            public boolean canScrollVertically() {
+////            return false;
+////        }
+//            // SC嵌套ReCV防止数据显示不完整
+//            @Override
+//            public void onMeasure(RecyclerView.Recycler recycler, RecyclerView.State state, int widthSpec, int heightSpec) {
+//                int expandSpec = View.MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, View.MeasureSpec.AT_MOST);
+//                super.onMeasure(recycler, state, widthSpec, expandSpec);
+//            }
+//        };
+//        gridLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        common_rv.setLayoutManager(linearLayoutManager);
+        //设置自定义加载中和到底了效果
+        ProgressView progressView = new ProgressView(this);
+        progressView.setIndicatorId(0);
+        progressView.setIndicatorColor(0xff307FDE);
+        common_rv.setFootLoadingView(progressView);
+        common_rv.setCanloadMore(true);
+        TextView textView = new TextView(this);
+        textView.setText("已经到底了~");
+        textView.setTextColor(Color.BLACK);
+        common_rv.setFootEndView(textView);
+        common_rv.setLoadMoreListener(new LoadMoreListener() {
+            @Override
+            public void onLoadMore() {
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        if (dataSource.size() >= newsListModel.getData().getTotal()) {
+                            common_rv.loadMoreEnd();
+                            page = 1;
+                            return;
+                        }
+                        page += 1;
+                        initNewsListData(String.valueOf(gridType), page, 10, "");
+                        common_rv.loadMoreComplete();
+                    }
+                }, 1000);
+            }
+        });
+        newsListAdapter = new NewsListAdapter(this, dataSource);
+        common_rv.setAdapter(newsListAdapter);
+        newsListAdapter.setOnItemClickListener(new NewsListAdapter.OnItemClickListener() {
+            @Override
+            public void OnItemClick(View view, String content) {
+                Intent intent = new Intent(FindSecondAC.this, IronMasterWC.class);
+                intent.putExtra("webType", 2);
+                intent.putExtra("content", content);
+                startActivity(intent);
+            }
+        });
+
+    }
+
 
 
     private void initGridView() {
@@ -237,9 +403,10 @@ public class FindSecondAC extends BaseAC {
         }
 
     };
-    public void initJumpToNext(String title){
-        Intent intent = new Intent(FindSecondAC.this,FindThreeAC.class);
-        intent.putExtra("threeTitle",title);
+
+    public void initJumpToNext(String title) {
+        Intent intent = new Intent(FindSecondAC.this, FindThreeAC.class);
+        intent.putExtra("threeTitle", title);
         startActivity(intent);
     }
 

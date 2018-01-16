@@ -74,7 +74,10 @@
         <activity
             android:name="com.example.zhengdong.base.Section.Four.Controller.FindThreeAC"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.example.zhengdong.base.Section.Four.Controller.FindAddAC"
+        <activity
+            android:name="com.example.zhengdong.base.Section.Four.Controller.FindAddAC"
+            android:theme="@style/AppTheme" />
+        <activity android:name="com.example.zhengdong.base.Section.Five.Controller.MineOfferAC"
             android:theme="@style/AppTheme"></activity>
     </application>
 

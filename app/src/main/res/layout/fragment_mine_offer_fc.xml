@@ -1,0 +1,31 @@
+<!--
+  ~ Copyright (c) create by ki1lt0 .
+  -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECEEF1"
+    tools:context="com.example.zhengdong.base.Section.Five.Controller.MineOfferFC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ten_dp"
+        android:background="@color/white">
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.example.zhengdong.base.Macro.dzRecycleview.DzRecyclerView
+                android:id="@+id/common_rv"
+                android:scrollbars="none"
+                android:overScrollMode="never"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.example.zhengdong.base.Macro.dzRecycleview.DzRecyclerView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+</FrameLayout>

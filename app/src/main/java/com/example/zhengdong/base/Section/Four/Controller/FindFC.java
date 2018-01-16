@@ -19,12 +19,23 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
+import com.example.zhengdong.base.APIManager.HttpInterFace;
+import com.example.zhengdong.base.APIManager.HttpRequest;
+import com.example.zhengdong.base.APIManager.UrlUtils;
 import com.example.zhengdong.base.Macro.AlphaViewUtils;
 import com.example.zhengdong.base.Macro.LogUtil;
+import com.example.zhengdong.base.Macro.XToast;
 import com.example.zhengdong.base.Macro.comView.SoftKeyBoardListener;
+import com.example.zhengdong.base.Section.Four.Adapter.FindHorizontalListAdapter;
 import com.example.zhengdong.base.Section.Four.Adapter.FindListAdapter;
+import com.example.zhengdong.base.Section.Four.Model.NewsTitleModel;
 import com.example.zhengdong.base.Section.Four.View.FindSearchEdtView;
 import com.example.zhengdong.jbx.R;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,6 +53,9 @@ public class FindFC extends Fragment {
     @BindView(R.id.find_rv)
     RecyclerView findRv;
     private View views;
+    private ArrayList<String> mTitles= new ArrayList<>();
+    private ArrayList<String> mNewsIDs = new ArrayList<>();
+    private List<NewsTitleModel.DataBean.EcInformationCatBean> dataSource = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,12 +64,52 @@ public class FindFC extends Fragment {
         if (views == null) {
             views = inflater.inflate(R.layout.fragment_find_fc, container, false);
             unbinder = ButterKnife.bind(this, views);
-            initRecycleView();
+//            initRecycleView();
             initSearchView();
-
+            initTabLayData();
         }
         return views;
     }
+
+    /**
+     * 初始化数据源
+     * */
+    // 初始化标题栏数据
+    private void initTabLayData() {
+        HttpRequest.URL_JSONGETNOPARAM_REQUEST(getActivity(), UrlUtils.NEWS_TITLE_LIST, "加载中...", false, new HttpInterFace() {
+            @Override
+            public void URL_REQUEST(String response) {
+                LogUtil.e("打印的json"+response);
+                NewsTitleModel newsTitleModel = new Gson().fromJson(response, NewsTitleModel.class);
+                if (newsTitleModel.getCode() == 200) {
+                    dataSource = newsTitleModel.getData().getEcInformationCat();
+//                    for (int i = 0; i < newsTitleModel.getData().getEcInformationCat().size(); i++) {
+//                        mTitles.add(newsTitleModel.getData().getEcInformationCat().get(i).getKey_name());
+//                        mNewsIDs.add(String.valueOf(newsTitleModel.getData().getEcInformationCat().get(i).getId()));
+//                    }
+                    initRecycleView();
+                } else {
+                    XToast.show(getActivity().getBaseContext(), "" + newsTitleModel.getMsg());
+                }
+            }
+
+            @Override
+            public void BEFORE() {
+
+            }
+
+            @Override
+            public void AFTER() {
+
+            }
+
+            @Override
+            public void NOCONNECTION() {
+
+            }
+        });
+    }
+
 
     private void initSearchView() {
         // 监听键盘事件
@@ -104,11 +158,12 @@ public class FindFC extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         findRv.setLayoutManager(linearLayoutManager);
-        FindListAdapter findListAdapter = new FindListAdapter(getActivity(), null);
+        FindListAdapter findListAdapter = new FindListAdapter(getActivity(), dataSource);
         findRv.setAdapter(findListAdapter);
         findListAdapter.setOnItemClickListener(new FindListAdapter.OnItemClickListener() {
             @Override
             public void OnItemClick(View view, String name, int gridviewPosition) {
+                LogUtil.e("当前点击的页面是",name+gridviewPosition);
                 Intent intent = new Intent(getActivity(), FindSecondAC.class);
                 intent.putExtra("gridType", gridviewPosition);
                 intent.putExtra("gridName",name);

@@ -7,9 +7,42 @@
         android:id="@+id/header_lay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
+        android:visibility="visible"
         android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:orientation="vertical">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/horizontal_rv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/seventen_zero_dp"
+                android:scrollbars="none"
+                android:overScrollMode="never">
+            </android.support.v7.widget.RecyclerView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/ten_dp"
+                android:layout_marginTop="@dimen/five_dpp"
+                android:gravity="center_horizontal">
+                <ImageView
+                    android:id="@+id/first_point"
+                    android:layout_width="@dimen/eight_dp"
+                    android:layout_height="@dimen/eight_dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="@dimen/eight_dp"
+                    android:background="@drawable/point_deep"/>
+                <ImageView
+                    android:id="@+id/second_point"
+                    android:layout_width="@dimen/eight_dp"
+                    android:layout_height="@dimen/eight_dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/point_light"/>
+            </LinearLayout>
+
+        </LinearLayout>
         <RelativeLayout
+            android:visibility="gone"
             android:layout_marginTop="@dimen/fifteen_dp"
             android:layout_width="match_parent"
             android:layout_height="@dimen/seventen_zero_dp">

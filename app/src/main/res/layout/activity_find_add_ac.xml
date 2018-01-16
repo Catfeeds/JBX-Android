@@ -60,6 +60,7 @@
                             android:textSize="15sp" />
 
                         <EditText
+                            android:id="@+id/aw_title_edt"
                             android:layout_width="@dimen/zero_dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="3"
@@ -104,6 +105,7 @@
                             android:textSize="15sp" />
 
                         <EditText
+                            android:id="@+id/aw_name_edt"
                             android:layout_width="@dimen/zero_dp"
                             android:layout_height="wrap_content"
                             android:padding="@dimen/five_dpp"
@@ -124,6 +126,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/aw_sex_rel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -183,6 +186,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/aw_birthday_edt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -242,6 +246,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/aw_salary_rel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -301,6 +306,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/aw_year_rel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -385,14 +391,16 @@
                             android:textSize="15sp" />
 
                         <EditText
+                            android:id="@+id/aw_phone_edt"
                             android:layout_width="@dimen/zero_dp"
                             android:layout_height="wrap_content"
                             android:padding="@dimen/five_dpp"
                             android:layout_weight="3"
                             android:background="@null"
+                            android:maxLength="11"
                             android:gravity="right|center"
                             android:hint="请填写有效的手机号码"
-                            android:inputType="textMultiLine"
+                            android:inputType="phone"
                             android:textColorHint="#FF666666"
                             android:textSize="@dimen/fiften_sp" />
                     </LinearLayout>
@@ -405,6 +413,7 @@
                     android:background="#F0F0F0" />
 
                 <RelativeLayout
+                    android:id="@+id/aw_offer_rel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -479,6 +488,7 @@
                         android:textSize="15sp" />
 
                     <EditText
+                        android:id="@+id/aw_intro_edt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/five_dpp"
@@ -504,6 +514,7 @@
                 android:layout_marginTop="@dimen/thirty_five">
 
                 <Button
+                    android:id="@+id/aw_save_btn"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/four_four_dp"
                     android:layout_marginLeft="@dimen/fifteen_dp"
@@ -540,6 +551,7 @@
 
 
                 <RelativeLayout
+                    android:id="@+id/ah_zhiwei_rel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -599,6 +611,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/ah_salary_rel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -658,6 +671,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/ah_fl_rel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -717,6 +731,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:id="@+id/ah_workyear_rel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -775,6 +790,7 @@
                         android:background="#D8D8D8" />
                 </RelativeLayout>
                 <RelativeLayout
+                    android:id="@+id/ah_people_rel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -852,6 +868,7 @@
                         android:textSize="15sp" />
 
                     <EditText
+                        android:id="@+id/ah_descript_edt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/fifteen_dp"
@@ -876,6 +893,7 @@
                 android:layout_marginTop="@dimen/thirty_five">
 
                 <Button
+                    android:id="@+id/ah_release_btn"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/four_four_dp"
                     android:layout_marginLeft="@dimen/fifteen_dp"

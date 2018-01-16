@@ -85,11 +85,11 @@ public class NewsFC extends Fragment implements OnTabSelectListener, CommonPopup
             public void URL_REQUEST(String response) {
                 NewsTitleModel newsTitleModel = new Gson().fromJson(response, NewsTitleModel.class);
                 if (newsTitleModel.getCode() == 200) {
-                    for (int i = 0; i < newsTitleModel.getData().size(); i++) {
-                        mTitles.add(newsTitleModel.getData().get(i).getKey_name());
-                        mNewsIDs.add(String.valueOf(newsTitleModel.getData().get(i).getId()));
-                    }
-                    initTabLayView();
+//                    for (int i = 0; i < newsTitleModel.getData().size(); i++) {
+//                        mTitles.add(newsTitleModel.getData().get(i).getKey_name());
+//                        mNewsIDs.add(String.valueOf(newsTitleModel.getData().get(i).getId()));
+//                    }
+//                    initTabLayView();
                 } else {
                     XToast.show(getActivity().getBaseContext(), "" + newsTitleModel.getMsg());
                 }

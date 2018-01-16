@@ -54,4 +54,5 @@
     <dimen name="sixteen_dp">16dp</dimen>
     <dimen name="one_hundred_one_dp">101dp</dimen>
     <dimen name="fifty_dp">50dp</dimen>
+    <dimen name="sixteen_sp">16sp</dimen>
 </resources>
