@@ -35,7 +35,7 @@ public class MineOfferListAdapter extends RecyclerView.Adapter<MineOfferListAdap
     private OnItemClickListener mOnItemClickListener;
 
     public interface OnItemClickListener {
-        void OnItemClick(View view, String name);
+        void OnItemClick(View view, int name);
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
@@ -58,36 +58,48 @@ public class MineOfferListAdapter extends RecyclerView.Adapter<MineOfferListAdap
 
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
-//        viewHolder.titleTxt.setText(datas.get(position).getTitle());
-//        viewHolder.subTitleTxt.setText(datas.get(position).getAdd_time());
-//        GlideApp.with(mContext)
-//                .load(datas.get(position).getImgUrl())
-//                .placeholder(R.drawable.placerholder)
-//                .centerCrop()
-//                .into(viewHolder.rightPic);
-//        viewHolder.cell.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                mOnItemClickListener.OnItemClick(view,datas.get(position).getContent());
-//            }
-//        });
+
         if (types == 1){
             viewHolder.firstCell.setVisibility(View.VISIBLE);
+            viewHolder.firstCell.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mOnItemClickListener.OnItemClick(view,types);
+                }
+            });
         }else {
             viewHolder.firstCell.setVisibility(View.GONE);
         }
         if (types == 2){
             viewHolder.secondCell.setVisibility(View.VISIBLE);
+            viewHolder.secondCell.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mOnItemClickListener.OnItemClick(view,types);
+                }
+            });
         }else {
             viewHolder.secondCell.setVisibility(View.GONE);
         }
         if (types == 3){
             viewHolder.threeCell.setVisibility(View.VISIBLE);
+            viewHolder.threeCell.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mOnItemClickListener.OnItemClick(view,types);
+                }
+            });
         }else {
             viewHolder.threeCell.setVisibility(View.GONE);
         }
         if (types == 4){
             viewHolder.fourCell.setVisibility(View.VISIBLE);
+            viewHolder.fourCell.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mOnItemClickListener.OnItemClick(view,types);
+                }
+            });
         }else {
             viewHolder.fourCell.setVisibility(View.GONE);
         }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) create by ki1lt0 .
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECEEF1"
+    tools:context="com.example.zhengdong.base.Section.Five.Controller.OfferDetailAC">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/four_four_dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <include layout="@layout/com_navi_title_bar_item"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/offer_detail_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/offer_detail_lay"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/four_four_dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal|center_vertical"
+        android:background="#32C607">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="立即报价"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/sixteen_sp"
+            />
+    </LinearLayout>
+</RelativeLayout>

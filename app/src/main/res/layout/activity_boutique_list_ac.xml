@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) create by ki1lt0 .
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.zhengdong.base.Section.Second.Controller.BoutiqueListAC">
+    <include layout="@layout/com_navi_title_bar_item"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ten_dp"
+        android:background="#FFF3F3F3" />
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <com.example.zhengdong.base.Macro.dzRecycleview.DzRecyclerView
+            android:id="@+id/common_rv"
+            android:scrollbars="none"
+            android:overScrollMode="never"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.example.zhengdong.base.Macro.dzRecycleview.DzRecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

@@ -5,6 +5,12 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 
     <application
         android:name="com.example.zhengdong.base.APIManager.JBXApplication"
@@ -77,8 +83,58 @@
         <activity
             android:name="com.example.zhengdong.base.Section.Four.Controller.FindAddAC"
             android:theme="@style/AppTheme" />
-        <activity android:name="com.example.zhengdong.base.Section.Five.Controller.MineOfferAC"
+        <activity
+            android:name="com.example.zhengdong.base.Section.Five.Controller.MineOfferAC"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.example.zhengdong.base.Section.Five.Controller.MineOfferSecondAC"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.example.zhengdong.base.Section.Five.Controller.OfferDetailAC"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.example.zhengdong.base.Section.Second.Controller.BoutiqueDetailAC"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.example.zhengdong.base.Section.Second.Controller.BoutiqueListAC"
             android:theme="@style/AppTheme"></activity>
+
+
+        // 微信分享
+        <activity
+            android:name="com.example.zhengdong.base.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        // QQ分享
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent100424468" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5a686ec8f29d98170c000022" >
+        </meta-data>
+
+
+
     </application>
 
 </manifest>

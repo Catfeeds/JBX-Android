@@ -16,24 +16,15 @@
         android:paddingRight="@dimen/sixteen_dp"
         android:paddingTop="@dimen/ten_dp"
         android:visibility="gone">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#FFD8D8D8"
-            android:scaleType="centerCrop"
-            android:src="@drawable/placerholder" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/twenty_dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="订单号：1512342"
+                android:text="报价单号：1512342"
                 android:textColor="#FF000000"
                 android:textSize="@dimen/sixteen_sp" />
 
@@ -72,23 +63,17 @@
             android:paddingRight="@dimen/sixteen_dp"
             android:paddingTop="@dimen/ten_dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFD8D8D8"
-                android:scaleType="centerCrop"
-                android:src="@drawable/placerholder" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/twenty_dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="订单号：1512342"
+                    android:text="报价单号：1512342"
                     android:textColor="#FF000000"
                     android:textSize="@dimen/sixteen_sp" />
 
@@ -181,23 +166,16 @@
         android:paddingRight="@dimen/sixteen_dp"
         android:paddingTop="@dimen/ten_dp">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#FFD8D8D8"
-            android:scaleType="centerCrop"
-            android:src="@drawable/placerholder" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/twenty_dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="订单号：1512342"
+                android:text="询价单号：1512342"
                 android:textColor="#FF000000"
                 android:textSize="@dimen/sixteen_sp" />
 
@@ -226,23 +204,17 @@
         android:paddingTop="@dimen/ten_dp"
         android:visibility="gone">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#FFD8D8D8"
-            android:scaleType="centerCrop"
-            android:src="@drawable/placerholder" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/twenty_dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="订单号：1512342"
+                android:text="询价单号：1512342"
                 android:textColor="#FF000000"
                 android:textSize="@dimen/sixteen_sp" />
 

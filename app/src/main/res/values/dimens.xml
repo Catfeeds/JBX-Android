@@ -55,4 +55,7 @@
     <dimen name="one_hundred_one_dp">101dp</dimen>
     <dimen name="fifty_dp">50dp</dimen>
     <dimen name="sixteen_sp">16sp</dimen>
+    <dimen name="twenty_four_sp">24sp</dimen>
+    <dimen name="ten_sp">10sp</dimen>
+    <dimen name="two_hundred_dp">200dp</dimen>
 </resources>

@@ -67,9 +67,16 @@ dependencies {
     implementation 'com.android.support:design:27.0.2'
     implementation files('libs/okhttputils-2_6_2.jar')
     compile 'com.squareup.okhttp3:okhttp:3.9.1'
-//    implementation files('libs/okhttp-3.9.1.jar')
-//    implementation files('libs/okio-1.8.0.jar')
+    //    implementation files('libs/okhttp-3.9.1.jar')
+    //    implementation files('libs/okio-1.8.0.jar')
     // 仿照iOS 风格的选择器 https://github.com/Bigkoo/Android-PickerView
     compile 'com.contrarywind:Android-PickerView:3.2.7'
-
+    implementation files('libs/umeng_social_api.jar')
+    implementation files('libs/umeng_social_net.jar')
+    implementation files('libs/umeng_social_tool.jar')
+    implementation files('libs/open_sdk_r5923_lite.jar')
+    implementation files('libs/SocialSDK_QQ_Full.jar')
+    implementation files('libs/SocialSDK_WeiXin_Full.jar')
+    implementation files('libs/wechat-sdk-android-with-mta-1.1.6.jar')
+    implementation files('libs/umeng-common-1.4.3.jar')
 }

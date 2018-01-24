@@ -21,9 +21,7 @@ import com.example.zhengdong.base.Macro.LogUtil;
 import com.example.zhengdong.base.Macro.dzRecycleview.DzRecyclerView;
 import com.example.zhengdong.base.Macro.dzRecycleview.LoadMoreListener;
 import com.example.zhengdong.base.Macro.dzRecycleview.ProgressView;
-import com.example.zhengdong.base.Section.First.Controller.IronMasterWC;
 import com.example.zhengdong.base.Section.Five.Adapter.MineOfferListAdapter;
-import com.example.zhengdong.base.Section.Four.Adapter.NewsListAdapter;
 import com.example.zhengdong.jbx.R;
 
 import butterknife.BindView;
@@ -152,8 +150,10 @@ public class MineOfferFC extends Fragment {
         common_rv.setAdapter(mineOfferListAdapter);
         mineOfferListAdapter.setOnItemClickListener(new MineOfferListAdapter.OnItemClickListener() {
             @Override
-            public void OnItemClick(View view, String name) {
-
+            public void OnItemClick(View view, int cellType) {
+                Intent intent = new Intent(getActivity(),MineOfferSecondAC.class);
+                intent.putExtra("offerType",types);
+                startActivity(intent);
             }
         });
     }

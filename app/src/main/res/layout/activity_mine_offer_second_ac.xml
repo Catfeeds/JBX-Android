@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) create by ki1lt0 .
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zhengdong.base.Section.Five.Controller.MineOfferSecondAC">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/com_navi_title_bar_item" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/mine_offer_second_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/four_four_dp">
+        </android.support.v7.widget.RecyclerView>
+
+        <!--订单报价页面-->
+        <LinearLayout
+            android:id="@+id/order_price_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/fifteen_dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="报价金额："
+                android:textColor="#FF000000"
+                android:textSize="@dimen/fourteen_sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¥"
+                    android:textColor="#FF000000"
+                    android:textSize="@dimen/twenty_four_sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:gravity="center"
+                    android:hint="请输入报价金额"
+                    android:inputType="numberDecimal"
+                    android:textSize="30sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/one_dp"
+                android:background="#FFEDEDED" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten_dp"
+                android:background="@null"
+                android:cursorVisible="true"
+                android:hint="添加备注"
+                android:inputType="textMultiLine"
+                android:paddingBottom="@dimen/fifteen_dp"
+                android:paddingTop="@dimen/fifteen_dp"
+                android:textSize="@dimen/fourteen_sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/threeteen_dp"
+                android:background="@drawable/table_shape_button_radio_eight"
+                android:text="确认报价"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sixteen_sp" />
+
+        </LinearLayout>
+        <!--订货单详情-->
+        <ScrollView
+            android:id="@+id/order_detail_cell"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/sixteen_dp"
+                android:paddingRight="@dimen/sixteen_dp"
+                android:paddingTop="@dimen/fifteen_dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:text="概要信息"
+                        android:textColor="#FF0076FF"
+                        android:textSize="@dimen/sixteen_sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/one_dp"
+                        android:layout_marginTop="@dimen/five_dpp"
+                        android:background="#FF0076FF" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:layout_marginRight="@dimen/ten_dp"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="项目名称：20171121-02"
+                            android:textColor="#FF000000"
+                            android:textSize="@dimen/fourteen_sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten_dp"
+                            android:text="材质种类：1类(201)"
+                            android:textColor="#FF000000"
+                            android:textSize="@dimen/fourteen_sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten_dp"
+                            android:text="板材总数量(张)：5"
+                            android:textColor="#FF000000"
+                            android:textSize="@dimen/fourteen_sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten_dp"
+                            android:text="部件总面积(㎡)：0.01"
+                            android:textColor="#FF000000"
+                            android:textSize="@dimen/fourteen_sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten_dp"
+                            android:text="板材总面积(㎡)：10.00"
+                            android:textColor="#FF000000"
+                            android:textSize="@dimen/fourteen_sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten_dp"
+                            android:text="部件数量(个)：3"
+                            android:textColor="#FF000000"
+                            android:textSize="@dimen/fourteen_sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/twenty_dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:text="用料统计"
+                        android:textColor="#FF0076FF"
+                        android:textSize="@dimen/sixteen_sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/one_dp"
+                        android:layout_marginTop="@dimen/five_dpp"
+                        android:background="#FF0076FF" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:layout_marginRight="@dimen/ten_dp"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="@dimen/zero_dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="材质：201"
+                                android:textColor="#FF000000"
+                                android:textSize="@dimen/fourteen_sp" />
+
+                            <TextView
+                                android:layout_width="@dimen/zero_dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="厚度：0.3"
+                                android:textColor="#FF000000"
+                                android:textSize="@dimen/fourteen_sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten_dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="@dimen/zero_dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="板材颜色：宝石蓝"
+                                android:textColor="#FF000000"
+                                android:textSize="@dimen/fourteen_sp" />
+
+                            <TextView
+                                android:layout_width="@dimen/zero_dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="材料规格：1000*2000*5"
+                                android:textColor="#FF000000"
+                                android:textSize="@dimen/fourteen_sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/twenty_dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:text="加工统计"
+                        android:textColor="#FF0076FF"
+                        android:textSize="@dimen/sixteen_sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/one_dp"
+                        android:layout_marginTop="@dimen/five_dpp"
+                        android:background="#FF0076FF" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:layout_marginRight="@dimen/ten_dp"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="@dimen/zero_dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="下料刀数(刀)：3"
+                                android:textColor="#FF000000"
+                                android:textSize="@dimen/fourteen_sp" />
+
+                            <TextView
+                                android:layout_width="@dimen/zero_dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="折弯(刀)：15"
+                                android:textColor="#FF000000"
+                                android:textSize="@dimen/fourteen_sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten_dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="@dimen/zero_dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="刨槽(m)：0.00"
+                                android:textColor="#FF000000"
+                                android:textSize="@dimen/fourteen_sp" />
+
+                            <TextView
+                                android:layout_width="@dimen/zero_dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=""
+                                android:textColor="#FF000000"
+                                android:textSize="@dimen/fourteen_sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/twenty_dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:text="加工部件详情"
+                        android:textColor="#FF0076FF"
+                        android:textSize="@dimen/sixteen_sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/one_dp"
+                        android:layout_marginTop="@dimen/five_dpp"
+                        android:background="#FF0076FF" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:layout_marginRight="@dimen/ten_dp"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten_dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                           <ImageView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:src="@drawable/placerholder"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingRight="@dimen/ten_dp"
+                                android:paddingLeft="@dimen/ten_dp"
+                                android:orientation="vertical">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="材质：201"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="个数(个)：2"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/five_dpp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="厚度：0.3"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="纹路：无"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/five_dpp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="内尺：外尺"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="面朝向：朝内"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/five_dpp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="颜色：宝石蓝拉丝"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="剖面：198"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/five_dpp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="工艺："
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="下料宽度：193"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/five_dpp"
+                                    android:weightSum="3">
+                                    <TextView
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="部件名称"
+                                        android:textColor="#FF666666"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        android:layout_weight="1"
+                                        />
+                                    <TextView
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="长度"
+                                        android:textColor="#FF666666"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        android:layout_weight="1"
+                                        />
+                                    <TextView
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="数量"
+                                        android:textColor="#FF666666"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        android:layout_weight="1"
+                                        />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/five_dpp"
+                                    android:weightSum="3">
+                                    <TextView
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="加工件：7#2#"
+                                        android:textColor="#FF666666"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        android:layout_weight="1"
+                                        />
+                                    <TextView
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="1"
+                                        android:textColor="#FF666666"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        android:layout_weight="1"
+                                        />
+                                    <TextView
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="1"
+                                        android:textColor="#FF666666"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        android:layout_weight="1"
+                                        />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="@dimen/ten_dp"
+                            android:layout_height="@dimen/one_dp"
+                            android:background="#D9D9D9"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten_dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/placerholder"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingRight="@dimen/ten_dp"
+                                android:paddingLeft="@dimen/ten_dp"
+                                android:orientation="vertical">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="材质：201"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="个数(个)：2"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/five_dpp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="厚度：0.3"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="纹路：无"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/five_dpp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="内尺：外尺"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="面朝向：朝内"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/five_dpp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="颜色：宝石蓝拉丝"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="剖面：198"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/five_dpp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="工艺："
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                    <TextView
+                                        android:layout_weight="1"
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="下料宽度：193"
+                                        android:textColor="#FF000000"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/five_dpp"
+                                    android:weightSum="3">
+                                    <TextView
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="部件名称"
+                                        android:textColor="#FF666666"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        android:layout_weight="1"
+                                        />
+                                    <TextView
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="长度"
+                                        android:textColor="#FF666666"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        android:layout_weight="1"
+                                        />
+                                    <TextView
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="数量"
+                                        android:textColor="#FF666666"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        android:layout_weight="1"
+                                        />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/five_dpp"
+                                    android:weightSum="3">
+                                    <TextView
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="加工件：7#2#"
+                                        android:textColor="#FF666666"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        android:layout_weight="1"
+                                        />
+                                    <TextView
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="1"
+                                        android:textColor="#FF666666"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        android:layout_weight="1"
+                                        />
+                                    <TextView
+                                        android:layout_width="@dimen/zero_dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="1"
+                                        android:textColor="#FF666666"
+                                        android:textSize="@dimen/fourteen_sp"
+                                        android:layout_weight="1"
+                                        />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/one_dp"
+                            android:layout_marginTop="@dimen/ten_dp"
+                            android:background="#D9D9D9"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/four_cell_bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/four_four_dp"
+        android:layout_alignParentBottom="true"
+        android:background="#32C607"
+        android:gravity="center_vertical|center_horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看询价单详情"
+            android:textColor="#FFFFFFFF"
+            android:textSize="@dimen/sixteen_sp" />
+    </LinearLayout>
+
+</RelativeLayout>
