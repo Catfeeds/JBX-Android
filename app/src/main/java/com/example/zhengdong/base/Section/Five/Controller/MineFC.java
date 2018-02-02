@@ -14,10 +14,16 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.zhengdong.base.APIManager.UrlUtils;
+import com.example.zhengdong.base.Macro.SharedPreferencesUtils;
+import com.example.zhengdong.base.Macro.XToast;
 import com.example.zhengdong.base.Section.Five.Adapter.MineListAdapter;
 import com.example.zhengdong.base.Section.Five.View.CircleImageView;
 import com.example.zhengdong.base.Section.Four.View.XScrollView;
+import com.example.zhengdong.base.Section.Login.EventBus.LoginEvents;
 import com.example.zhengdong.jbx.R;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,6 +73,7 @@ public class MineFC extends Fragment {
     private View view;
     private MineListAdapter mineListAdapter;
 
+    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -93,6 +100,13 @@ public class MineFC extends Fragment {
                 if (position == 2||position == 3){
                     // mine offer
                     initMineOfferView(name);
+                }else if (position == 8){
+                    XToast.show(getContext(),"退出登录成功!");
+                    EventBus.getDefault().post(new LoginEvents("",false));
+                    SharedPreferencesUtils.setParam(getActivity(),UrlUtils.APP_TOKEN,"");
+                    SharedPreferencesUtils.setParam(getActivity(),UrlUtils.APP_ORANGE_ID,"");
+                    SharedPreferencesUtils.setParam(getActivity(), UrlUtils.APP_USERNAME,"");
+                    SharedPreferencesUtils.setParam(getActivity(), UrlUtils.APP_PASSWORD,"");
                 }
             }
         });

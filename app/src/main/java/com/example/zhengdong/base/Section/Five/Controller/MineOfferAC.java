@@ -107,7 +107,7 @@ public class MineOfferAC extends BaseAC {
 
             }
         });
-        tabLay.showMsg(1,5);
+//        tabLay.showMsg(1,5);
         tabLay.setMsgMargin(5,65,10);
     }
 

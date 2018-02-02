@@ -193,5 +193,6 @@
     <color name="text_gray_color">#FF333333</color>
     <color name="tab_bg">#FFF3F3F3</color>
     <color name="line_bg">#6497EA</color>
+    <color name="light_grays">#f1f1f1</color>
 
 </resources>

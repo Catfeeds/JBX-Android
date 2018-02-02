@@ -13,14 +13,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/boutique_rv"
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="none"
-            android:overScrollMode="never">
-        </android.support.v7.widget.RecyclerView>
-
+            android:layout_height="@dimen/zero_dp"
+            android:background="#FFF3F3F3" />
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <com.example.zhengdong.base.Macro.dzRecycleview.DzRecyclerView
+                android:id="@+id/boutique_rv"
+                android:scrollbars="none"
+                android:overScrollMode="never"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </com.example.zhengdong.base.Macro.dzRecycleview.DzRecyclerView>
+        </android.support.v4.widget.SwipeRefreshLayout>
     </LinearLayout>
+
 
 </FrameLayout>

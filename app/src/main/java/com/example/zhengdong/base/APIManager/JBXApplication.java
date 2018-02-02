@@ -28,8 +28,8 @@ public class JBXApplication extends Application {
          * 初始化友盟各个平台的KEY
          * */
         UMShareAPI.get(this);
-        PlatformConfig.setWeixin("wx54eebabc3dd0ff85", "ff08f0b40473eb7db23c95b5450a0518");
-        PlatformConfig.setQQZone("1106185869", "coKGUnnxmpMPy0il");
+        PlatformConfig.setWeixin("wx06f743d492caa4c3", "e380fe2466a5413506b1ea0860c7ac93");
+        PlatformConfig.setQQZone("1106627131", "1Rb55kS7nsSY6JBR");
 //        PlatformConfig.setSinaWeibo("3613900046", "7adc9187e699e83330c28d8b4abafb2f","http://sns.whalecloud.com");
 //        PlatformConfig.setDing("dingoaw1zc3hnitsoab1qb");
         // 配置cookie

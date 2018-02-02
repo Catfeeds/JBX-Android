@@ -25,6 +25,8 @@ import android.widget.TextView;
 
 import com.example.zhengdong.base.APIManager.UrlUtils;
 import com.example.zhengdong.base.Macro.DesUtils;
+import com.example.zhengdong.base.Macro.LogUtil;
+import com.example.zhengdong.base.Macro.SharedPreferencesUtils;
 import com.example.zhengdong.base.Macro.XToast;
 import com.example.zhengdong.base.Section.First.Controller.IronMasterWC;
 import com.example.zhengdong.base.Section.Login.Controller.LoginAC;
@@ -103,9 +105,13 @@ public class IronMasterFC extends Fragment {
         SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHH");
         String key = sdf.format(new java.util.Date());
         String url = "";
+        String token = String.valueOf(SharedPreferencesUtils.getParam(getActivity(), UrlUtils.APP_TOKEN, ""));
+
         try {
             String desId = DesUtils.encrypt("73", key);
-            url = UrlUtils.IRON_MASTER_URL + "/GCGL/html/wap/gc/html/login2.html?u=" + desId + "&client=android";
+//            url = UrlUtils.IRON_MASTER_URL + "/GCGL/html/wap/gc/html/login2.html?u=" + desId + "&client=android";
+            LogUtil.e("当前的网址:"+url);
+            url = UrlUtils.IRON_NEW_MASTER_URL+token;
         }catch (Exception e){
         }
         masterWebview.loadUrl(url);

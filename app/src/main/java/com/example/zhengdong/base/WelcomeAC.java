@@ -30,13 +30,19 @@ public class WelcomeAC extends AppCompatActivity {
                     goHome();
                     break;
                 case GO_GUIDE:
-                    goHome();
+                    goPessmisson();
                     break;
                 default:
                     break;
             }
         }
     };
+
+    // 获取定位权限
+    private void goPessmisson() {
+        goHome();
+    }
+
     private ViewFlipper allFlipper;
     private RelativeLayout splashLayout;
     @Override

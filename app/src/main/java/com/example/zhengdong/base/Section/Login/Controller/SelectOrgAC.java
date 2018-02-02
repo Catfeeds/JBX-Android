@@ -17,10 +17,13 @@ import com.example.zhengdong.base.General.BaseAC;
 import com.example.zhengdong.base.Macro.SharedPreferencesUtils;
 import com.example.zhengdong.base.Macro.XToast;
 import com.example.zhengdong.base.Section.Login.Adapter.OrganListAdapter;
+import com.example.zhengdong.base.Section.Login.EventBus.LoginEvents;
 import com.example.zhengdong.base.Section.Login.Model.LoginModel;
 import com.example.zhengdong.base.Section.Login.Model.OrganListModel;
 import com.example.zhengdong.jbx.R;
 import com.google.gson.Gson;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,6 +59,7 @@ public class SelectOrgAC extends BaseAC {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_org_ac);
         ButterKnife.bind(this);
+//        EventBus.getDefault().register(SelectOrgAC.this);
         initGetData();
         initNavigationView();
     }
@@ -137,7 +141,7 @@ public class SelectOrgAC extends BaseAC {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        RxBus.rxBusUnbund(compositeDisposable);
+//        EventBus.getDefault().unregister(SelectOrgAC.this);
     }
 
     private void initNavigationView() {
@@ -196,6 +200,8 @@ public class SelectOrgAC extends BaseAC {
                     XToast.show(getBaseContext(),"设置成功!");
                     SharedPreferencesUtils.setParam(SelectOrgAC.this,UrlUtils.APP_NAME,organName);
                     SharedPreferencesUtils.setParam(SelectOrgAC.this,UrlUtils.APP_ORANGE_ID,organID);
+                    EventBus.getDefault().post(new LoginEvents("登录成功!",true));
+                    finish();
                 }else {
                     XToast.show(getBaseContext(),""+loginModel.getMsg());
                 }

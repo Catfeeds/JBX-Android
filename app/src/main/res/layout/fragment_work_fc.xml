@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/fragment_work_view"
     tools:context="com.example.zhengdong.base.Section.First.Controller.WorkFC">
 
     <LinearLayout
@@ -14,20 +15,55 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include layout="@layout/com_navi_title_bar_item" />
+            <include layout="@layout/location_navi_title_bar_item" />
         </LinearLayout>
 
-
+        <!--首页广告-->
         <LinearLayout
+            android:id="@+id/ad_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/ad_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:scrollbars="vertical">
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+        <!--商城界面-->
+        <LinearLayout
+            android:id="@+id/market_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:orientation="vertical">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/shop_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:overScrollMode="never">
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+        <!--组织机构-->
+        <LinearLayout
+            android:id="@+id/orgi_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/work_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:overScrollMode="never"
-                android:scrollbars="none"></android.support.v7.widget.RecyclerView>
+                android:scrollbars="none">
+            </android.support.v7.widget.RecyclerView>
         </LinearLayout>
 
     </LinearLayout>

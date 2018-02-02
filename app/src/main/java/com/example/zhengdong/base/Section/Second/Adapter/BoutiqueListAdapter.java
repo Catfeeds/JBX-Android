@@ -5,7 +5,6 @@
 package com.example.zhengdong.base.Section.Second.Adapter;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +13,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.zhengdong.base.APIManager.UrlUtils;
 import com.example.zhengdong.base.Section.First.View.GlideApp;
+import com.example.zhengdong.base.Section.Five.View.CircleImageView;
+import com.example.zhengdong.base.Section.Second.Model.BoutiqueListModel;
 import com.example.zhengdong.jbx.R;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,19 +28,7 @@ public class BoutiqueListAdapter extends RecyclerView.Adapter<BoutiqueListAdapte
 
 
     private int types = 0;
-    public String[] datas = null;
-    int[] picArrs = {
-            R.drawable.test1, R.drawable.test19, R.drawable.test2, R.drawable.test3, R.drawable.test4, R.drawable.test5, R.drawable.test6,
-            R.drawable.test7, R.drawable.test8, R.drawable.test9, R.drawable.test10, R.drawable.test11, R.drawable.test12,
-            R.drawable.test13, R.drawable.test14, R.drawable.test16, R.drawable.test17, R.drawable.test18 ,R.drawable.test15,
-    };
-    String[] nameStr = {
-            "弧形精品#1测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本", "弧形精品#1测试文本测试文本测试文本测试文本测试文本", "框类精品#1测试文本测试文本", "框类精品#2测试文本测试文本", "斜边精品#1测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本",
-            "斜边精品#2测试文本测试文本测试文本测试文本测试文本",
-            "弧形精品#2测试文本测试文本测试文本测试文本测试文本", "盒子精品#1测试文本测试文本测试文本测试文本测试文本",
-            "盒子精品#2测试文本测试文本测试文本", "盒子精品#3测试文本", "U形精品#1测试文本测试文本测试文本测试文本测试文本", "弧形精品#3",
-            "框类精品#3测试文本测试文本测试文本测试文本", "U形精品#2测试文本", "方形精品#1测试文本测试文本测试文本测试文本", "盒子精品#4测试文本", "弧形精品#4测试文本测试文本测试文本测试文本测试文本测试文本", "异形精品#2测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本","异形精品#3"
-    };
+    public List<BoutiqueListModel.DataBean.FanexListBean> datas = null;
 
     /**
      * 修改 增加context
@@ -49,7 +41,7 @@ public class BoutiqueListAdapter extends RecyclerView.Adapter<BoutiqueListAdapte
     private OnItemClickListener mOnItemClickListener;
 
     public interface OnItemClickListener {
-        void OnItemClick(View view, int name);
+        void OnItemClick(View view, String graphical_id, String name);
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
@@ -57,7 +49,7 @@ public class BoutiqueListAdapter extends RecyclerView.Adapter<BoutiqueListAdapte
     }
 
 
-    public BoutiqueListAdapter(Context context, String[] datas) {
+    public BoutiqueListAdapter(Context context, List<BoutiqueListModel.DataBean.FanexListBean> datas) {
         mContext = context;
         this.datas = datas;
     }
@@ -71,23 +63,25 @@ public class BoutiqueListAdapter extends RecyclerView.Adapter<BoutiqueListAdapte
 
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
+        viewHolder.nameTxt.setText("" + datas.get(position).getUser_name());
+        viewHolder.timeTxt.setText("" + datas.get(position).getApply_ts());
         GlideApp.with(mContext)
-                .load(picArrs[position])
+                .load(UrlUtils.BASE_PIC_URL + datas.get(position).getPic_path())
                 .placeholder(R.drawable.placerholder)
                 .into(viewHolder.pic);
-//        viewHolder.pic.setBackgroundResource(picArrs[position]);
-        viewHolder.txt.setText(nameStr[position]);
+        viewHolder.txt.setText(datas.get(position).getPresentation());
+
         viewHolder.cardCell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mOnItemClickListener.OnItemClick(view,position);
+                mOnItemClickListener.OnItemClick(view, datas.get(position).getGraphical_id(),datas.get(position).getFanc_id());
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return picArrs.length;
+        return datas.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -98,6 +92,14 @@ public class BoutiqueListAdapter extends RecyclerView.Adapter<BoutiqueListAdapte
         TextView txt;
         @BindView(R.id.card_cell)
         LinearLayout cardCell;
+        @BindView(R.id.header_pic)
+        CircleImageView headerPic;
+        @BindView(R.id.name_txt)
+        TextView nameTxt;
+        @BindView(R.id.time_txt)
+        TextView timeTxt;
+        @BindView(R.id.flag_txt)
+        TextView flagTxt;
 
         public ViewHolder(View view) {
             super(view);

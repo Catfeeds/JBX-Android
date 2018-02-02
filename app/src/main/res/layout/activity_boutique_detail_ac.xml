@@ -1,46 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) create by ki1lt0 .
   -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/detail_content"
     android:background="@android:color/white"
     tools:context="com.example.zhengdong.base.Section.Second.Controller.BoutiqueDetailAC">
-    <com.example.zhengdong.base.Section.Second.View.HeadZoomScrollView
+
+    <ScrollView
         android:id="@+id/head_sv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fillViewport="true"
         android:overScrollMode="never">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/header_pic"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/placerholder" />
+                android:layout_height="wrap_content">
+
+                <com.example.zhengdong.base.Section.First.View.RecyclerBanner
+                    android:id="@+id/header_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:overScrollMode="never"
+                    android:scrollbars="none" />
+            </RelativeLayout>
 
 
             <RelativeLayout
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#F6F6F6">
+                android:background="#F6F6F6"
+                android:visibility="gone">
+
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/comment_rv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:overScrollMode="never">
-                </android.support.v7.widget.RecyclerView>
+                    android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
             </RelativeLayout>
 
             <LinearLayout
@@ -48,258 +54,288 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="@dimen/fifteen_dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
+
                     <com.example.zhengdong.base.Section.Five.View.CircleImageView
                         android:id="@+id/mine_header_pic"
                         android:layout_width="26dp"
                         android:layout_height="26dp"
                         android:layout_alignParentLeft="true"
-                        app:border_width="@dimen/zero_dp"
-                        app:border_color="@color/white"
+                        android:scaleType="centerCrop"
                         android:src="@drawable/placerholder"
-                        android:scaleType="centerCrop" />
+                        app:border_color="@color/white"
+                        app:border_width="@dimen/zero_dp" />
+
                     <TextView
+                        android:id="@+id/name_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Caleb Watts"
                         android:layout_marginLeft="@dimen/ten_dp"
+                        android:text=""
                         android:textColor="#FF000000"
-                        android:textSize="@dimen/fourteen_sp"
-                        />
+                        android:textSize="@dimen/fourteen_sp" />
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/title_txt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/twenty_dp"
-                    android:text="可定制展柜，珠宝展示柜"
+                    android:text=""
                     android:textColor="#FF000000"
-                    android:textSize="@dimen/eighteen_sp"
-                    />
+                    android:textSize="@dimen/eighteen_sp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/twenty_dp"
                     android:orientation="horizontal">
+
                     <TextView
+                        android:id="@+id/time_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="02-18"
+                        android:text=""
                         android:textColor="#FF666666"
-                        android:textSize="@dimen/twenty_sp"
-                        />
+                        android:textSize="@dimen/twenty_sp" />
+
                     <TextView
+                        android:id="@+id/use_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="169"
-                        android:textColor="#FF666666"
                         android:layout_marginLeft="@dimen/ten_dp"
-                        android:textSize="@dimen/twenty_sp"
-                        />
+                        android:text=""
+                        android:textColor="#FF666666"
+                        android:textSize="@dimen/twenty_sp" />
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/icon_fab"
-                        android:layout_marginLeft="@dimen/ten_dp"/>
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:src="@drawable/icon_fab" />
 
                     <TextView
+                        android:id="@+id/raise_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="169"
+                        android:text=""
                         android:textColor="#FF666666"
-                        android:textSize="@dimen/twenty_sp"
-                        />
+                        android:textSize="@dimen/twenty_sp" />
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/icon_com"
-                        android:layout_marginLeft="@dimen/ten_dp"/>
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        android:src="@drawable/icon_com" />
 
                     <TextView
+                        android:id="@+id/comment_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="169"
+                        android:text=""
                         android:textColor="#FF666666"
-                        android:textSize="@dimen/twenty_sp"
-                        />
+                        android:textSize="@dimen/twenty_sp" />
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/twenty_dp"
                     android:orientation="horizontal">
+
                     <View
                         android:layout_width="@dimen/two_dp"
                         android:layout_height="match_parent"
-                        android:background="#FFD8D8D8"
-                        />
+                        android:background="#FFD8D8D8" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <TextView
+                                android:id="@+id/material_txt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="材质：铁板"
                                 android:layout_marginLeft="@dimen/fifteen_dp"
+                                android:text=""
                                 android:textColor="#FF666666"
-                                android:textSize="@dimen/fourteen_sp"
-                                />
+                                android:textSize="@dimen/fourteen_sp" />
+
                             <TextView
+                                android:id="@+id/height_txt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/twenty_dp"
-                                android:text="厚度：0.8"
+                                android:text=""
                                 android:textColor="#FF666666"
-                                android:textSize="@dimen/fourteen_sp"
-                                />
+                                android:textSize="@dimen/fourteen_sp" />
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <TextView
+                                android:id="@+id/color_txt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="板材颜色：玫瑰金拉丝"
-                                android:layout_marginTop="@dimen/ten_dp"
                                 android:layout_marginLeft="@dimen/fifteen_dp"
+                                android:layout_marginTop="@dimen/ten_dp"
+                                android:text=""
                                 android:textColor="#FF666666"
-                                android:textSize="@dimen/fourteen_sp"
-                                />
+                                android:textSize="@dimen/fourteen_sp" />
 
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/ten_dp"
                             android:orientation="horizontal">
+
                             <TextView
+                                android:id="@+id/length_txt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="长度：1100"
                                 android:layout_marginLeft="@dimen/fifteen_dp"
+                                android:text=""
                                 android:textColor="#FF666666"
-                                android:textSize="@dimen/fourteen_sp"
-                                />
+                                android:textSize="@dimen/fourteen_sp" />
+
                             <TextView
+                                android:id="@+id/width_txt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/twenty_dp"
-                                android:text="宽度：1100"
+                                android:text=""
                                 android:textColor="#FF666666"
-                                android:textSize="@dimen/fourteen_sp"
-                                />
+                                android:textSize="@dimen/fourteen_sp" />
+
                             <TextView
+                                android:id="@+id/total_sum_txt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/twenty_dp"
-                                android:text="总面积：1100"
+                                android:text=""
                                 android:textColor="#FF666666"
-                                android:textSize="@dimen/fourteen_sp"
-                                />
+                                android:textSize="@dimen/fourteen_sp" />
                         </LinearLayout>
                     </LinearLayout>
 
 
                 </LinearLayout>
+
                 <TextView
+                    android:id="@+id/descript_txt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="位于澳大利亚帕丁顿的珠宝零售店，由Landini Associates设计。这是一家珠宝定制店，与商业大众零售市场形成鲜明对比的是店内从内至外几乎看不到成品陈列，打破了传统意义上的零售店，仅能看到陈列小珠宝盒的长方形珠宝陈列柜台。产品作为定制体验的一部分，通过原材料和流程与客户进行交流，引导客户从中找到最完美的首饰。从选材到定制成品，均在该店完成，这也是品牌的一种理念。"
-                    android:textColor="#FF000000"
                     android:layout_marginTop="@dimen/twenty_dp"
-                    android:textSize="@dimen/fourteen_sp"
-                    />
+                    android:text=""
+                    android:textColor="#FF000000"
+                    android:textSize="@dimen/fourteen_sp" />
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </com.example.zhengdong.base.Section.Second.View.HeadZoomScrollView>
+    </ScrollView>
+
     <LinearLayout
         android:id="@+id/back"
         android:layout_width="@dimen/four_eight"
         android:layout_height="@dimen/four_eight"
         android:layout_marginTop="@dimen/fifteen_dp"
         android:gravity="center_vertical|center_horizontal">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/icon__in_back"/>
+            android:src="@drawable/icon__in_back" />
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/share"
-        android:layout_marginTop="@dimen/fifteen_dp"
         android:layout_width="@dimen/four_eight"
         android:layout_height="@dimen/four_eight"
         android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/fifteen_dp"
         android:gravity="center_vertical|center_horizontal">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/icon_in_more"/>
+            android:src="@drawable/icon_in_more" />
     </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/four_eight"
         android:layout_alignParentBottom="true"
         android:background="@color/white">
+
         <RelativeLayout
             android:id="@+id/input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="6dp"
             android:layout_marginLeft="@dimen/sixteen_dp"
             android:layout_marginRight="@dimen/ninety_dp"
             android:layout_marginTop="6dp"
-            android:layout_marginBottom="6dp"
             android:background="@drawable/table_shape_gray_bg">
+
             <ImageView
                 android:id="@+id/write"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icon_speak"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="@dimen/ten_dp"/>
+                android:layout_marginLeft="@dimen/ten_dp"
+                android:src="@drawable/icon_speak" />
+
             <EditText
                 android:id="@+id/edt"
-                android:layout_toRightOf="@+id/write"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/write"
                 android:background="@null"
-                android:textColor="@color/black"
-                android:textSize="@dimen/fiften_sp"
+                android:cursorVisible="true"
                 android:hint="  我有话说"
-                android:inputType="text"
                 android:imeOptions="actionSend"
+                android:inputType="text"
+                android:textColor="@color/black"
                 android:textColorHint="#666666"
-                android:cursorVisible="true"/>
+                android:textSize="@dimen/fiften_sp" />
         </RelativeLayout>
+
         <ImageView
             android:id="@+id/comment_list_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/shape_msg"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="53dp"
-            android:layout_centerVertical="true"/>
+            android:src="@drawable/shape_msg" />
+
         <ImageView
             android:id="@+id/raise_btn"
             android:layout_width="@dimen/twenty_two_dp"
             android:layout_height="@dimen/twenty_two_dp"
-            android:src="@drawable/icon_fab"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="17dp"
-            android:layout_centerVertical="true"/>
+            android:src="@drawable/icon_fab" />
     </RelativeLayout>
 
 </RelativeLayout>

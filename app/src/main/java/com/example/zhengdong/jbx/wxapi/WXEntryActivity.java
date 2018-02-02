@@ -2,7 +2,7 @@
  * Copyright (c) create by ki1lt0 .
  */
 
-package com.example.zhengdong.base.wxapi;
+package com.example.zhengdong.jbx.wxapi;
 
 
 //import com.umeng.weixin.callback.WXCallbackActivity;

@@ -14,12 +14,20 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.zhengdong.base.APIManager.HttpInterFace;
+import com.example.zhengdong.base.APIManager.HttpRequest;
+import com.example.zhengdong.base.APIManager.UrlUtils;
+import com.example.zhengdong.base.Macro.XToast;
 import com.example.zhengdong.base.Section.Second.Adapter.BoutiqueListAdapter;
+import com.example.zhengdong.base.Section.Second.Model.BoutiqueItemListModel;
 import com.example.zhengdong.jbx.R;
 import com.flyco.tablayout.SlidingTabLayout;
 import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,12 +58,12 @@ public class MessageFC extends Fragment {
     @BindView(R.id.tab_lay)
     SlidingTabLayout tab_lay;
     private View view;
-
-    private String[] mTitles = {
-            "展柜", "屏风", "制品", "配件", "雕塑"
-    };
     private ArrayList<BoutiqueListFC> mFragments = new ArrayList<>();
     private MyPagerAdapter mAdapter;
+    private BoutiqueItemListModel boutiqueItemListModel;
+    private List<BoutiqueItemListModel.DataBean> dataSource;
+    private ArrayList<String> mTitles;
+    private ArrayList<String> mID;
 
 
     @Override
@@ -66,14 +74,50 @@ public class MessageFC extends Fragment {
             view = inflater.inflate(R.layout.fragment_message_fc, container, false);
             unbinder = ButterKnife.bind(this, view);
             initNavigationView();
-            initTabLayView();
+            initItemDataSource();
         }
         return view;
     }
 
+    private void initItemDataSource() {
+        HttpRequest.URL_JSONGETNOPARAM_REQUEST(getActivity(), UrlUtils.BOUTIQUE_ITEM_LIST_URL, "加载中...", false, new HttpInterFace() {
+            @Override
+            public void URL_REQUEST(String response) {
+                mTitles = new ArrayList<>();
+                mID = new ArrayList<>();
+                boutiqueItemListModel = new Gson().fromJson(response,BoutiqueItemListModel.class);
+                if (boutiqueItemListModel.getCode() == 200){
+                    dataSource = boutiqueItemListModel.getData();
+                    for (int i = 0;i<dataSource.size();i++){
+                        mTitles.add(dataSource.get(i).getName());
+                        mID.add(dataSource.get(i).getId());
+                    }
+                    initTabLayView();
+                }else {
+                    XToast.show(getContext(),""+boutiqueItemListModel.getMsg());
+                }
+            }
+
+            @Override
+            public void BEFORE() {
+
+            }
+
+            @Override
+            public void AFTER() {
+
+            }
+
+            @Override
+            public void NOCONNECTION() {
+
+            }
+        });
+    }
+
     private void initTabLayView() {
-        for (int i = 0; i < mTitles.length; i++) {
-            mFragments.add(new BoutiqueListFC());
+        for (int i = 0; i < mTitles.size(); i++) {
+            mFragments.add(BoutiqueListFC.getInstance(mID.get(i)));
         }
         mAdapter = new MyPagerAdapter(getActivity().getSupportFragmentManager());
         vp.setAdapter(mAdapter);
@@ -119,7 +163,7 @@ public class MessageFC extends Fragment {
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return mTitles[position];
+            return mTitles.get(position);
         }
 
         @Override

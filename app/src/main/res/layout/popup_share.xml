@@ -52,9 +52,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/icon_in_more" />
+                        android:layout_width="@dimen/four_four_dp"
+                        android:layout_height="@dimen/four_four_dp"
+                        android:background="@drawable/umeng_socialize_wechat" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -75,9 +75,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/icon_in_more" />
+                        android:layout_width="@dimen/four_four_dp"
+                        android:layout_height="@dimen/four_four_dp"
+                        android:background="@drawable/umeng_socialize_wxcircle" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -98,9 +98,9 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/icon_in_more" />
+                        android:layout_width="@dimen/four_four_dp"
+                        android:layout_height="@dimen/four_four_dp"
+                        android:background="@drawable/umeng_socialize_qq" />
 
                     <TextView
                         android:layout_width="wrap_content"

@@ -6,17 +6,32 @@ package com.example.zhengdong.base.Section.Second.Controller;
 
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.example.zhengdong.base.APIManager.HttpInterFace;
+import com.example.zhengdong.base.APIManager.HttpRequest;
+import com.example.zhengdong.base.APIManager.UrlUtils;
+import com.example.zhengdong.base.Macro.XToast;
+import com.example.zhengdong.base.Macro.dzRecycleview.DzRecyclerView;
+import com.example.zhengdong.base.Macro.dzRecycleview.LoadMoreListener;
+import com.example.zhengdong.base.Macro.dzRecycleview.ProgressView;
 import com.example.zhengdong.base.Section.Five.View.StaggerItemSeperateView;
 import com.example.zhengdong.base.Section.Second.Adapter.BoutiqueListAdapter;
+import com.example.zhengdong.base.Section.Second.Model.BoutiqueListModel;
 import com.example.zhengdong.jbx.R;
+import com.google.gson.Gson;
+
+import java.util.HashMap;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,7 +44,7 @@ public class BoutiqueListFC extends Fragment {
 
 
     @BindView(R.id.boutique_rv)
-    RecyclerView boutiqueRv;
+    DzRecyclerView boutiqueRv;
     Unbinder unbinder;
 
     String[] picArr = {
@@ -48,9 +63,19 @@ public class BoutiqueListFC extends Fragment {
             "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516276795259&di=a25e3955fe6e704541faf8f35d231193&imgtype=0&src=http%3A%2F%2Fwww.jdzj.com%2FUserDocument%2F2012Y%2Fdgxybxg%2FPicture%2F201341483122.jpg",
             "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1516276956551&di=2b22a48af81000d2ccea3ccb772e4bf8&imgtype=0&src=http%3A%2F%2Fimg5.niutuku.com%2Fphone%2F1212%2F5952%2F5952-niutuku.com-89417.jpg",
     };
+    @BindView(R.id.swipe_layout)
+    SwipeRefreshLayout swipeLayout;
+    private int page = 1;
+    private BoutiqueListAdapter boutiqueListAdapter;
+    private String itemID = "";
+    private List<BoutiqueListModel.DataBean.FanexListBean> dataSource;
+    private BoutiqueListModel boutiqueListModel;
 
-    public BoutiqueListFC() {
-        // Required empty public constructor
+
+    public static BoutiqueListFC getInstance(String itemsID) {
+        BoutiqueListFC sf = new BoutiqueListFC();
+        sf.itemID = itemsID;
+        return sf;
     }
 
 
@@ -60,28 +85,118 @@ public class BoutiqueListFC extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_boutique_list_fc, container, false);
         unbinder = ButterKnife.bind(this, view);
-        initDataSource();
+        initDataSource(itemID,1,10);
         return view;
     }
 
-    private void initDataSource() {
+    private void initDataSource(String item, final int page, int pageNum) {
+        if (page == 1){
+            dataSource = null;
+        }
+        HashMap<String,String> map = new HashMap<>();
+        map.put("fan_type",item);
+        map.put("page", String.valueOf(page));
+        map.put("pageNum", String.valueOf(pageNum));
+        HttpRequest.URL_GET_REQUEST(getActivity(), UrlUtils.BOUTIQUE_LIST_URL, map, "加载中...", false, new HttpInterFace() {
+            @Override
+            public void URL_REQUEST(String response) {
+                boutiqueListModel = new Gson().fromJson(response,BoutiqueListModel.class);
+                if (boutiqueListModel.getCode() == 200){
+                    if (page == 1) {
+                        dataSource = boutiqueListModel.getData().getFanexList();
+                        initBoutiqueView();
+                    } else {
+                        dataSource.addAll(boutiqueListModel.getData().getFanexList());
+                        boutiqueListAdapter.notifyDataSetChanged();
+                    }
+                }else {
+                    XToast.show(getContext(),""+boutiqueListModel.getMsg());
+                }
+            }
 
-        initBoutiqueView();
+            @Override
+            public void BEFORE() {
 
+            }
+
+            @Override
+            public void AFTER() {
+
+            }
+
+            @Override
+            public void NOCONNECTION() {
+
+            }
+        });
     }
 
     private void initBoutiqueView() {
-        boutiqueRv.setPadding(13,13,13,13);
+
+        swipeLayout.setColorSchemeResources(R.color.navi_back_blue_color, R.color.navi_back_blue_color, R.color.navi_back_blue_color,
+                R.color.navi_back_blue_color);
+
+        swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        //注意此处
+                        dataSource.clear();
+                        page = 1;
+                        initDataSource(itemID, 1, 10);
+                        boutiqueRv.refreshComplete();
+                        swipeLayout.setRefreshing(false);
+                        boutiqueListAdapter.notifyDataSetChanged();
+                    }
+                }, 1000);
+
+            }
+        });
+
+        boutiqueRv.setPadding(13, 13, 13, 13);
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         boutiqueRv.setLayoutManager(staggeredGridLayoutManager);
         StaggerItemSeperateView staggerItemSeperateView = new StaggerItemSeperateView(13);
         boutiqueRv.addItemDecoration(staggerItemSeperateView);
-        BoutiqueListAdapter boutiqueListAdapter = new BoutiqueListAdapter(getActivity(), picArr);
+
+        //设置自定义加载中和到底了效果
+        ProgressView progressView = new ProgressView(getActivity());
+        progressView.setIndicatorId(0);
+        progressView.setIndicatorColor(0xff307FDE);
+        boutiqueRv.setFootLoadingView(progressView);
+        boutiqueRv.setCanloadMore(true);
+        TextView textView = new TextView(getActivity());
+        textView.setText("已经到底了~");
+        textView.setTextColor(Color.BLACK);
+        boutiqueRv.setFootEndView(textView);
+        boutiqueRv.setLoadMoreListener(new LoadMoreListener() {
+            @Override
+            public void onLoadMore() {
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        if (dataSource.size() >= boutiqueListModel.getData().getTotal()) {
+                            boutiqueRv.loadMoreEnd();
+                            page = 1;
+                            return;
+                        }
+                        page += 1;
+                        initDataSource(itemID, page, 10);
+                        boutiqueRv.loadMoreComplete();
+                    }
+                }, 1000);
+            }
+        });
+
+        boutiqueListAdapter = new BoutiqueListAdapter(getActivity(), dataSource);
         boutiqueRv.setAdapter(boutiqueListAdapter);
         boutiqueListAdapter.setOnItemClickListener(new BoutiqueListAdapter.OnItemClickListener() {
             @Override
-            public void OnItemClick(View view, int name) {
-                Intent intent = new Intent(getActivity(),BoutiqueDetailAC.class);
+            public void OnItemClick(View view, String graphical_id, String Fanc_id) {
+                Intent intent = new Intent(getActivity(), BoutiqueDetailAC.class);
+                intent.putExtra("Graphical_id",graphical_id);
+                intent.putExtra("Fanc_id",Fanc_id);
                 startActivity(intent);
             }
         });

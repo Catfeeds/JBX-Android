@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <com.example.zhengdong.base.Section.Five.View.CircleImageView
-                    android:id="@+id/mine_header_pic"
+                    android:id="@+id/header_pic"
                     android:layout_width="26dp"
                     android:layout_height="26dp"
                     android:layout_alignParentLeft="true"
@@ -29,19 +29,21 @@
                     android:src="@drawable/placerholder"
                     android:scaleType="centerCrop" />
                 <TextView
-                    android:layout_toRightOf="@+id/mine_header_pic"
+                    android:id="@+id/name_txt"
+                    android:layout_toRightOf="@+id/header_pic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="厦门钢鲸科技"
+                    android:text=""
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/five_dpp"
                     android:textColor="#FF666666"
                     android:textSize="@dimen/eleven_sp"
                     />
                 <TextView
+                    android:id="@+id/time_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="02-18"
+                    android:text=""
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:textColor="#FF666666"
@@ -60,7 +62,6 @@
                 android:id="@+id/pic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"/>
 
@@ -86,6 +87,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
+                        android:id="@+id/flag_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/ten_dp"
@@ -102,6 +104,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/ten_dp"
                         android:text="#最新"
+                        android:visibility="gone"
                         android:layout_marginLeft="@dimen/ten_dp"
                         android:textColor="@color/skyblue"
                         android:background="@drawable/table_shape_blue_line_bg_six"

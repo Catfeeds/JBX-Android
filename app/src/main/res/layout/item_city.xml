@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) create by ki1lt0 .
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/grrray"/>
+    <LinearLayout
+        android:id="@+id/brand_cell"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:background="@drawable/ripple_bg"
+        android:layout_height="52dp">
+        <ImageView
+            android:id="@+id/brand_pic"
+            android:layout_width="@dimen/twenty_two_dp"
+            android:layout_height="@dimen/twenty_two_dp"
+            android:layout_marginLeft="@dimen/threeteen_sp"
+            android:background="@drawable/placerholder"/>
+
+        <TextView
+            android:id="@+id/brand_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/five_dpp"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:paddingLeft="@dimen/ten_dp"
+            android:textSize="14sp"
+            tools:text=""/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/grrray"/>
+
+
+</LinearLayout>

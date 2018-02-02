@@ -11,13 +11,15 @@ public class GetVerifyCodeModel {
      * success : true
      * code : 200
      * msg : success
-     * data : null
+     * data : a4818713257a4c74a2d71f26f1d335ff
+     * otherData : null
      */
 
     private boolean success;
     private int code;
     private String msg;
-    private Object data;
+    private String data;
+    private Object otherData;
 
     public boolean isSuccess() {
         return success;
@@ -43,11 +45,19 @@ public class GetVerifyCodeModel {
         this.msg = msg;
     }
 
-    public Object getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(String data) {
         this.data = data;
+    }
+
+    public Object getOtherData() {
+        return otherData;
+    }
+
+    public void setOtherData(Object otherData) {
+        this.otherData = otherData;
     }
 }

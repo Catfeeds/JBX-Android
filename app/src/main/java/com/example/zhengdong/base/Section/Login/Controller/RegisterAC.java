@@ -47,6 +47,7 @@ public class RegisterAC extends BaseAC {
     private String phoneNumber;
     private String verifyCode;
     private String codes;
+    private String data = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +97,8 @@ public class RegisterAC extends BaseAC {
         map.put("phone", phone);
         map.put("password", password);
         map.put("verifyCode", codes);
+        map.put("smsToken",data);
+        map.put("isWap","1");
         HttpRequest.URL_REQUEST(RegisterAC.this, map, UrlUtils.REGISTER_URL, true, "注册中...", new HttpInterFace() {
             @Override
             public void URL_REQUEST(String response) {
@@ -152,6 +155,7 @@ public class RegisterAC extends BaseAC {
                 GetVerifyCodeModel getVerifyCodeModel = new Gson().fromJson(response, GetVerifyCodeModel.class);
                 if (getVerifyCodeModel.getCode() == 200) {
                     XToast.show(getBaseContext(), "" + getVerifyCodeModel.getMsg());
+                    data = getVerifyCodeModel.getData();
 
                 } else {
                     XToast.show(getBaseContext(), "" + getVerifyCodeModel.getMsg());

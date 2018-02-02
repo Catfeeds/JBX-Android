@@ -108,8 +108,8 @@ public class CommonAC extends AppCompatActivity {
         String org_id = String.valueOf(SharedPreferencesUtils.getParam(CommonAC.this,UrlUtils.APP_ORANGE_ID,""));
         HashMap<String, String> map = new HashMap<>();
         map.put("parent_dept_id","root");
-        map.put("token",token);
-        map.put("org_id",org_id);
+//        map.put("token",token);
+//        map.put("org_id",org_id);
         HttpRequest.URL_JSONGET_REQUEST(this, UrlUtils.GET_PARENT_PARTMENT_LIST_URL,map,"加载中...", true, new HttpInterFace() {
             @Override
             public void URL_REQUEST(String response) {

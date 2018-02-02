@@ -79,4 +79,16 @@ dependencies {
     implementation files('libs/SocialSDK_WeiXin_Full.jar')
     implementation files('libs/wechat-sdk-android-with-mta-1.1.6.jar')
     implementation files('libs/umeng-common-1.4.3.jar')
+    compile 'com.github.gittjy:LoadingDialog:1.0.2'
+    // 权限控制
+    annotationProcessor 'com.zhy:mpermission-compiler:1.0.0'
+    compile 'com.zhy:mpermission-api:1.0.0'
+    implementation project(':indexlib')
+    implementation project(':citypicker')
+    // material alerk
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    // recycleview 插入动画
+    compile 'jp.wasabeef:recyclerview-animators:2.2.7'
+    // 引导用户的遮罩层
+    compile 'com.isanwenyu.highlight:highlight:1.8.0'
 }

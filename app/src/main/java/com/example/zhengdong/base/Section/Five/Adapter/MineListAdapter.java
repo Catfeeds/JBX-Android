@@ -38,12 +38,12 @@ public class MineListAdapter extends RecyclerView.Adapter<MineListAdapter.ViewHo
     private int[] commonPic;
 
     String[] mineListTitle = {
-            "我的订单", "我的关注", "我的报价", "我的询价", "邀请", "我的客服", "帮助与反馈", "设置"
+            "我的订单", "我的关注", "我的报价", "我的询价", "邀请", "我的客服", "帮助与反馈", "设置","退出登录"
     };
 
     int[] mineListPic = {
             R.drawable.my_list_order, R.drawable.my_list_follow, R.drawable.my_list_invoice, R.drawable.my_list_address,
-            R.drawable.my_list_invitation, R.drawable.my_list_ser, R.drawable.my_list_help, R.drawable.my_list_set
+            R.drawable.my_list_invitation, R.drawable.my_list_ser, R.drawable.my_list_help, R.drawable.my_list_set,R.drawable.my_list_set
     };
 
     @OnClick(R.id.mine_setting_rela)
@@ -73,7 +73,7 @@ public class MineListAdapter extends RecyclerView.Adapter<MineListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
-        if (position == 3 || position == 7) {
+        if (position == 3 || position == 8) {
             viewHolder.mineBottomLay.setVisibility(View.VISIBLE);
             viewHolder.mineLineView.setVisibility(View.GONE);
         } else {
@@ -94,7 +94,7 @@ public class MineListAdapter extends RecyclerView.Adapter<MineListAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return 8;
+        return mineListTitle.length;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

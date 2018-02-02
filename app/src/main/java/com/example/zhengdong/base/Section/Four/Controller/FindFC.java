@@ -94,7 +94,7 @@ public class FindFC extends Fragment {
      */
     // 初始化标题栏数据
     private void initTabLayData() {
-        HttpRequest.URL_JSONGETNOPARAM_REQUEST(getActivity(), UrlUtils.NEWS_TITLE_LIST, "加载中...", false, new HttpInterFace() {
+        HttpRequest.URL_JSONGETNOPARAM_REQUEST(getActivity(), UrlUtils.NEWS_TITLE_LIST, "加载中...", true, new HttpInterFace() {
             @Override
             public void URL_REQUEST(String response) {
                 LogUtil.e("打印的json" + response);
