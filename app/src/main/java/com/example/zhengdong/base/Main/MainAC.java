@@ -15,6 +15,7 @@ import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
+import android.webkit.URLUtil;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -27,6 +28,8 @@ import com.example.zhengdong.base.General.BaseAC;
 import com.example.zhengdong.base.Macro.LogUtil;
 import com.example.zhengdong.base.Macro.SharedPreferencesUtils;
 import com.example.zhengdong.base.Macro.XToast;
+import com.example.zhengdong.base.Section.First.Events.RefreshTokenEvent;
+import com.example.zhengdong.base.Section.First.Events.ShopEvent;
 import com.example.zhengdong.base.Section.Four.Controller.FindFC;
 import com.example.zhengdong.base.Section.Login.Controller.LoginAC;
 import com.example.zhengdong.base.Section.Login.Controller.SelectOrgAC;
@@ -95,6 +98,7 @@ public class MainAC extends BaseAC implements View.OnClickListener {
     private int currentTab;
     private IronMasterPupWindow ironMasterPupWindow;
     private String currentTxt="";
+    private String tokens = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,6 +132,7 @@ public class MainAC extends BaseAC implements View.OnClickListener {
                     if (loginModel.getCode() == 200) {
                         String token = loginModel.getData().getToken();
                         SharedPreferencesUtils.setParam(MainAC.this, UrlUtils.APP_TOKEN, token);
+                        tokens = loginModel.getData().getToken();
                         // 判断是否有多个组织机构
                         if (loginModel.getOtherData() != null) {
                             // 默认选择第一个组织机构
@@ -212,6 +217,14 @@ public class MainAC extends BaseAC implements View.OnClickListener {
         firstTxt.setText(messageEvent.getMessage());
     }
 
+    // 刷新token
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void RefreshToken(RefreshTokenEvent refreshTokenEvent){
+//        XToast.show(getBaseContext(),"当前的token为"+refreshTokenEvent.getToken());
+        tokens = refreshTokenEvent.getToken();
+        SharedPreferencesUtils.setParam(MainAC.this,UrlUtils.APP_TOKEN,refreshTokenEvent.getToken());
+    }
+
     private void initTabView() {
         fragments.put(PAGE_ONE, new WorkFC());
         fragments.put(PAGE_TWO, new MessageFC());
@@ -250,6 +263,11 @@ public class MainAC extends BaseAC implements View.OnClickListener {
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
     private void changeButtonStatus(int index, boolean check) {
         switch (index) {
             case PAGE_ONE:
@@ -260,7 +278,8 @@ public class MainAC extends BaseAC implements View.OnClickListener {
                     firstPic.setBackgroundResource(R.drawable.shop_icon);
                     firstTxt.setTextColor(ContextCompat.getColor(this, R.color.gray_40));
                 }
-                break;
+
+                  break;
             case PAGE_TWO:
                 if (check) {
                     secondPic.setBackgroundResource(R.drawable.star_sel_icon);
@@ -313,6 +332,8 @@ public class MainAC extends BaseAC implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.first_lay:
+                // 点击后直接变为商城界面
+                EventBus.getDefault().postSticky(new ShopEvent("商城",true));
                 changeTab(PAGE_ONE);
                 break;
             case R.id.second_lay:
@@ -320,7 +341,7 @@ public class MainAC extends BaseAC implements View.OnClickListener {
                 break;
             case R.id.three_lay:
 //                changeTab(PAGE_THREE);
-                ironMasterPupWindow = new IronMasterPupWindow(MainAC.this, itemsOnClick);
+                ironMasterPupWindow = new IronMasterPupWindow(MainAC.this,tokens,itemsOnClick);
                 ironMasterPupWindow.showAtLocation(MainAC.this.findViewById(R.id.activity_main_ac), Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
                 break;
             case R.id.four_lay:
@@ -333,6 +354,7 @@ public class MainAC extends BaseAC implements View.OnClickListener {
                 break;
         }
     }
+
 
     //为弹出窗口实现监听类
     private View.OnClickListener itemsOnClick = new View.OnClickListener() {

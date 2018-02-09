@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F3F3F3"
+    tools:context="com.example.zhengdong.base.Section.First.Controller.WorkSecondAC">
+    <include layout="@layout/com_navi_title_bar_item"/>
+    <!--工作 - 消息模块-->
+    <LinearLayout
+        android:id="@+id/work_msg_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:visibility="gone">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/work_msg_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+    <!--工作 - 客户模块-->
+    <LinearLayout
+        android:id="@+id/custom_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/four_eight"
+            android:background="#FFF3F3F3">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/four_eight"
+                android:layout_marginLeft="@dimen/ten_dp"
+                android:layout_marginRight="@dimen/ten_dp">
+                <com.example.zhengdong.base.Section.First.View.SearchEditText
+                    android:id="@+id/search_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/thirty_dp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:imeOptions="actionSearch"
+                    android:background="@drawable/table_shape_white_line_bg"
+                    android:cursorVisible="true"
+                    android:textSize="@dimen/twenty_sp"
+                    android:paddingLeft="@dimen/fifteen_dp"
+                    android:textColorHint="#FF828282"
+                    android:textCursorDrawable="@drawable/curse_bg"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fifty_dp">
+                <TextView
+                    android:layout_width="61dp"
+                    android:layout_height="21dp"
+                    android:text="△ 朋友推荐"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/sixteen_dp"
+                    android:textColor="#ff222222"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:layout_width="23dp"
+                    android:layout_height="20dp"
+                    android:text="2人"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/sixteen_dp"
+                    android:textColor="#ff989898"
+                    android:textSize="14dp"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fifty_dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/thirty_dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="57dp"
+                        android:layout_height="20dp"
+                        android:text="大兴公司"
+                        android:textColor="#ff222222"
+                        android:textSize="14dp"
+                        />
+                    <TextView
+                        android:layout_width="186dp"
+                        android:layout_height="17dp"
+                        android:text="最后跟进时间：2018-02-13 11:22"
+                        android:textColor="#ff989898"
+                        android:textSize="12dp"
+                        />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fifty_dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/thirty_dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="57dp"
+                        android:layout_height="20dp"
+                        android:text="华中公司"
+                        android:textColor="#ff222222"
+                        android:textSize="14dp"
+                        />
+                    <TextView
+                        android:layout_width="186dp"
+                        android:layout_height="17dp"
+                        android:text="最后跟进时间：2018-01-13 11:22"
+                        android:textColor="#ff989898"
+                        android:textSize="12dp"
+                        />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fifty_dp">
+                <TextView
+                    android:layout_width="61dp"
+                    android:layout_height="21dp"
+                    android:text="△ 朋友推荐"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/sixteen_dp"
+                    android:textColor="#ff222222"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:layout_width="23dp"
+                    android:layout_height="20dp"
+                    android:text="2人"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/sixteen_dp"
+                    android:textColor="#ff989898"
+                    android:textSize="14dp"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fifty_dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/thirty_dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="57dp"
+                        android:layout_height="20dp"
+                        android:text="大兴公司"
+                        android:textColor="#ff222222"
+                        android:textSize="14dp"
+                        />
+                    <TextView
+                        android:layout_width="186dp"
+                        android:layout_height="17dp"
+                        android:text="最后跟进时间：2018-02-13 11:22"
+                        android:textColor="#ff989898"
+                        android:textSize="12dp"
+                        />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fifty_dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/thirty_dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="57dp"
+                        android:layout_height="20dp"
+                        android:text="钢鲸公司"
+                        android:textColor="#ff222222"
+                        android:textSize="14dp"
+                        />
+                    <TextView
+                        android:layout_width="186dp"
+                        android:layout_height="17dp"
+                        android:text="最后跟进时间：2018-02-13 11:22"
+                        android:textColor="#ff989898"
+                        android:textSize="12dp"
+                        />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--工作 - 周报模块-->
+    <LinearLayout
+        android:id="@+id/week_view"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <!--<ScrollView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        <!--</ScrollView>-->
+    </LinearLayout>
+
+
+</LinearLayout>

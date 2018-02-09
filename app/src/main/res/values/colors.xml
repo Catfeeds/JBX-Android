@@ -194,5 +194,7 @@
     <color name="tab_bg">#FFF3F3F3</color>
     <color name="line_bg">#6497EA</color>
     <color name="light_grays">#f1f1f1</color>
+    <color name="half_transparent">#8f000000</color>
+
 
 </resources>

@@ -15,6 +15,7 @@ import com.example.zhengdong.base.APIManager.HttpInterFace;
 import com.example.zhengdong.base.APIManager.HttpRequest;
 import com.example.zhengdong.base.APIManager.UrlUtils;
 import com.example.zhengdong.base.General.BaseAC;
+import com.example.zhengdong.base.Macro.SharedPreferencesUtils;
 import com.example.zhengdong.base.Macro.XToast;
 import com.example.zhengdong.base.Section.Login.Model.GetVerifyCodeModel;
 import com.example.zhengdong.jbx.R;
@@ -83,12 +84,12 @@ public class RegisterAC extends BaseAC {
             XToast.show(getBaseContext(), "请输入验证码!");
             return;
         }
-        String phone = registerPhoneEdt.getText().toString().trim();
+        final String phone = registerPhoneEdt.getText().toString().trim();
         if (TextUtils.isEmpty(phone)) {
             XToast.show(getBaseContext(), "手机号码不能为空!");
             return;
         }
-        String password = registerPawEdt.getText().toString().trim();
+        final String password = registerPawEdt.getText().toString().trim();
         if (TextUtils.isEmpty(password)) {
             XToast.show(getBaseContext(), "请输入密码!");
             return;
@@ -105,6 +106,9 @@ public class RegisterAC extends BaseAC {
                 GetVerifyCodeModel getVerifyCodeModel = new Gson().fromJson(response,GetVerifyCodeModel.class);
                 if (getVerifyCodeModel.getCode() == 200){
                     XToast.show(getBaseContext(),""+getVerifyCodeModel.getMsg());
+                    SharedPreferencesUtils.setParam(RegisterAC.this,UrlUtils.APP_USERNAME,phone);
+                    SharedPreferencesUtils.setParam(RegisterAC.this,UrlUtils.APP_PASSWORD,password);
+                    finish();
                 }else {
                     XToast.show(getBaseContext(),""+getVerifyCodeModel.getMsg());
                 }

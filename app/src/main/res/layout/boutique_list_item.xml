@@ -93,7 +93,6 @@
                         android:layout_marginTop="@dimen/ten_dp"
                         android:text="#热门"
                         android:textColor="@color/skyblue"
-                        android:background="@drawable/table_shape_blue_line_bg_six"
                         android:paddingLeft="@dimen/five_dpp"
                         android:paddingRight="@dimen/five_dpp"
                         android:paddingTop="@dimen/two_dp"

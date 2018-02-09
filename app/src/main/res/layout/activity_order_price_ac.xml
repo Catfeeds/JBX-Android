@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.zhengdong.base.Section.Four.Controller.OrderPriceAC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/com_navi_title_bar_item" />
+        <com.example.zhengdong.base.Section.Four.View.FilterHeaderView.FilterView
+            android:id="@+id/filter_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.example.zhengdong.base.Section.Four.View.FilterHeaderView.FilterView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ten_dp"
+            android:background="#fff0f0f0" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/goods_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:overScrollMode="never">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+
+</LinearLayout>

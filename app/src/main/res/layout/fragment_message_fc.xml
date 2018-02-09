@@ -7,29 +7,44 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
         <include layout="@layout/com_navi_title_bar_item"/>
-        <com.flyco.tablayout.SlidingTabLayout
-            android:id="@+id/tab_lay"
+        <LinearLayout
+            android:id="@+id/online_view"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/four_four_dp"
-            android:background="@color/white"
-            tl:tl_indicator_color="@color/navi_back_blue_color"
-            tl:tl_indicator_height="@dimen/two_dp"
-            tl:tl_indicator_width_equal_title="true"
-            tl:tl_tab_padding="@dimen/fifteen_dp"
-            tl:tl_tab_space_equal="true"
-            tl:tl_textSelectColor="#222222"
-            tl:tl_textUnselectColor="#656565"
-            tl:tl_textsize="@dimen/fiften_sp"
-            tl:tl_underline_color="@color/white"
-            tl:tl_underline_height="@dimen/one_dp"/>
-        <android.support.v4.view.ViewPager
-            android:id="@+id/vp"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:orientation="vertical">
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/tab_lay"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/four_four_dp"
+                android:background="@color/white"
+                tl:tl_indicator_color="@color/navi_back_blue_color"
+                tl:tl_indicator_height="@dimen/two_dp"
+                tl:tl_indicator_width_equal_title="true"
+                tl:tl_tab_padding="@dimen/fifteen_dp"
+                tl:tl_tab_space_equal="true"
+                tl:tl_textSelectColor="#222222"
+                tl:tl_textUnselectColor="#656565"
+                tl:tl_textsize="@dimen/fiften_sp"
+                tl:tl_underline_color="@color/white"
+                tl:tl_underline_height="@dimen/one_dp"/>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v4.view.ViewPager>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/off_line_view"
+            android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </android.support.v4.view.ViewPager>
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|center_horizontal">
+            <include layout="@layout/off_line_view"/>
+        </LinearLayout>
     </LinearLayout>
 
 

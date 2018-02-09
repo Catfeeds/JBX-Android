@@ -17,13 +17,22 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.zhengdong.base.APIManager.HttpInterFace;
+import com.example.zhengdong.base.APIManager.HttpRequest;
+import com.example.zhengdong.base.APIManager.UrlUtils;
+import com.example.zhengdong.base.Macro.XToast;
 import com.example.zhengdong.base.Macro.dzRecycleview.DzRecyclerView;
 import com.example.zhengdong.base.Macro.dzRecycleview.LoadMoreListener;
 import com.example.zhengdong.base.Macro.dzRecycleview.ProgressView;
 import com.example.zhengdong.base.Section.First.Controller.IronMasterWC;
 import com.example.zhengdong.base.Section.Four.Adapter.NewsListAdapter;
 import com.example.zhengdong.base.Section.Second.Adapter.BoutiqueCommentListAdapter;
+import com.example.zhengdong.base.Section.Second.Model.CommnetListModel;
 import com.example.zhengdong.jbx.R;
+import com.google.gson.Gson;
+
+import java.util.HashMap;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -52,6 +61,10 @@ public class BoutiqueListAC extends AppCompatActivity {
     @BindView(R.id.swipe_layout)
     SwipeRefreshLayout swipeLayout;
     private BoutiqueCommentListAdapter boutiqueCommentListAdapter;
+    private List<CommnetListModel.DataBean.FanCommentsListBean> dataSource;
+    private int pages = 1;
+    private String fanc_id = "";
+    private CommnetListModel commnetListModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +73,57 @@ public class BoutiqueListAC extends AppCompatActivity {
         ButterKnife.bind(this);
         naviBackLay.setVisibility(View.VISIBLE);
         naviTitleTxt.setText("评论列表");
-        initRefreshView();
+//        initRefreshView();
+        fanc_id = getIntent().getStringExtra("Fancid");
+        initBoutiqueCommentListData(fanc_id, 1, 10);
     }
+
+    /**
+     * 查询评论列表
+     */
+    private void initBoutiqueCommentListData(String fanc_id, final int page, int pageNum) {
+        if (page == 1) {
+            dataSource = null;
+        }
+        HashMap<String, String> map = new HashMap<>();
+        map.put("fanc_id", fanc_id);
+        map.put("page", String.valueOf(page));
+        map.put("pageNum", String.valueOf(pageNum));
+        HttpRequest.URL_GET_REQUEST(this, UrlUtils.BOUTIQUE_COMMENT_LIST_URL, map, "加载中...", true, new HttpInterFace() {
+            @Override
+            public void URL_REQUEST(String response) {
+                commnetListModel = new Gson().fromJson(response, CommnetListModel.class);
+                if (commnetListModel.getCode() == 200) {
+                    if (pages == 1) {
+                        dataSource = commnetListModel.getData().getFanCommentsList();
+                        initRefreshView();
+                    } else {
+                        dataSource.addAll(commnetListModel.getData().getFanCommentsList());
+                        boutiqueCommentListAdapter.notifyDataSetChanged();
+                    }
+
+                } else {
+                    XToast.show(getBaseContext(), "" + commnetListModel.getMsg());
+                }
+            }
+
+            @Override
+            public void BEFORE() {
+
+            }
+
+            @Override
+            public void AFTER() {
+
+            }
+
+            @Override
+            public void NOCONNECTION() {
+
+            }
+        });
+    }
+
     private void initRefreshView() {
         swipeLayout.setColorSchemeResources(R.color.navi_back_blue_color, R.color.navi_back_blue_color, R.color.navi_back_blue_color,
                 R.color.navi_back_blue_color);
@@ -73,12 +135,12 @@ public class BoutiqueListAC extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     public void run() {
                         //注意此处
-//                        dataSource.clear();
-//                        page = 1;
-//                        initNewsListData(currentID, 1, 10, "");
-//                        common_rv.refreshComplete();
-//                        swipeLayout.setRefreshing(false);
-//                        newsListAdapter.notifyDataSetChanged();
+                        dataSource.clear();
+                        pages = 1;
+                        initBoutiqueCommentListData(fanc_id, 1, 10);
+                        common_rv.refreshComplete();
+                        swipeLayout.setRefreshing(false);
+                        boutiqueCommentListAdapter.notifyDataSetChanged();
                     }
                 }, 1000);
 
@@ -115,19 +177,19 @@ public class BoutiqueListAC extends AppCompatActivity {
             public void onLoadMore() {
                 new Handler().postDelayed(new Runnable() {
                     public void run() {
-//                        if (dataSource.size() >= newsListModel.getData().getTotal()) {
-//                            common_rv.loadMoreEnd();
-//                            page = 1;
-//                            return;
-//                        }
-//                        page += 1;
-//                        initNewsListData(currentID, page, 10, "");
-//                        common_rv.loadMoreComplete();
+                        if (dataSource.size() >= commnetListModel.getData().getTotal()) {
+                            common_rv.loadMoreEnd();
+                            pages = 1;
+                            return;
+                        }
+                        pages += 1;
+                        initBoutiqueCommentListData(fanc_id, pages, 10);
+                        common_rv.loadMoreComplete();
                     }
                 }, 1000);
             }
         });
-        boutiqueCommentListAdapter = new BoutiqueCommentListAdapter(this,null);
+        boutiqueCommentListAdapter = new BoutiqueCommentListAdapter(this, dataSource);
         common_rv.setAdapter(boutiqueCommentListAdapter);
         boutiqueCommentListAdapter.setOnItemClickListener(new BoutiqueCommentListAdapter.OnItemClickListener() {
             @Override

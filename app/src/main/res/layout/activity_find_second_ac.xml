@@ -6,7 +6,7 @@
     android:id="@+id/find_second_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#fff0f0f0"
     tools:context="com.example.zhengdong.base.Section.Four.Controller.FindSecondAC">
 
     <LinearLayout
@@ -15,13 +15,26 @@
         android:layout_height="wrap_content">
         <include layout="@layout/com_navi_title_bar_item" />
     </LinearLayout>
-
+    <!--报价中心的界面-->
+    <LinearLayout
+        android:id="@+id/speak_price_view"
+        android:layout_below="@+id/title_view_lay"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/speak_price_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
     <!--求职招聘模块-->
     <LinearLayout
         android:id="@+id/find_job_sc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"
+        android:background="@color/white"
         android:layout_below="@+id/title_view_lay">
 
         <LinearLayout
@@ -121,6 +134,31 @@
                 android:layout_height="match_parent">
             </com.example.zhengdong.base.Macro.dzRecycleview.DzRecyclerView>
         </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+    <!--技术论坛的界面-->
+    <LinearLayout
+        android:id="@+id/tech_view"
+        android:layout_below="@+id/title_view_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/tech_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+    <!--断网时候的界面-->
+    <LinearLayout
+        android:id="@+id/off_line_view"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical|center_horizontal">
+        <include layout="@layout/off_line_view"/>
     </LinearLayout>
 
 

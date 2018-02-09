@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.zhengdong.base.Section.First.View.GlideApp;
+import com.example.zhengdong.base.Section.Four.Model.NewsListModel;
 import com.example.zhengdong.base.Section.Four.Model.NewsTitleModel;
 import com.example.zhengdong.base.Section.Four.View.HorizontalRecycleView.PagingScrollHelper;
 import com.example.zhengdong.jbx.R;
@@ -27,6 +29,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class FindListAdapter extends RecyclerView.Adapter<FindListAdapter.ViewHolder> {
+    private List<NewsListModel.DataBean.EcInformationBean> newsDatas = null;
     public List<NewsTitleModel.DataBean.EcInformationCatBean> datas = null;
 
     /**
@@ -41,7 +44,7 @@ public class FindListAdapter extends RecyclerView.Adapter<FindListAdapter.ViewHo
     private List<Map<String, Object>> data_list = new ArrayList<Map<String, Object>>();
 
     public interface OnItemClickListener {
-        void OnItemClick(View view, String name, int i);
+        void OnItemClick(View view, String name, int position, int i);
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
@@ -49,9 +52,10 @@ public class FindListAdapter extends RecyclerView.Adapter<FindListAdapter.ViewHo
     }
 
 
-    public FindListAdapter(Context context, List<NewsTitleModel.DataBean.EcInformationCatBean> datas) {
+    public FindListAdapter(Context context, List<NewsTitleModel.DataBean.EcInformationCatBean> datas, List<NewsListModel.DataBean.EcInformationBean> newDataSource) {
         mContext = context;
         this.datas = datas;
+        this.newsDatas = newDataSource;
     }
 
     @Override
@@ -88,7 +92,7 @@ public class FindListAdapter extends RecyclerView.Adapter<FindListAdapter.ViewHo
             findHorizontalListAdapter.setOnItemClickListener(new FindHorizontalListAdapter.OnItemClickListener() {
                 @Override
                 public void OnItemClick(View view, String name, int newId) {
-                    mOnItemClickListener.OnItemClick(view, name, newId);
+                    mOnItemClickListener.OnItemClick(view, name, 1, newId);
                 }
             });
 
@@ -97,15 +101,40 @@ public class FindListAdapter extends RecyclerView.Adapter<FindListAdapter.ViewHo
         } else {
             viewHolder.headerLay.setVisibility(View.GONE);
         }
-        viewHolder.titleTxt.setText("测试标题");
-        viewHolder.subTitleTxt.setText("测试时间");
+        if (newsDatas != null){
+            viewHolder.titleTxt.setText(""+newsDatas.get(position).getTitle());
+            viewHolder.subTitleTxt.setText(""+newsDatas.get(position).getAdd_time());
+            GlideApp.with(mContext)
+                    .load(newsDatas.get(position).getImgUrl())
+                    .placeholder(R.drawable.placerholder)
+                    .centerCrop()
+                    .into(viewHolder.rightPic);
+            viewHolder.cell.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mOnItemClickListener.OnItemClick(view,""+newsDatas.get(position).getContent(),2,position);
+                }
+            });
+        }else {
+            viewHolder.titleTxt.setText("暂无数据");
+            viewHolder.subTitleTxt.setText("暂无数据");
+        }
 
+    }
+
+    public void setNewsDatas(List<NewsListModel.DataBean.EcInformationBean> newDataSource){
+        newsDatas = newDataSource;
+        notifyDataSetChanged();
     }
 
 
     @Override
     public int getItemCount() {
-        return 5;
+        if (newsDatas != null){
+            return newsDatas.size();
+        }else {
+            return 5;
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

@@ -56,7 +56,7 @@ public class RecyclerBanner extends FrameLayout {
         public void run() {
             recyclerView.smoothScrollToPosition(++currentIndex);
             changePoint();
-            handler.postDelayed(this,3000);
+            handler.postDelayed(this,5000);
         }
     };
 
@@ -116,7 +116,7 @@ public class RecyclerBanner extends FrameLayout {
 
     public synchronized void setPlaying(boolean playing){
         if(!isPlaying && playing && adapter != null && adapter.getItemCount() > 2){
-            handler.postDelayed(playTask,3000);
+            handler.postDelayed(playTask,5000);
             isPlaying = true;
         }else if(isPlaying && !playing){
             handler.removeCallbacksAndMessages(null);
@@ -227,7 +227,7 @@ public class RecyclerBanner extends FrameLayout {
 //            Glide.with(img.getContext()).load(datas.get(position % datas.size()).getUrl()).diskCacheStrategy(DiskCacheStrategy.ALL).placeholder(R.drawable.placerholder).animate(R.anim.glide_animal).into(img);
             GlideApp.with(img.getContext())
                     .load(datas.get(position % datas.size()).getUrl())
-                    .placeholder(R.drawable.banner)
+                    .placeholder(R.drawable.placerholder)
                     .fitCenter()
                     .into(img);
         }

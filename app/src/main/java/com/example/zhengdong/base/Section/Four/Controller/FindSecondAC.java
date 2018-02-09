@@ -35,6 +35,8 @@ import com.example.zhengdong.base.Section.First.Controller.IronMasterWC;
 import com.example.zhengdong.base.Section.Four.Adapter.FindGridListAdapter;
 import com.example.zhengdong.base.Section.Four.Adapter.NewsListAdapter;
 import com.example.zhengdong.base.Section.Four.Adapter.SpaceDecoration;
+import com.example.zhengdong.base.Section.Four.Adapter.SpeakPriceListAdapter;
+import com.example.zhengdong.base.Section.Four.Adapter.TechListAdapter;
 import com.example.zhengdong.base.Section.Four.Model.NewsListModel;
 import com.example.zhengdong.base.Section.Four.View.FindJobPupWindow;
 import com.example.zhengdong.jbx.R;
@@ -89,6 +91,20 @@ public class FindSecondAC extends BaseAC {
     LinearLayout newListView;
     @BindView(R.id.find_second_activity)
     RelativeLayout findSecondActivity;
+    @BindView(R.id.pic)
+    ImageView pic;
+    @BindView(R.id.txt)
+    TextView txtx;
+    @BindView(R.id.off_line_view)
+    LinearLayout offLineView;
+    @BindView(R.id.speak_price_rv)
+    RecyclerView speakPriceRv;
+    @BindView(R.id.speak_price_view)
+    LinearLayout speakPriceView;
+    @BindView(R.id.tech_rv)
+    RecyclerView techRv;
+    @BindView(R.id.tech_view)
+    LinearLayout techView;
     private int gridType = -1;
     private String gridName = "";
     private FindJobPupWindow findJobPupWindow;
@@ -122,16 +138,64 @@ public class FindSecondAC extends BaseAC {
 
         // 前四个的界面
         if (gridType < 10) {
-            findJobSc.setVisibility(View.VISIBLE);
-            initGridView();
-            initTabLayView();
+            if (gridType == 1) {
+                // 求职招聘
+                findJobSc.setVisibility(View.VISIBLE);
+                initGridView();
+                initTabLayView();
+            } else if (gridType == 0) {
+                //报价中心
+                speakPriceView.setVisibility(View.VISIBLE);
+                initSpeakPriceRV();
+            } else if (gridType == 2) {
+                // 技术论坛
+                naviRightPicLay.setVisibility(View.VISIBLE);
+                rightPic.setBackgroundResource(R.drawable.icon_pu);
+                techView.setVisibility(View.VISIBLE);
+                initTechRV();
+            }
         } else {
             // 新闻模块的界面
             newListView.setVisibility(View.VISIBLE);
-            initNewsListData(String.valueOf(gridType),1,10,"");
+            initNewsListData(String.valueOf(gridType), 1, 10, "");
         }
 
 
+    }
+
+    /**
+     * 技术论坛模块的recycleview
+     * */
+    private void initTechRV() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        techRv.setLayoutManager(linearLayoutManager);
+        TechListAdapter techListAdapter = new TechListAdapter(this,null);
+        techRv.setAdapter(techListAdapter);
+        techListAdapter.setOnItemClickListener(new TechListAdapter.OnItemClickListener() {
+            @Override
+            public void OnItemClick(View view, String name, int position, int i) {
+
+            }
+        });
+    }
+
+    /**
+     * 报价中心模块的recycleview
+     */
+    private void initSpeakPriceRV() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        speakPriceRv.setLayoutManager(linearLayoutManager);
+        SpeakPriceListAdapter speakPriceListAdapter = new SpeakPriceListAdapter(this, null);
+        speakPriceRv.setAdapter(speakPriceListAdapter);
+        speakPriceListAdapter.setOnItemClickListener(new SpeakPriceListAdapter.OnItemClickListener() {
+            @Override
+            public void OnItemClick(View view, String name, int position, int i) {
+                Intent intent = new Intent(FindSecondAC.this, OrderPriceAC.class);
+                startActivity(intent);
+            }
+        });
     }
 
     /**
@@ -147,14 +211,23 @@ public class FindSecondAC extends BaseAC {
         map.put("page", String.valueOf(pages));
         map.put("pageNum", String.valueOf(10));
         map.put("titleName", searchTxt);
-        HttpRequest.URL_JSONGET_REQUEST(this, UrlUtils.NEWS_LIST_URL, map, "", false, new HttpInterFace() {
+        HttpRequest.URL_JSONGET_REQUEST(this, UrlUtils.NEWS_LIST_URL, map, "加载中...", true, new HttpInterFace() {
             @Override
             public void URL_REQUEST(String response) {
                 newsListModel = new Gson().fromJson(response, NewsListModel.class);
                 if (newsListModel.getCode() == 200) {
+                    newListView.setVisibility(View.VISIBLE);
+                    offLineView.setVisibility(View.GONE);
                     if (pages == 1) {
                         dataSource = newsListModel.getData().getEcInformation();
-                        initRefreshView();
+                        if (dataSource.size() == 0) {
+                            newListView.setVisibility(View.GONE);
+                            offLineView.setVisibility(View.VISIBLE);
+                            pic.setBackgroundResource(R.drawable.duanwang8);
+                            txtx.setText("暂无相关数据...");
+                        } else {
+                            initRefreshView();
+                        }
                     } else {
                         dataSource.addAll(newsListModel.getData().getEcInformation());
                         newsListAdapter.notifyDataSetChanged();
@@ -177,7 +250,8 @@ public class FindSecondAC extends BaseAC {
 
             @Override
             public void NOCONNECTION() {
-
+                newListView.setVisibility(View.GONE);
+                offLineView.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -264,7 +338,6 @@ public class FindSecondAC extends BaseAC {
     }
 
 
-
     private void initGridView() {
         getData();
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 4);
@@ -340,6 +413,11 @@ public class FindSecondAC extends BaseAC {
 //        tab_lay.showDot(4);
     }
 
+    @OnClick(R.id.off_line_view)
+    public void onViewClicked() {
+        initNewsListData(String.valueOf(gridType), 1, 10, "");
+    }
+
     private class MyPagerAdapter extends FragmentPagerAdapter {
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -368,7 +446,12 @@ public class FindSecondAC extends BaseAC {
                 finish();
                 break;
             case R.id.navi_right_pic_lay:
-                initRightPopWindowView();
+                if (gridType == 1) {
+                    initRightPopWindowView();
+                }else if (gridType == 2){
+                    Intent intent = new Intent(FindSecondAC.this,TechPublishAC.class);
+                    startActivity(intent);
+                }
                 break;
             default:
                 break;

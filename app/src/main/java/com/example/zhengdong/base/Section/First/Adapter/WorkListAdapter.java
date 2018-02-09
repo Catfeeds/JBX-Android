@@ -65,9 +65,8 @@ public class WorkListAdapter extends RecyclerView.Adapter<WorkListAdapter.ViewHo
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
         if (position == 0) {
             viewHolder.banner.setVisibility(View.VISIBLE);
-            urls.add(new Entity("",""));
-            urls.add(new Entity("",""));
-            urls.add(new Entity("",""));
+            urls.add(new Entity("http://oot34wnx6.bkt.clouddn.com/banner1.png",""));
+            urls.add(new Entity("http://oot34wnx6.bkt.clouddn.com/banner2.png",""));
             viewHolder.bannerRv.setOnPagerClickListener(new RecyclerBanner.OnPagerClickListener() {
                 @Override
                 public void onClick(RecyclerBanner.BannerEntity entity) {
@@ -82,21 +81,23 @@ public class WorkListAdapter extends RecyclerView.Adapter<WorkListAdapter.ViewHo
         viewHolder.firstTxt.setText(datas.get(position));
         txtArr = new ArrayList<>();
         srcArr = new ArrayList<>();
+//        if (position == 0) {
+//            commonTxt = ImageAsset.FIRST_TXT;
+//            commonPic = ImageAsset.FIRST_PIC;
+//        } else
+
         if (position == 0) {
-            commonTxt = ImageAsset.FIRST_TXT;
-            commonPic = ImageAsset.FIRST_PIC;
-        } else if (position == 1) {
             commonTxt = ImageAsset.SECOND_TXT;
             commonPic = ImageAsset.SECOND_PIC;
-        } else if (position == 2) {
-            commonTxt = ImageAsset.THREE_TXT;
-            commonPic = ImageAsset.THREE_PIC;
-        } else if (position == 3) {
+        } else if (position == 1) {
             commonTxt = ImageAsset.FOUR_TXT;
             commonPic = ImageAsset.FOUR_PIC;
-        } else if (position == 4) {
+        } else if (position == 2) {
             commonTxt = ImageAsset.FIVE_TXT;
             commonPic = ImageAsset.FIVE_PIC;
+        } else if (position == 3) {
+            commonTxt = ImageAsset.THREE_TXT;
+            commonPic = ImageAsset.THREE_PIC;
         }
         for (int i = 0; i < commonTxt.length; i++) {
             txtArr.add(commonTxt[i]);

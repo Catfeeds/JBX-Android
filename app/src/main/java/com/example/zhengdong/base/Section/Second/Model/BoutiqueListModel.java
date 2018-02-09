@@ -12,11 +12,12 @@ import java.util.List;
 
 public class BoutiqueListModel {
 
+
     /**
      * success : true
      * code : 200
      * msg : success
-     * data : {"total":1,"fanexList":[{"fanc_id":"82666a0a5d2b494f9403c5cb253a0327","graphical_id":"89a7a85278de4e0bbcc4e6a4a07579a4","item_id":"2189fc5dd89643bd9c3bd79801f9fe0e","fan_title":"给对方的施工","fan_type":"pj","apply_ts":"02-02","owner_id":"60acb85001774427875ed156758b3807","presentation":"个梵蒂冈","pic_path":"/GRAPHICAL/60acb85001774427875ed156758b3807/4d61952a1c91456eb7cf71c359522e7a/thumbnail.png","fanc_flag":"zx","phone":"15168273085","user_name":"肖大大"}]}
+     * data : {"total":1,"fanexList":[{"fanc_id":"03d8110d00b540728ed60a0ab623eb0e","graphical_id":"d2f0935cc70e4bb5b55055369e12eca5","item_id":"a6320fbcf17a4856aaf8d7dd9ae58476","fan_title":"测试111111","fan_type":"zg","apply_ts":"02-02","owner_id":"60acb85001774427875ed156758b3807","presentation":"100000000","pic_path":"/group1/M00/00/04/wKgBNlpwFaGATvCMAAAdo1AWcO4184.png","fanc_flag":["最新"],"phone":"15168273085","user_name":"肖大大"}]}
      * otherData : null
      */
 
@@ -69,7 +70,7 @@ public class BoutiqueListModel {
     public static class DataBean {
         /**
          * total : 1
-         * fanexList : [{"fanc_id":"82666a0a5d2b494f9403c5cb253a0327","graphical_id":"89a7a85278de4e0bbcc4e6a4a07579a4","item_id":"2189fc5dd89643bd9c3bd79801f9fe0e","fan_title":"给对方的施工","fan_type":"pj","apply_ts":"02-02","owner_id":"60acb85001774427875ed156758b3807","presentation":"个梵蒂冈","pic_path":"/GRAPHICAL/60acb85001774427875ed156758b3807/4d61952a1c91456eb7cf71c359522e7a/thumbnail.png","fanc_flag":"zx","phone":"15168273085","user_name":"肖大大"}]
+         * fanexList : [{"fanc_id":"03d8110d00b540728ed60a0ab623eb0e","graphical_id":"d2f0935cc70e4bb5b55055369e12eca5","item_id":"a6320fbcf17a4856aaf8d7dd9ae58476","fan_title":"测试111111","fan_type":"zg","apply_ts":"02-02","owner_id":"60acb85001774427875ed156758b3807","presentation":"100000000","pic_path":"/group1/M00/00/04/wKgBNlpwFaGATvCMAAAdo1AWcO4184.png","fanc_flag":["最新"],"phone":"15168273085","user_name":"肖大大"}]
          */
 
         private int total;
@@ -93,16 +94,16 @@ public class BoutiqueListModel {
 
         public static class FanexListBean {
             /**
-             * fanc_id : 82666a0a5d2b494f9403c5cb253a0327
-             * graphical_id : 89a7a85278de4e0bbcc4e6a4a07579a4
-             * item_id : 2189fc5dd89643bd9c3bd79801f9fe0e
-             * fan_title : 给对方的施工
-             * fan_type : pj
+             * fanc_id : 03d8110d00b540728ed60a0ab623eb0e
+             * graphical_id : d2f0935cc70e4bb5b55055369e12eca5
+             * item_id : a6320fbcf17a4856aaf8d7dd9ae58476
+             * fan_title : 测试111111
+             * fan_type : zg
              * apply_ts : 02-02
              * owner_id : 60acb85001774427875ed156758b3807
-             * presentation : 个梵蒂冈
-             * pic_path : /GRAPHICAL/60acb85001774427875ed156758b3807/4d61952a1c91456eb7cf71c359522e7a/thumbnail.png
-             * fanc_flag : zx
+             * presentation : 100000000
+             * pic_path : /group1/M00/00/04/wKgBNlpwFaGATvCMAAAdo1AWcO4184.png
+             * fanc_flag : ["最新"]
              * phone : 15168273085
              * user_name : 肖大大
              */
@@ -116,9 +117,9 @@ public class BoutiqueListModel {
             private String owner_id;
             private String presentation;
             private String pic_path;
-            private String fanc_flag;
             private String phone;
             private String user_name;
+            private List<String> fanc_flag;
 
             public String getFanc_id() {
                 return fanc_id;
@@ -192,14 +193,6 @@ public class BoutiqueListModel {
                 this.pic_path = pic_path;
             }
 
-            public String getFanc_flag() {
-                return fanc_flag;
-            }
-
-            public void setFanc_flag(String fanc_flag) {
-                this.fanc_flag = fanc_flag;
-            }
-
             public String getPhone() {
                 return phone;
             }
@@ -214,6 +207,14 @@ public class BoutiqueListModel {
 
             public void setUser_name(String user_name) {
                 this.user_name = user_name;
+            }
+
+            public List<String> getFanc_flag() {
+                return fanc_flag;
+            }
+
+            public void setFanc_flag(List<String> fanc_flag) {
+                this.fanc_flag = fanc_flag;
             }
         }
     }

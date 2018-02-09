@@ -19,15 +19,26 @@ public class UrlUtils {
      * 接口文档
      */
     public static String BASE_PIC_URL = "http://106.14.154.136:20000";
-    public static String BASE_URL = "http://172.16.3.5:8085/rest-api";
+    // 本地测试环境
+//    public static String BASE_URL = "http://172.16.3.5:8085/rest-api";
+//    public static String BASE_URL = "http://172.16.18.244:8089/api";
+//    public static String BASE_SSO_URL = "http://172.16.3.5:8087/SSO";
+    // 内部测试环境
+//    public static String BASE_URL = "http://apitest.jubuxiu.com/api";
+//    public static String BASE_SSO_URL = "http://ssotest.jubuxiu.com/SSO";
+
+    // 外部测试环境
+    public static String BASE_URL = "http://api.jubuxiu.com/api";
+    public static String BASE_SSO_URL = "http://sso.jubuxiu.com/SSO";
+
     // 用户登陆
     public static String LOGIN_URL = BASE_URL + "/api/token/getToken";
     // 注册
-    public static String REGISTER_URL = BASE_URL + "/api/user/register";
+    public static String REGISTER_URL = BASE_SSO_URL + "/sso/user/register";
     // 获取短信校验码
     public static String GET_VERIFY_CODE = BASE_URL + "/api/sms/getSmsCode";
     // 忘记密码
-    public static String FORGET_PAW_URL = BASE_URL + "/api/user/forgetPassword";
+    public static String FORGET_PAW_URL = BASE_SSO_URL + "/sso/user/forgetPassword";
     // 设置机构ID
     public static String SETTING_ORGAN_ID_URL = BASE_URL + "/api/token/setOrg";
     // 获取部门列表
@@ -38,7 +49,9 @@ public class UrlUtils {
     public static String ADD_PARTMENT_URL = BASE_URL + "/api/dept/add";
     // 钣金大师
     public static String IRON_MASTER_URL = "http://106.14.154.136:8081";
-    public static String IRON_NEW_MASTER_URL = "http://172.16.18.244:8085/GCGL/html/web/html/index1.html?token=";
+    //    http://bjds.jubuxiu.com/GCGL/html/wap/gc/html/index.html
+//    public static String IRON_NEW_MASTER_URL = "http://bjds.jubuxiu.com/GCGL/html/wap/gc/html/index.html";
+    public static String IRON_NEW_MASTER_URL = "http://bjdstest.jubuxiu.com/GCGL/html/wap/gc/html/index.html";
     // 查询部门和部门人数
     public static String QUERY_MENBER_AND_DEPT_LIST_URL = BASE_URL + "/admin/dept/queryDeptAndMember";
     // 删除部门
@@ -72,11 +85,22 @@ public class UrlUtils {
 
     /**
      * 精品模块
-     * */
+     */
     // 精品头部
     public static String BOUTIQUE_ITEM_LIST_URL = BASE_URL + "/api/delicate/quiryFanType";
     // 查询精品列表
     public static String BOUTIQUE_LIST_URL = BASE_URL + "/api/delicate/enquiryFancyEx";
     // 查询精品详情
-    public static String BOUTIQUE_DETAIL_URL = BASE_URL +"/api/delicate/enquiryFanExInformation";
+    public static String BOUTIQUE_DETAIL_URL = BASE_URL + "/api/delicate/enquiryFanExInformation";
+    // 评论
+    public static String BOUTIQUE_COMMENT_URL = BASE_URL + "/api/delicate/toComment";
+    // 评论列表
+    public static String BOUTIQUE_COMMENT_LIST_URL = BASE_URL + "/api/delicate/enquiryFanComments";
+    // 查询是否点赞
+    public static String BOUTIQUE_QUERY_ISRAISE_URL = BASE_URL + "/api/delicate/isDianZan";
+
+    /**
+     * 首页广告图
+     */
+    public static String HOME_ADVERTISEMENT_URL = BASE_URL + "/api/statistics/statisticsTotal";
 }

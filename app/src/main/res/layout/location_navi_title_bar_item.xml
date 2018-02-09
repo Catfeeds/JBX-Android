@@ -15,13 +15,14 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/four_eight"
             android:orientation="horizontal"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_marginLeft="@dimen/ten_dp"
             android:gravity="center_horizontal|center_vertical"
             android:layout_alignParentLeft="true">
 
             <ImageView
                 android:id="@+id/location_pic"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/icon_ad_loc"/>
@@ -32,10 +33,10 @@
                 android:layout_marginLeft="@dimen/five_dpp"
                 android:textColor="@color/white"
                 android:textSize="@dimen/fiften_sp"
-                android:text="定位中..."/>
+                android:text=""/>
             <ImageView
                 android:id="@+id/location_more_pic"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/icon_ad_xl"/>
@@ -87,6 +88,36 @@
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
                 android:src="@drawable/icon_ad_switch"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/navi_location_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/four_eight"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_marginRight="@dimen/ten_dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/right_location_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_ad_loc"/>
+            <TextView
+                android:id="@+id/right_location_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/five_dpp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fiften_sp"
+                android:text="城市定位"/>
+            <ImageView
+                android:id="@+id/right_location_more_pic"
+                android:visibility="visible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_ad_xl"/>
         </LinearLayout>
 
 

@@ -8,7 +8,7 @@
     <!--广告第一个模块-->
     <LinearLayout
         android:id="@+id/first_cell"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -16,13 +16,16 @@
         <com.example.zhengdong.base.Section.First.View.RecyclerBanner
             android:id="@+id/ad_banner_rv"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/one_hundred_five_dp"></com.example.zhengdong.base.Section.First.View.RecyclerBanner>
+            android:background="@color/gray_40"
+            android:layout_height="@dimen/two_hundred_dp">
+        </com.example.zhengdong.base.Section.First.View.RecyclerBanner>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/fifteen_dp"
+            android:visibility="gone"
             android:gravity="center_horizontal|center_vertical"
             android:orientation="horizontal">
 
@@ -49,6 +52,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/one_dp"
+            android:visibility="gone"
             android:layout_marginLeft="@dimen/sixteen_dp"
             android:layout_marginRight="@dimen/sixteen_dp"
             android:layout_marginTop="@dimen/fifteen_dp"
@@ -57,7 +61,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/ten_dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -215,7 +218,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="加工单数"
+                                android:text="撮合信息"
                                 android:textColor="#FF000000"
                                 android:textSize="@dimen/fourteen_sp" />
 
@@ -307,7 +310,6 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/ten_dp"
-                android:layout_marginTop="@dimen/ten_dp"
                 android:background="#FFF0F0F0"
                 />
 

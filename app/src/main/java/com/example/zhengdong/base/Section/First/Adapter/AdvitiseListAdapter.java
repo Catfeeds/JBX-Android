@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 
 import com.example.zhengdong.base.Macro.CountAnimationTextView;
 import com.example.zhengdong.base.Macro.LogUtil;
+import com.example.zhengdong.base.Section.First.Model.AdvertiseListModel;
 import com.example.zhengdong.base.Section.First.Model.OrganPartmentListModel;
 import com.example.zhengdong.base.Section.First.View.RecyclerBanner;
 import com.example.zhengdong.jbx.R;
@@ -30,7 +31,7 @@ import butterknife.ButterKnife;
 import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
 
 public class AdvitiseListAdapter extends RecyclerView.Adapter<AdvitiseListAdapter.ViewHolder> {
-    public OrganPartmentListModel datas = null;
+    public AdvertiseListModel.DataBean datas = null;
     private List<RecyclerBanner.BannerEntity> urls = new ArrayList<>();
     /**
      * 修改 增加context
@@ -41,6 +42,7 @@ public class AdvitiseListAdapter extends RecyclerView.Adapter<AdvitiseListAdapte
     private Context mContext;
 
     private OnItemClickListener mOnItemClickListener;
+    private int lastUserString = 0;
 
     public interface OnItemClickListener {
         void OnItemClick(View view, String i, String position, String name);
@@ -51,7 +53,7 @@ public class AdvitiseListAdapter extends RecyclerView.Adapter<AdvitiseListAdapte
     }
 
 
-    public AdvitiseListAdapter(Context context, OrganPartmentListModel datas) {
+    public AdvitiseListAdapter(Context context, AdvertiseListModel.DataBean datas) {
         mContext = context;
         this.datas = datas;
     }
@@ -67,9 +69,9 @@ public class AdvitiseListAdapter extends RecyclerView.Adapter<AdvitiseListAdapte
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
         if (position == 0) {
             viewHolder.firstCell.setVisibility(View.VISIBLE);
-            urls.add(new Entity("", ""));
-            urls.add(new Entity("", ""));
-            urls.add(new Entity("", ""));
+            for (int i = 0;i<datas.getTop_pic_list().size();i++){
+                urls.add(new Entity(datas.getTop_pic_list().get(i).getPicUrl().toString(),""));
+            }
             viewHolder.adBannerRv.setOnPagerClickListener(new RecyclerBanner.OnPagerClickListener() {
                 @Override
                 public void onClick(RecyclerBanner.BannerEntity entity) {
@@ -81,7 +83,9 @@ public class AdvitiseListAdapter extends RecyclerView.Adapter<AdvitiseListAdapte
             // 文字
             viewHolder.fFirstTxt.setDecimalFormat(new DecimalFormat("###,###,###"))
                     .setAnimationDuration(10000)
-                    .countAnimation(0, 100);
+                    .countAnimation(lastUserString, datas.getUserTotal());
+            lastUserString = datas.getUserTotal();
+
             viewHolder.fSecondTxt.setDecimalFormat(new DecimalFormat("###,###,###"))
                     .setAnimationDuration(10000)
                     .countAnimation(0, 99999);

@@ -12,6 +12,7 @@ import com.example.zhengdong.base.APIManager.HttpInterFace;
 import com.example.zhengdong.base.APIManager.HttpRequest;
 import com.example.zhengdong.base.APIManager.UrlUtils;
 import com.example.zhengdong.base.General.BaseAC;
+import com.example.zhengdong.base.Macro.SharedPreferencesUtils;
 import com.example.zhengdong.base.Macro.XToast;
 import com.example.zhengdong.base.Section.Login.Model.LoginModel;
 import com.example.zhengdong.jbx.R;
@@ -36,6 +37,8 @@ public class ConfirmAC extends BaseAC {
     Button confirmBtn;
     private String phone;
     private String verifyCode;
+    private String data = "";
+    private String smsCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,7 @@ public class ConfirmAC extends BaseAC {
         ButterKnife.bind(this);
         phone = getIntent().getStringExtra("phone");
         verifyCode = getIntent().getStringExtra("verifyCode");
+        smsCode = getIntent().getStringExtra("smsToken");
     }
 
 
@@ -61,7 +65,7 @@ public class ConfirmAC extends BaseAC {
 
     // 忘记密码
     private void initForgetPaw() {
-        String firstPaw = confirmNewPawEdt.getText().toString().trim();
+        final String firstPaw = confirmNewPawEdt.getText().toString().trim();
         String secondPaw = confirmConformPawEdt.getText().toString().trim();
         if (TextUtils.isEmpty(firstPaw)){
             XToast.show(getBaseContext(),"请输入新密码!");
@@ -79,12 +83,16 @@ public class ConfirmAC extends BaseAC {
         map.put("phone",phone);
         map.put("verifyCode",verifyCode);
         map.put("password",firstPaw);
+        map.put("smsToken",smsCode);
         HttpRequest.URL_REQUEST(ConfirmAC.this, map, UrlUtils.FORGET_PAW_URL, true, "", new HttpInterFace() {
             @Override
             public void URL_REQUEST(String response) {
                 LoginModel loginModel = new Gson().fromJson(response,LoginModel.class);
                 if (loginModel.getCode() == 200){
+                    SharedPreferencesUtils.setParam(ConfirmAC.this,UrlUtils.APP_USERNAME,phone);
+                    SharedPreferencesUtils.setParam(ConfirmAC.this,UrlUtils.APP_PASSWORD,firstPaw);
                     XToast.show(getBaseContext(),"找回密码成功!");
+                    finish();
                 }else {
                     XToast.show(getBaseContext(),""+loginModel.getMsg());
                 }

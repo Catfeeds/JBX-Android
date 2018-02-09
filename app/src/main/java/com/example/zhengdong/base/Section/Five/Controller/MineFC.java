@@ -20,6 +20,7 @@ import com.example.zhengdong.base.Macro.XToast;
 import com.example.zhengdong.base.Section.Five.Adapter.MineListAdapter;
 import com.example.zhengdong.base.Section.Five.View.CircleImageView;
 import com.example.zhengdong.base.Section.Four.View.XScrollView;
+import com.example.zhengdong.base.Section.Login.Controller.LoginAC;
 import com.example.zhengdong.base.Section.Login.EventBus.LoginEvents;
 import com.example.zhengdong.jbx.R;
 
@@ -81,6 +82,9 @@ public class MineFC extends Fragment {
         if (view == null) {
             view = inflater.inflate(R.layout.fragment_mine_fc, container, false);
             unbinder = ButterKnife.bind(this, view);
+            String name = String.valueOf(SharedPreferencesUtils.getParam(getActivity(), UrlUtils.APP_NAME,""));
+            mineShopnameTxt.setText(name+"");
+            mineRv.setNestedScrollingEnabled(false);
             initScanView();
             initMineListView();
 
@@ -99,7 +103,7 @@ public class MineFC extends Fragment {
             public void OnItemClick(View view, int position, String name) {
                 if (position == 2||position == 3){
                     // mine offer
-                    initMineOfferView(name);
+//                    initMineOfferView(name);
                 }else if (position == 8){
                     XToast.show(getContext(),"退出登录成功!");
                     EventBus.getDefault().post(new LoginEvents("",false));
@@ -107,6 +111,8 @@ public class MineFC extends Fragment {
                     SharedPreferencesUtils.setParam(getActivity(),UrlUtils.APP_ORANGE_ID,"");
                     SharedPreferencesUtils.setParam(getActivity(), UrlUtils.APP_USERNAME,"");
                     SharedPreferencesUtils.setParam(getActivity(), UrlUtils.APP_PASSWORD,"");
+                    Intent intent = new Intent(getActivity(), LoginAC.class);
+                    startActivity(intent);
                 }
             }
         });

@@ -28,6 +28,7 @@ public class HttpRequest {
 
     public static Activity activity = new Activity();
     private static LoadingDailog dialog;
+    private static Context mContext;
 
     public static void URL_REQUEST(final Context context, HashMap<String, String> hashMap, String url, final boolean isLoading, String loadString, final HttpInterFace httpInterFace) {
         LogUtil.e("HasMap参数" + hashMap.toString());
@@ -49,7 +50,7 @@ public class HttpRequest {
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
-                        XToast.show(context, "网络出错！" + id);
+//                        XToast.show(context, "网络出错！" + id);
                         httpInterFace.NOCONNECTION();
                     }
 
@@ -113,7 +114,7 @@ public class HttpRequest {
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
-                        XToast.show(context, "网络出错！" + id);
+//                        XToast.show(context, "网络出错！" + id);
                         httpInterFace.NOCONNECTION();
                     }
 
@@ -180,7 +181,7 @@ public class HttpRequest {
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
-                        XToast.show(context, "网络出错！");
+//                        XToast.show(context, "网络出错！");
                         if (isLoading) {
                             dialog.dismiss();
                         }
@@ -256,7 +257,7 @@ public class HttpRequest {
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
-                        XToast.show(context, "网络出错！" + id);
+//                        XToast.show(context, "网络出错！" + id);
                         httpInterFace.NOCONNECTION();
                     }
 
@@ -333,7 +334,7 @@ public class HttpRequest {
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
-                        XToast.show(context, "网络出错！");
+//                        XToast.show(context, "网络出错！");
                         httpInterFace.NOCONNECTION();
                     }
 
@@ -386,9 +387,12 @@ public class HttpRequest {
             dialog = loadBuilder.create();
 
         }
-        String token = String.valueOf(SharedPreferencesUtils.getParam(context, UrlUtils.APP_TOKEN, ""));
-        String org_id = String.valueOf(SharedPreferencesUtils.getParam(context, UrlUtils.APP_ORANGE_ID, ""));
-
+        String token = "";
+        String org_id = "";
+        if (context != null){
+             token = String.valueOf(SharedPreferencesUtils.getParam(context, UrlUtils.APP_TOKEN, ""));
+             org_id = String.valueOf(SharedPreferencesUtils.getParam(context, UrlUtils.APP_ORANGE_ID, ""));
+        }
         LogUtil.e("HasMap参数" + url.toString());
         OkHttpUtils.get().url(url)
                 .addHeader("x-application-context", "application:8085")
@@ -400,7 +404,7 @@ public class HttpRequest {
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
-                        XToast.show(context, "网络出错！");
+//                        XToast.show(context, "网络出错！");
                         httpInterFace.NOCONNECTION();
                         if (isLoading) {
                             dialog.dismiss();
@@ -464,7 +468,7 @@ public class HttpRequest {
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
-                        XToast.show(context, "网络出错！");
+//                        XToast.show(context, "网络出错！");
                         httpInterFace.NOCONNECTION();
                     }
 

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) create by ki1lt0 .
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cell"
+    android:background="@drawable/ripple_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/fifteen_dp"
+        android:layout_marginTop="@dimen/ten_dp">
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="@dimen/four_four_dp"
+            android:layout_height="@dimen/four_four_dp"
+            android:background="@drawable/placerholder" />
+
+        <TextView
+            android:id="@+id/title_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/ten_dp"
+            android:layout_toRightOf="@+id/pic"
+            android:text="工作通知"
+            android:textColor="#ff222222"
+            android:textSize="@dimen/fiften_sp" />
+
+        <TextView
+            android:id="@+id/time_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/fifteen_dp"
+            android:text="2018.02.12"
+            android:textColor="#ff989898"
+            android:textSize="@dimen/twenty_sp" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/ten_dp"
+        android:background="#D8D8D8"/>
+    <TextView
+        android:id="@+id/content_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ten_dp"
+        android:layout_marginLeft="@dimen/sixty_dp"
+        android:text=""
+        android:textColor="#ff307fde"
+        android:textSize="@dimen/eleven_sp"
+        />
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ten_dp"
+        android:background="#fff3f3f3"
+        android:layout_marginTop="@dimen/fifteen_dp"/>
+
+</LinearLayout>

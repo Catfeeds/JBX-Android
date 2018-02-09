@@ -1,0 +1,184 @@
+<!--
+  ~ Copyright (c) create by ki1lt0 .
+  -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zhengdong.base.Section.Four.Controller.ShopCarFC">
+
+    <!--商品页面-->
+    <LinearLayout
+        android:id="@+id/goods_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.example.zhengdong.base.Section.First.View.RecyclerBanner
+                android:id="@+id/banner_rv"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/two_hundred_dp"
+                android:background="@color/gray_40">
+            </com.example.zhengdong.base.Section.First.View.RecyclerBanner>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/de"
+                android:scaleType="centerCrop"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:layout_marginLeft="@dimen/sixteen_dp"
+                    android:text="品 名： 不锈钢板(卷)"
+                    android:textColor="#ff222222"
+                    android:textSize="@dimen/fourteen_sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:layout_marginLeft="@dimen/sixteen_dp"
+                    android:text="材质\表面： 201\2B"
+                    android:textColor="#ff222222"
+                    android:textSize="@dimen/fourteen_sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:layout_marginLeft="@dimen/sixteen_dp"
+                    android:text="规 格 ： 1*1219*2438"
+                    android:textColor="#ff222222"
+                    android:textSize="@dimen/fourteen_sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:layout_marginLeft="@dimen/sixteen_dp"
+                    android:text="生产品牌 ： 钢鲸"
+                    android:textColor="#ff222222"
+                    android:textSize="@dimen/fourteen_sp"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ten_dp"
+                    android:layout_marginLeft="@dimen/sixteen_dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="单 价 ： "
+                        android:textColor="#ff222222"
+                        android:textSize="@dimen/fourteen_sp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¥128元/张"
+                        android:textColor="#FF0000"
+                        android:textSize="@dimen/fourteen_sp"
+                        />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/ten_dp"
+                    android:background="#fff3f3f3"
+                    android:layout_marginTop="@dimen/ten_dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/ten_dp">
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/placerholder"
+                        android:layout_marginTop="@dimen/ten_dp"
+                        android:layout_marginLeft="@dimen/ten_dp"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="沈阳鑫利恒装饰材料"
+                            android:textColor="#ff222222"
+                            android:layout_marginTop="@dimen/ten_dp"
+                            android:layout_marginLeft="@dimen/twenty_four_dp"
+                            android:textSize="@dimen/fiften_sp"
+                            />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten_dp"
+                            android:layout_marginLeft="@dimen/twenty_four_dp"
+                            android:src="@drawable/icon_shoplat"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ten_dp"
+                            android:layout_marginLeft="@dimen/twenty_four_dp"
+                            android:layout_marginRight="@dimen/sixteen_dp"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="关注人数 70"
+                                android:textColor="#ff222222"
+                                android:textSize="@dimen/threeteen_sp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="商品总数 40"
+                                android:textColor="#ff222222"
+                                android:textSize="@dimen/threeteen_sp"
+                                android:layout_marginLeft="@dimen/sixteen_dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff3f3f3" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!--详情页面-->
+    <LinearLayout
+        android:id="@+id/detail_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/detail"
+            android:scaleType="centerInside"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/detail2"
+            android:scaleType="centerInside"/>
+
+    </LinearLayout>
+
+</FrameLayout>

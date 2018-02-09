@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.zhengdong.base.APIManager.UrlUtils;
+import com.example.zhengdong.base.Macro.LogUtil;
 import com.example.zhengdong.base.Section.First.View.GlideApp;
 import com.example.zhengdong.base.Section.Five.View.CircleImageView;
 import com.example.zhengdong.base.Section.Second.Model.BoutiqueListModel;
@@ -65,6 +66,12 @@ public class BoutiqueListAdapter extends RecyclerView.Adapter<BoutiqueListAdapte
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
         viewHolder.nameTxt.setText("" + datas.get(position).getUser_name());
         viewHolder.timeTxt.setText("" + datas.get(position).getApply_ts());
+        String flag = "";
+        for (int i = 0;i< datas.get(position).getFanc_flag().size();i++){
+            flag += "#"+datas.get(position).getFanc_flag().get(i) + "  ";
+        }
+        viewHolder.flagTxt.setText(""+flag);
+        LogUtil.e("图片路径为",""+UrlUtils.BASE_PIC_URL+datas.get(position).getPic_path());
         GlideApp.with(mContext)
                 .load(UrlUtils.BASE_PIC_URL + datas.get(position).getPic_path())
                 .placeholder(R.drawable.placerholder)
@@ -104,12 +111,6 @@ public class BoutiqueListAdapter extends RecyclerView.Adapter<BoutiqueListAdapte
         public ViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
-//            int width = ((Activity) pic.getContext()).getWindowManager().getDefaultDisplay().getWidth();
-//            ViewGroup.LayoutParams params = pic.getLayoutParams();
-            //设置图片的相对于屏幕的宽高比
-//            params.width = (width-40)/2;
-//            params.height =  (int) (300 + Math.random() * 400) ;
-//            pic.setLayoutParams(params);
         }
     }
 }

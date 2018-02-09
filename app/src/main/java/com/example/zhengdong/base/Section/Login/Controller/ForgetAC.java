@@ -42,6 +42,7 @@ public class ForgetAC extends BaseAC {
     @BindView(R.id.forget_back_lay)
     LinearLayout forgetBackLay;
     private String phoneNumber;
+    private String data = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,7 @@ public class ForgetAC extends BaseAC {
                 Intent intent = new Intent(ForgetAC.this, ConfirmAC.class);
                 intent.putExtra("phone",phone);
                 intent.putExtra("verifyCode",verifyCode);
+                intent.putExtra("smsToken",data);
                 startActivity(intent);
                 break;
             case R.id.forget_back_lay:
@@ -109,6 +111,7 @@ public class ForgetAC extends BaseAC {
                 GetVerifyCodeModel getVerifyCodeModel = new Gson().fromJson(response, GetVerifyCodeModel.class);
                 if (getVerifyCodeModel.getCode() == 200) {
                     XToast.show(getBaseContext(), "" + getVerifyCodeModel.getMsg());
+                    data = getVerifyCodeModel.getData();
 
                 } else {
                     XToast.show(getBaseContext(), "" + getVerifyCodeModel.getMsg());

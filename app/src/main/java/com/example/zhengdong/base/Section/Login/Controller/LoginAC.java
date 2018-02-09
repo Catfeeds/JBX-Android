@@ -15,9 +15,12 @@ import com.example.zhengdong.base.APIManager.HttpRequest;
 import com.example.zhengdong.base.APIManager.RxBus;
 import com.example.zhengdong.base.APIManager.UrlUtils;
 import com.example.zhengdong.base.General.BaseAC;
+import com.example.zhengdong.base.Macro.LogUtil;
 import com.example.zhengdong.base.Macro.PreferencesUtils;
 import com.example.zhengdong.base.Macro.SharedPreferencesUtils;
 import com.example.zhengdong.base.Macro.XToast;
+import com.example.zhengdong.base.Main.MainAC;
+import com.example.zhengdong.base.Section.First.Events.RefreshTokenEvent;
 import com.example.zhengdong.base.Section.Login.EventBus.LoginEvents;
 import com.example.zhengdong.base.Section.Login.Model.LoginModel;
 import com.example.zhengdong.jbx.R;
@@ -89,11 +92,13 @@ public class LoginAC extends BaseAC {
                     SharedPreferencesUtils.setParam(LoginAC.this,UrlUtils.APP_PASSWORD,password);
 //                    XToast.show(getBaseContext(), "" + loginModel.getMsg());
                     String token = loginModel.getData().getToken();
+                    SharedPreferencesUtils.setParam(LoginAC.this,UrlUtils.APP_TOKEN,"");
                     SharedPreferencesUtils.setParam(LoginAC.this,UrlUtils.APP_TOKEN,token);
+                    EventBus.getDefault().post(new RefreshTokenEvent(token));
                     // 判断是否有多个组织机构
                     if (loginModel.getOtherData() == null){
                         // 直接跳转
-                        EventBus.getDefault().postSticky(new LoginEvents("1",false));
+                        EventBus.getDefault().postSticky(new LoginEvents(token,false));
                         finish();
                     }else {
                         // 弹出组织机构的列表,让用户选择
@@ -123,7 +128,15 @@ public class LoginAC extends BaseAC {
 
     }
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // 刷新token
+        String user = String.valueOf(SharedPreferencesUtils.getParam(LoginAC.this, UrlUtils.APP_USERNAME,""));
+        String paw = String.valueOf(SharedPreferencesUtils.getParam(LoginAC.this, UrlUtils.APP_PASSWORD,""));
+        loginUsernameEdt.setText(user);
+        loginPawEdt.setText(paw);
+    }
 
     @OnClick({R.id.login_delete_lay, R.id.login_register_txt, R.id.login_forget_txt, R.id.login_btn})
     public void onViewClicked(View view) {

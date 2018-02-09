@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/one_dp"
+        android:background="#bdbdbd" />
+
+    <LinearLayout
+        android:id="@+id/ll_head_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/four_two_dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_category"
+            android:layout_width="@dimen/zero_dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ripple_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_category_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_image"
+                android:layout_centerHorizontal="true"
+                android:text="板(卷)"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fiften_sp" />
+
+            <ImageView
+                android:id="@+id/iv_category_arrow"
+                android:layout_width="@dimen/ten_dp"
+                android:layout_height="@dimen/ten_dp"
+                android:layout_marginLeft="@dimen/fifteen_dp"
+                android:src="@drawable/icon_dowm" />
+            <!--<com.example.zhengdong.base.Section.Four.View.FilterView.ExpandIconView-->
+            <!--android:id="@+id/expand_icon_first"-->
+            <!--android:layout_width="@dimen/ten_dp"-->
+            <!--android:layout_height="@dimen/ten_dp"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_marginLeft="@dimen/fifteen_dp"-->
+            <!--app:eiv_animationDuration="300"-->
+            <!--app:eiv_color="#000"-->
+            <!--app:eiv_colorLess="@color/black"-->
+            <!--app:eiv_colorMore="@color/black"-->
+            <!--app:eiv_roundedCorners="false"-->
+            <!--app:eiv_switchColor="false" />-->
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="20dp"
+            android:background="#bdbdbd" />
+
+        <LinearLayout
+            android:id="@+id/ll_sort"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ripple_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_sort_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_image"
+                android:layout_centerHorizontal="true"
+                android:text="价格"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fiften_sp" />
+
+            <ImageView
+                android:id="@+id/iv_sort_arrow"
+                android:layout_width="@dimen/ten_dp"
+                android:layout_height="@dimen/ten_dp"
+                android:layout_marginLeft="@dimen/fifteen_dp"
+                android:src="@drawable/icon_dowm" />
+            <!--<com.example.zhengdong.base.Section.Four.View.FilterView.ExpandIconView-->
+            <!--android:id="@+id/expand_icon_second"-->
+            <!--android:layout_width="@dimen/ten_dp"-->
+            <!--android:layout_height="@dimen/ten_dp"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_marginLeft="@dimen/fifteen_dp"-->
+            <!--app:eiv_animationDuration="300"-->
+            <!--app:eiv_color="#000"-->
+            <!--app:eiv_colorLess="@color/black"-->
+            <!--app:eiv_colorMore="@color/black"-->
+            <!--app:eiv_roundedCorners="false"-->
+            <!--app:eiv_switchColor="false" />-->
+        </LinearLayout>
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="20dp"
+            android:background="#bdbdbd" />
+
+        <LinearLayout
+            android:id="@+id/ll_filter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ripple_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_filter_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_image"
+                android:layout_centerHorizontal="true"
+                android:text="筛选"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fiften_sp" />
+
+            <ImageView
+                android:id="@+id/iv_filter_arrow"
+                android:layout_width="@dimen/ten_dp"
+                android:layout_height="@dimen/ten_dp"
+                android:layout_marginLeft="@dimen/fifteen_dp"
+                android:src="@drawable/icon_dowm" />
+            <!--<com.example.zhengdong.base.Section.Four.View.FilterView.ExpandIconView-->
+            <!--android:id="@+id/expand_icon_three"-->
+            <!--android:layout_width="@dimen/ten_dp"-->
+            <!--android:layout_height="@dimen/ten_dp"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:layout_marginLeft="@dimen/fifteen_dp"-->
+            <!--app:eiv_animationDuration="300"-->
+            <!--app:eiv_color="#000"-->
+            <!--app:eiv_colorLess="@color/black"-->
+            <!--app:eiv_colorMore="@color/black"-->
+            <!--app:eiv_roundedCorners="false"-->
+            <!--app:eiv_switchColor="false" />-->
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#bdbdbd" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/view_mask_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/half_transparent" />
+
+        <LinearLayout
+            android:id="@+id/ll_content_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/filter_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:visibility="gone">
+            </android.support.v7.widget.RecyclerView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fourty_dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/ripple_bg">
+                    <TextView
+                        android:layout_marginLeft="@dimen/sixteen_dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="管材"
+                        android:textColor="#ff222222"
+                        android:textSize="@dimen/fiften_sp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fourty_dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/ripple_bg">
+                    <TextView
+                        android:layout_marginLeft="@dimen/sixteen_dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="板(卷)"
+                        android:textColor="#ff222222"
+                        android:textSize="@dimen/fiften_sp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fourty_dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/ripple_bg">
+                    <TextView
+                        android:layout_marginLeft="@dimen/sixteen_dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="配件"
+                        android:textColor="#ff222222"
+                        android:textSize="@dimen/fiften_sp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fourty_dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/ripple_bg">
+                    <TextView
+                        android:layout_marginLeft="@dimen/sixteen_dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="制品"
+                        android:textColor="#ff222222"
+                        android:textSize="@dimen/fiften_sp"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

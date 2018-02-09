@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) create by ki1lt0 .
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0"
+    android:orientation="vertical"
+    tools:context="com.example.zhengdong.base.Section.Four.Controller.TechPublishAC">
+    <include layout="@layout/com_navi_title_bar_item"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/fifteen_dp"
+        android:orientation="vertical">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fifty_dp"
+            android:background="@null"
+            android:cursorVisible="true"
+            android:textCursorDrawable="@drawable/curse_bg"
+            android:text=""
+            android:textSize="@dimen/fiften_sp"
+            android:hint="请添加标题"
+            android:layout_marginLeft="@dimen/sixteen_dp"
+            android:layout_marginRight="@dimen/sixteen_dp"
+            android:inputType="textMultiLine"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#D8D8D8"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/eight_ten_dp"
+            android:background="@null"
+            android:cursorVisible="true"
+            android:gravity="top"
+            android:layout_marginTop="@dimen/fifteen_dp"
+            android:textCursorDrawable="@drawable/curse_bg"
+            android:text=""
+            android:textSize="@dimen/fiften_sp"
+            android:hint="请简要介绍加工部件…"
+            android:layout_marginLeft="@dimen/sixteen_dp"
+            android:layout_marginRight="@dimen/sixteen_dp"
+            android:inputType="textMultiLine"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/sixteen_dp"
+            android:layout_marginRight="@dimen/sixteen_dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/placerholder"/>
+            <ImageView
+                android:layout_marginLeft="@dimen/ten_dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/placerholder"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
